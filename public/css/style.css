@@ -1,0 +1,224 @@
+/* Portfolio — Paweł Rogoża
+   Static implementation of the Claude Design file "Portfolio - Desktop (Live)".
+   Colors are kept in oklch() exactly as in the design. */
+
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  min-height:100vh;
+  background:oklch(0.95 0.004 95);
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  color:oklch(0.26 0.012 255);
+}
+button{font:inherit;cursor:pointer}
+
+/* terminal scrollbar */
+.tscroll::-webkit-scrollbar{width:10px;height:10px}
+.tscroll::-webkit-scrollbar-thumb{background:oklch(0.46 0.014 255);border-radius:6px}
+.tscroll::-webkit-scrollbar-thumb:hover{background:oklch(0.56 0.02 150)}
+.tscroll::-webkit-scrollbar-track{background:transparent}
+
+/* ===== sticky nav ===== */
+.nav{
+  position:sticky;top:0;z-index:20;
+  backdrop-filter:saturate(1.4) blur(8px);
+  -webkit-backdrop-filter:saturate(1.4) blur(8px);
+  background:oklch(0.985 0.006 95 / 0.86);
+  border-bottom:1px solid oklch(0.9 0.008 80);
+}
+.nav-inner{
+  max-width:1180px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 36px;
+}
+.nav-brand{display:flex;align-items:baseline;gap:12px}
+.brand{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:15px;font-weight:500;letter-spacing:0.01em;
+  color:oklch(0.3 0.012 60);
+}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-links{display:flex;gap:26px;font-size:14.5px;color:oklch(0.38 0.012 60)}
+.nav-links span{cursor:pointer;transition:color .15s}
+.nav-links span:hover{color:oklch(0.45 0.07 150)}
+.lang-toggle{
+  display:flex;align-items:center;
+  font-family:'IBM Plex Mono',monospace;font-size:13px;
+  border:1px solid oklch(0.86 0.008 80);border-radius:8px;overflow:hidden;
+}
+.lang-btn{padding:5px 10px;cursor:pointer;background:transparent;color:oklch(0.4 0.012 60)}
+.lang-btn-pl{border-left:1px solid oklch(0.9 0.008 80)}
+.lang-btn.active{background:oklch(0.32 0.03 150);color:oklch(0.97 0.01 150)}
+
+/* ===== hero ===== */
+.hero{
+  max-width:1260px;margin:0 auto;
+  display:grid;grid-template-columns:0.92fr 1.5fr;gap:54px;
+  padding:64px 36px 40px;align-items:start;
+}
+.hero-h1{
+  font-family:'IBM Plex Serif',serif;font-weight:600;
+  font-size:54px;line-height:1.05;letter-spacing:-0.018em;
+  margin:0 0 18px;color:oklch(0.18 0.012 60);
+}
+.hero-sub{
+  font-size:18px;line-height:1.6;color:oklch(0.38 0.012 60);
+  margin:0 0 30px;max-width:500px;text-wrap:pretty;
+}
+.hero-ctas{display:flex;gap:12px}
+.btn-primary{
+  font-family:'IBM Plex Mono',monospace;font-size:14px;
+  padding:12px 20px;border-radius:9px;border:none;
+  background:oklch(0.32 0.03 150);color:oklch(0.97 0.01 150);
+  transition:background .15s;
+}
+.btn-primary:hover{background:oklch(0.4 0.05 150)}
+.btn-secondary{
+  font-family:'IBM Plex Mono',monospace;font-size:14px;
+  padding:12px 20px;border-radius:9px;
+  border:1px solid oklch(0.82 0.01 80);background:transparent;
+  color:oklch(0.32 0.012 60);transition:border-color .15s;
+}
+.btn-secondary:hover{border-color:oklch(0.6 0.04 150)}
+
+/* ===== terminal shell ===== */
+.terminal{
+  position:relative;
+  background:oklch(0.19 0.015 258);
+  border-radius:14px;overflow:hidden;
+  box-shadow:0 40px 70px -34px oklch(0.2 0.02 258 / 0.65);
+  border:1px solid oklch(0.3 0.014 258);
+  display:flex;flex-direction:column;
+  resize:both;
+  width:100%;height:620px;
+  min-width:340px;min-height:300px;
+  max-width:94vw;max-height:86vh;
+}
+.term-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;background:oklch(0.235 0.015 258);
+  border-bottom:1px solid oklch(0.3 0.014 258);flex-shrink:0;
+}
+.term-header-left{display:flex;align-items:center;gap:8px}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot-red{background:oklch(0.65 0.16 25)}
+.dot-amber{background:oklch(0.78 0.13 80)}
+.dot-green{background:oklch(0.72 0.14 150)}
+.term-title{
+  margin-left:6px;font-family:'IBM Plex Mono',monospace;
+  font-size:12.5px;color:oklch(0.68 0.012 258);
+}
+.term-expand{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;
+  color:oklch(0.78 0.012 258);background:transparent;
+  border:1px solid oklch(0.36 0.014 258);border-radius:6px;
+  padding:5px 10px;transition:border-color .15s,color .15s;
+}
+.term-expand:hover{border-color:oklch(0.6 0.04 235);color:oklch(0.85 0.08 235)}
+
+.term-path{
+  padding:11px 18px 0;font-family:'IBM Plex Mono',monospace;
+  font-size:12.5px;color:oklch(0.62 0.012 258);
+  display:flex;gap:5px;align-items:center;flex-shrink:0;
+}
+.path-seg{cursor:pointer;transition:color .15s}
+.path-seg:hover{color:oklch(0.82 0.13 150)}
+.path-sep{color:oklch(0.46 0.012 258)}
+.path-cur{color:oklch(0.8 0.08 150)}
+.path-tree{margin-left:auto;cursor:pointer;color:oklch(0.62 0.012 258);transition:color .15s}
+.path-tree:hover{color:oklch(0.82 0.13 150)}
+
+.term-body{
+  flex:1;min-height:0;overflow-y:auto;
+  padding:14px 18px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:14.5px;line-height:1.62;
+}
+.term-input-row{
+  padding:12px 18px 8px;display:flex;align-items:center;gap:8px;
+  font-family:'IBM Plex Mono',monospace;font-size:14.5px;
+  border-top:1px solid oklch(0.3 0.014 258);flex-shrink:0;
+}
+.prompt-user{color:oklch(0.82 0.14 150)}
+.prompt-sep{color:oklch(0.66 0.012 258)}
+#term-input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:oklch(0.95 0.006 258);
+  font-family:'IBM Plex Mono',monospace;font-size:14.5px;
+}
+#term-input::placeholder{color:oklch(0.55 0.012 258)}
+
+.term-chips{display:flex;flex-wrap:wrap;gap:7px;padding:8px 18px 18px;flex-shrink:0}
+.chip{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+  padding:5px 11px;border-radius:6px;
+  border:1px solid oklch(0.36 0.014 258);background:transparent;
+  color:oklch(0.82 0.012 258);transition:border-color .15s,color .15s;
+}
+.chip:hover{border-color:oklch(0.82 0.13 150);color:oklch(0.88 0.07 150)}
+
+.term-grip{
+  position:absolute;right:2px;bottom:2px;width:16px;height:16px;
+  pointer-events:none;
+  background:repeating-linear-gradient(135deg, oklch(0.6 0.02 258) 0 1.5px, transparent 1.5px 4px);
+  opacity:0.55;border-bottom-right-radius:13px;
+}
+
+/* expanded (fullscreen) terminal — !important so it also beats
+   inline width/height left behind by a corner-drag resize */
+.terminal.expanded{
+  position:fixed;inset:0;z-index:80;
+  border-radius:0;border:none;box-shadow:none;resize:none;
+  width:100vw !important;height:100vh !important;
+  max-width:none;max-height:none;
+}
+.terminal.expanded .term-body{font-size:16px;padding:26px 44px}
+.terminal.expanded .term-grip{display:none}
+body.term-expanded{overflow:hidden}
+
+/* ===== terminal output ===== */
+.term-screen{margin-bottom:14px}
+.term-line{white-space:pre-wrap;color:oklch(0.95 0.006 258)}
+.t-dim{color:oklch(0.72 0.012 258)}
+.t-green{color:oklch(0.84 0.14 150)}
+.t-amber{color:oklch(0.85 0.11 78)}
+.t-blue{color:oklch(0.78 0.1 235)}
+.t-bold{font-weight:600}
+.term-prompt-line{white-space:pre-wrap;margin-bottom:2px}
+.term-suggestion{color:oklch(0.84 0.14 150);cursor:pointer;text-decoration:underline;margin-right:10px}
+
+/* ===== filesystem strip ===== */
+.fs-strip{
+  max-width:1180px;margin:0 auto;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:8px 36px 4px;
+  font-family:'IBM Plex Mono',monospace;font-size:13px;
+  color:oklch(0.52 0.012 60);
+}
+.fs-home{color:oklch(0.45 0.06 150)}
+.fs-dot{color:oklch(0.8 0.008 80)}
+.fs-file{cursor:pointer;transition:color .15s}
+.fs-file:hover{color:oklch(0.4 0.07 150)}
+
+.spacer{height:48px}
+
+/* ===== mobile (<760px) ===== */
+@media (max-width:759px){
+  .nav-inner{padding:13px 18px}
+  .nav-links{display:none}
+  .hero{
+    max-width:1180px;
+    display:flex;flex-direction:column;gap:26px;
+    padding:30px 18px 24px;
+  }
+  .hero-h1{font-size:33px}
+  /* fixed full-width terminal on mobile (drag-resize makes no sense on touch);
+     !important also overrides inline sizes left behind by a desktop drag */
+  .terminal{
+    resize:none;
+    width:100% !important;height:480px !important;
+    min-width:0;max-width:100%;max-height:none;
+  }
+  .term-grip{display:none}
+  .fs-strip{padding:10px 18px 4px}
+}

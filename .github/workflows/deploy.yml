@@ -1,0 +1,37 @@
+# Automatyczny deploy na VPS po pushu do main.
+#
+# Domyślnie WYŁĄCZONY — job jest pomijany, dopóki nie ustawisz w repo
+# (Settings -> Secrets and variables -> Actions):
+#
+#   Variables:
+#     DEPLOY_ENABLED = true
+#     DEPLOY_PATH    = /var/www/portfolio   (opcjonalnie, to jest default)
+#   Secrets:
+#     VPS_HOST     - adres VPS-a (np. 1.2.3.4 albo vps.pawelrogoza.pl)
+#     VPS_USER     - użytkownik SSH do deployu
+#     VPS_SSH_KEY  - prywatny klucz SSH (ed25519) dodany na VPS do authorized_keys
+
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    if: ${{ vars.DEPLOY_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Rsync site to VPS
+        run: |
+          rsync -avz --delete public/ \
+            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ vars.DEPLOY_PATH || '/var/www/portfolio' }}/"

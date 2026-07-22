@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paweł Rogoża — Linux Administration &amp; SysOps</title>
+<meta name="description" content="Portfolio of Paweł Rogoża — Linux administration & SysOps, building toward Cloud / DevOps / Platform Engineering. Main project: Harbor, a self-hosted VPS.">
+<meta property="og:title" content="Paweł Rogoża — Linux Administration &amp; SysOps">
+<meta property="og:description" content="Interactive terminal portfolio. Main project: Harbor, a self-hosted VPS I run and document.">
+<meta property="og:url" content="https://portfolio.pawelrogoza.pl/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23181b26'/%3E%3Ctext%20x='11'%20y='44'%20font-family='monospace'%20font-size='28'%20font-weight='bold'%20fill='%234ade80'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== sticky nav ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span class="brand">pawel rogoża</span>
+    </div>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <span data-cmd="about" data-i18n="navAbout">About</span>
+        <span data-cmd="harbor" data-i18n="navHarbor">Harbor</span>
+        <span data-cmd="projects" data-i18n="navProjects">Projects</span>
+        <span data-cmd="skills" data-i18n="navSkills">Skills</span>
+        <span data-cmd="contact" data-i18n="navContact">Contact</span>
+      </nav>
+      <div class="lang-toggle">
+        <span id="lang-en" class="lang-btn">EN</span>
+        <span id="lang-pl" class="lang-btn lang-btn-pl">PL</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== hero ===== -->
+<div class="hero">
+  <!-- left -->
+  <div class="hero-left">
+    <h1 class="hero-h1" data-i18n="heroH1">Hi, I'm Paweł Rogoża.</h1>
+    <p class="hero-sub" data-i18n="heroSub">I work in Linux administration and SysOps. My main project, Harbor, is a self-hosted VPS where I run and document a real server stack — web, mail, databases, monitoring, backups and automation.</p>
+    <div class="hero-ctas">
+      <button class="btn-primary" data-cmd="harbor"><span data-i18n="ctaHarbor">Open Harbor</span> →</button>
+      <button class="btn-secondary" data-cmd="contact" data-i18n="ctaContact">Get in touch</button>
+    </div>
+  </div>
+
+  <!-- right: terminal (drag the bottom-right corner to resize) -->
+  <div class="terminal" id="terminal">
+    <div class="term-header">
+      <div class="term-header-left">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-amber"></span>
+        <span class="dot dot-green"></span>
+        <span class="term-title">visitor@portfolio</span>
+      </div>
+      <button class="term-expand" id="btn-expand" type="button"><span id="expand-icon">⤢</span> <span id="expand-label">expand</span></button>
+    </div>
+    <div class="term-path">
+      <span class="path-seg" data-cmd="ls">~</span><span class="path-sep">/</span>
+      <span class="path-seg" data-cmd="ls">home</span><span class="path-sep">/</span>
+      <span class="path-seg path-cur" data-cmd="ls">pawel</span>
+      <span class="path-tree" data-cmd="tree">tree ⌄</span>
+    </div>
+    <div class="term-body tscroll" id="term-output"></div>
+    <div class="term-input-row">
+      <span class="prompt-user">pawel@portfolio</span><span class="prompt-sep">:~$</span>
+      <input id="term-input" type="text" placeholder="type a command…" autocomplete="off" autocapitalize="off" spellcheck="false">
+    </div>
+    <div class="term-chips">
+      <button class="chip" data-cmd="whoami" type="button">whoami</button>
+      <button class="chip" data-cmd="harbor" type="button">harbor</button>
+      <button class="chip" data-cmd="projects" type="button">projects</button>
+      <button class="chip" data-cmd="skills" type="button">skills</button>
+      <button class="chip" data-cmd="contact" type="button">contact</button>
+      <button class="chip" data-cmd="help" type="button">help</button>
+    </div>
+    <div class="term-grip" title="drag to resize"></div>
+  </div>
+</div>
+
+<!-- ===== filesystem strip ===== -->
+<div class="fs-strip">
+  <span class="fs-home">~/home/pawel</span>
+  <span class="fs-dot">·</span>
+  <span class="fs-file" data-cmd="about">about.md</span>
+  <span class="fs-file" data-cmd="harbor">projects/harbor.md</span>
+  <span class="fs-file" data-cmd="skills">skills.txt</span>
+  <span class="fs-file" data-cmd="education">education.txt</span>
+  <span class="fs-file" data-cmd="goals">goals.txt</span>
+  <span class="fs-file" data-cmd="contact">contact.txt</span>
+</div>
+
+<div class="spacer"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
