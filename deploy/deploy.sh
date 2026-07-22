@@ -8,7 +8,7 @@
 set -euo pipefail
 
 HOST="${DEPLOY_HOST:?Ustaw DEPLOY_HOST, np. DEPLOY_HOST=pawel@vps ./deploy/deploy.sh}"
-DEST="${DEPLOY_PATH:-/var/www/portfolio}"
+DEST="${DEPLOY_PATH:-/home/portfolio/portfolio/public}"
 SRC="$(cd "$(dirname "$0")/../public" && pwd)"
 
 echo "Deploying ${SRC}/ -> ${HOST}:${DEST}/"

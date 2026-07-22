@@ -5,7 +5,7 @@
 #
 #   Variables:
 #     DEPLOY_ENABLED = true
-#     DEPLOY_PATH    = /var/www/portfolio   (opcjonalnie, to jest default)
+#     DEPLOY_PATH    = /home/portfolio/portfolio/public   (opcjonalnie, to jest default)
 #   Secrets:
 #     VPS_HOST     - adres VPS-a (np. 1.2.3.4 albo vps.pawelrogoza.pl)
 #     VPS_USER     - użytkownik SSH do deployu
@@ -34,4 +34,4 @@ jobs:
       - name: Rsync site to VPS
         run: |
           rsync -avz --delete public/ \
-            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ vars.DEPLOY_PATH || '/var/www/portfolio' }}/"
+            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ vars.DEPLOY_PATH || '/home/portfolio/portfolio/public' }}/"

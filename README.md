@@ -45,22 +45,20 @@ python3 -m http.server 8080
 1. **DNS** — dodaj rekord `A` (i ew. `AAAA`) dla `portfolio.pawelrogoza.pl`
    wskazujący na IP VPS-a.
 
-2. **Katalog na VPS:**
+2. **Klon repo na VPS** (jako user `portfolio`, do `/home/portfolio/portfolio`):
 
    ```bash
-   sudo mkdir -p /var/www/portfolio
-   sudo chown $USER:$USER /var/www/portfolio
+   sudo useradd -m -s /bin/bash portfolio   # jeśli jeszcze nie istnieje
+   sudo chmod o+x /home/portfolio           # nginx musi móc wejść do katalogu
+   sudo -iu portfolio
+   git clone https://github.com/Pawel-Rogoza/portfolio.git ~/portfolio
+   exit
    ```
 
-3. **Wgraj stronę** (z lokalnej maszyny, z katalogu repo):
+   nginx serwuje bezpośrednio `/home/portfolio/portfolio/public`, więc
+   aktualizacja strony to po prostu `git pull` w tym katalogu.
 
-   ```bash
-   DEPLOY_HOST=user@twoj-vps ./deploy/deploy.sh
-   # albo ręcznie:
-   rsync -avz --delete public/ user@twoj-vps:/var/www/portfolio/
-   ```
-
-4. **nginx:**
+3. **nginx:**
 
    ```bash
    sudo cp deploy/nginx/portfolio.pawelrogoza.pl.conf /etc/nginx/sites-available/
@@ -68,7 +66,7 @@ python3 -m http.server 8080
    sudo nginx -t && sudo systemctl reload nginx
    ```
 
-5. **HTTPS (Let's Encrypt):**
+4. **HTTPS (Let's Encrypt):**
 
    ```bash
    sudo certbot --nginx -d portfolio.pawelrogoza.pl
