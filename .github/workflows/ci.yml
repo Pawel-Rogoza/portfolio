@@ -1,0 +1,114 @@
+# CI — uruchamia się przy każdym pushu i pull requeście.
+#
+# Deploy woła ten sam workflow przez `workflow_call`, więc na main nie ma
+# ścieżki, którą da się wypchnąć bez przejścia testów.
+
+name: CI
+
+on:
+  push:
+    branches-ignore: [main]     # main jest testowany przez deploy.yml
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static:
+    name: Static checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Strona nie ma build stepu, więc "kompilacja" to sprawdzenie składni.
+      - name: Parse every JS file
+        run: |
+          for file in public/js/*.js; do
+            node --check "$file"
+          done
+
+      # CSP, referencje do plików, tagi <head>, brak klikalnych spanów itd.
+      - name: Static checks
+        run: node tests/static-checks.mjs
+
+      # `nginx -t` nie sprawdza, czy `root` istnieje, więc wystarczy sama
+      # instalacja pliku — łapie literówki, brakujące średniki i złe cudzysłowy
+      # w długim nagłówku CSP.
+      - name: nginx config syntax
+        run: |
+          set -uo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq nginx >/dev/null
+          sudo cp deploy/nginx/portfolio.pawelrogoza.pl.conf /etc/nginx/conf.d/
+          sudo rm -f /etc/nginx/sites-enabled/default
+
+          output=$(sudo nginx -t 2>&1 || true)
+          echo "$output"
+
+          # `nginx -t` woła też socket() dla każdego `listen`, więc na runnerze
+          # bez IPv6 przewraca się na `listen [::]:80` — to nie jest błąd
+          # konfiguracji i nie może wywalać CI.
+          grep -q 'syntax is ok' <<<"$output" \
+            || { echo "::error::vhost ma błąd składni"; exit 1; }
+
+          if grep '\[emerg\]' <<<"$output" | grep -qv 'Address family not supported'; then
+            echo "::error::nginx zgłosił błąd inny niż brak IPv6 na runnerze"
+            exit 1
+          fi
+
+      - name: Shell scripts
+        run: bash -n deploy/deploy.sh
+
+  browser:
+    name: Browser suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tests/package-lock.json
+
+      - name: Install test dependencies
+        working-directory: tests
+        run: npm ci
+
+      - name: Resolve Playwright version
+        id: pw
+        working-directory: tests
+        run: echo "version=$(node -p "require('playwright/package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache browser
+        id: browser-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw.outputs.version }}
+
+      - name: Install Chromium
+        if: steps.browser-cache.outputs.cache-hit != 'true'
+        working-directory: tests
+        run: npx playwright install --with-deps chromium
+
+      - name: Install system deps for cached browser
+        if: steps.browser-cache.outputs.cache-hit == 'true'
+        working-directory: tests
+        run: npx playwright install-deps chromium
+
+      # Serwuje public/ z tym samym CSP, co vhost, i przechodzi przez wszystkie
+      # komendy, oba motywy, oba języki i skróty klawiszowe.
+      - name: Browser suite
+        working-directory: tests
+        run: node browser.mjs

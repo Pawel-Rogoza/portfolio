@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-tests",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CI checks for the portfolio. The site itself has no dependencies — these live here so public/ stays a plain static directory.",
+  "scripts": {
+    "test": "node static-checks.mjs && node browser.mjs",
+    "test:static": "node static-checks.mjs",
+    "test:browser": "node browser.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.0"
+  }
+}

@@ -54,10 +54,15 @@ public/            <- to jest cała strona (deployowany katalog)
   favicon.svg
   og.png           <- podgląd dla social mediów (1200×630)
   robots.txt
+tests/             <- tylko CI, strona nadal nie ma zależności
+  static-checks.mjs  <- CSP, referencje, tagi head (bez przeglądarki)
+  browser.mjs        <- terminal, motywy, i18n, a11y w headless Chromium
 deploy/
   nginx/portfolio.pawelrogoza.pl.conf   <- gotowy vhost nginx
-  deploy.sh                             <- ręczny deploy przez rsync
-.github/workflows/deploy.yml            <- opcjonalny auto-deploy (domyślnie wyłączony)
+  deploy.sh                             <- awaryjny deploy przez rsync
+.github/workflows/
+  ci.yml                                <- testy przy każdym pushu i PR
+  deploy.yml                            <- deploy na main (domyślnie wyłączony)
 ```
 
 ## Podgląd lokalny
@@ -117,15 +122,86 @@ i zostaw samo `'self'`.
 > `add_header` odziedziczone z `server {}`. Dlatego cache jest ustawiany
 > dyrektywą `expires`, a nie `add_header Cache-Control`.
 
-### Auto-deploy z GitHuba (opcjonalnie)
+## CI / CD
 
-Workflow `.github/workflows/deploy.yml` po każdym pushu do `main` wgrywa
-`public/` na VPS przez rsync. Domyślnie jest **pomijany** — żeby go włączyć,
-ustaw w repo (Settings → Secrets and variables → Actions):
+```
+push na gałąź  ->  CI  (static + browser)
+push na main   ->  CI  ->  deploy na VPS  ->  health check
+```
 
-- variable `DEPLOY_ENABLED` = `true` (+ opcjonalnie `DEPLOY_PATH`),
-- secrets `VPS_HOST`, `VPS_USER`, `VPS_SSH_KEY` (klucz prywatny ed25519,
-  którego klucz publiczny jest w `authorized_keys` na VPS).
+### CI — `.github/workflows/ci.yml`
+
+Dwa joby, obie bramki muszą być zielone:
+
+**`static`** — bez przeglądarki, kilka sekund:
+
+- `node --check` na każdym pliku JS i `bash -n` na `deploy.sh`,
+- `nginx -t` na vhoście (łapie literówki i rozjechane cudzysłowy w CSP),
+- `tests/static-checks.mjs`: brak inline `<script>` / `<style>` / `style=""`
+  (inaczej CSP by je wyciął w produkcji), CSP bez `unsafe-inline`,
+  brak `add_header` w bloku `location`, wszystkie lokalne `href`/`src`
+  istnieją na dysku, żaden plik w `public/` nie jest osierocony, klasy `.mt-*`
+  używane przez `app.js` są zdefiniowane w CSS, komplet tagów `<head>`,
+  `og.png` faktycznie 1200×630, zero klikalnych `<span>`.
+
+**`browser`** — Chromium headless, serwuje `public/` **z tym samym CSP, co
+vhost** (policy jest czytana z pliku konfiguracyjnego, więc testy nie mogą się
+z nią rozjechać). Sprawdza m.in.:
+
+- wszystkie ~54 komendy i ścieżki błędów — każda musi coś wypisać, zero
+  wyjątków JS w całym przebiegu,
+- scrollback dopisuje, `clear` czyści, `cd` przestawia prompt, breadcrumb,
+  pasek statusu i tytuł okna,
+- `Tab` (unikat, lista kandydatów, ścieżka), `↑`/`↓`, `Ctrl+U`, `Ctrl+L`,
+  historia przeżywa reload,
+- paski `htop` mają niezerową wysokość **i** się ruszają,
+- kontrast echa komendy w jasnym motywie ≥ 4.5:1,
+- motyw przełącza się i zapisuje, widoczna jest dokładnie jedna ikona,
+- przełączenie na PL zmienia **każdy** string strony (poza jawną listą tych,
+  które w obu językach są takie same) oraz treść terminala,
+- chipy, nawigacja i pasek plików sterują terminalem, pełny ekran i `Esc`,
+- zero klikalnych `<span>`, linki zewnętrzne mają `rel="noopener"`,
+- `prefers-reduced-motion` wyłącza animacje, ciemny motyw wchodzi z systemu,
+- zero naruszeń CSP (przez zdarzenie `securitypolicyviolation`, nie przez
+  parsowanie konsoli).
+
+Lokalnie:
+
+```bash
+cd tests
+npm ci
+npx playwright install chromium
+npm test
+```
+
+### CD — `.github/workflows/deploy.yml`
+
+Po pushu do `main` workflow **najpierw woła cały CI** (`workflow_call`), więc
+nie ma ścieżki, którą da się wdrożyć bez zielonych testów. Potem loguje się na
+VPS i robi `git fetch` + `git reset --hard <sha>` w klonie repo — na serwerze
+ląduje dokładnie ten commit, a nie "to, co zdążyło się przesłać".
+
+Na koniec **health check**: strona odpowiada, zawiera terminal, wszystkie
+zasoby (`style.css`, `theme.js`, `app.js`, `favicon.svg`, `og.png`) się
+serwują, a odpowiedź ma nagłówki `Content-Security-Policy`,
+`X-Content-Type-Options` i `Referrer-Policy`. Deploy bez tego sprawdzenia to
+tylko kopiowanie plików.
+
+Job `deploy` jest domyślnie **pomijany**. Żeby go włączyć, ustaw w repo
+(Settings → Secrets and variables → Actions):
+
+| typ | nazwa | opis |
+| --- | --- | --- |
+| variable | `DEPLOY_ENABLED` | `true` — bez tego deploy się nie uruchamia |
+| variable | `DEPLOY_REPO` | ścieżka klona na VPS (default `/home/portfolio/portfolio`) |
+| variable | `SITE_URL` | adres do health checku (default `https://portfolio.pawelrogoza.pl`) |
+| secret | `VPS_HOST` | adres VPS-a |
+| secret | `VPS_USER` | użytkownik SSH |
+| secret | `VPS_SSH_KEY` | prywatny klucz ed25519 (publiczny w `authorized_keys`) |
+| secret | `VPS_SSH_KNOWN_HOSTS` | **zalecane** — output `ssh-keyscan twoj-vps`; bez tego workflow ufa kluczowi hosta przy pierwszym połączeniu |
+
+Ręczny deploy przez rsync (`deploy/deploy.sh`) został jako wariant awaryjny —
+nie mieszaj go z `git reset` na tym samym katalogu.
 
 ## Edycja treści
 

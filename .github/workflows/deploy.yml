@@ -1,37 +1,120 @@
-# Automatyczny deploy na VPS po pushu do main.
+# CD — deploy na VPS po pushu do main.
 #
-# Domyślnie WYŁĄCZONY — job jest pomijany, dopóki nie ustawisz w repo
+# Deploy przechodzi dopiero po zielonym CI (job `ci` woła .github/workflows/ci.yml).
+#
+# Domyślnie job `deploy` jest POMIJANY, dopóki nie ustawisz w repo
 # (Settings -> Secrets and variables -> Actions):
 #
 #   Variables:
 #     DEPLOY_ENABLED = true
-#     DEPLOY_PATH    = /home/portfolio/portfolio/public   (opcjonalnie, to jest default)
+#     DEPLOY_REPO    = /home/portfolio/portfolio        (opcjonalnie, to jest default)
+#     SITE_URL       = https://portfolio.pawelrogoza.pl (opcjonalnie, do health checku)
 #   Secrets:
-#     VPS_HOST     - adres VPS-a (np. 1.2.3.4 albo vps.pawelrogoza.pl)
-#     VPS_USER     - użytkownik SSH do deployu
-#     VPS_SSH_KEY  - prywatny klucz SSH (ed25519) dodany na VPS do authorized_keys
+#     VPS_HOST            - adres VPS-a (np. 1.2.3.4 albo vps.pawelrogoza.pl)
+#     VPS_USER            - użytkownik SSH do deployu
+#     VPS_SSH_KEY         - prywatny klucz SSH (ed25519) dodany na VPS do authorized_keys
+#     VPS_SSH_KNOWN_HOSTS - (zalecane) output `ssh-keyscan twoj-vps`; bez tego
+#                           workflow ufa kluczowi przy pierwszym połączeniu
+#
+# Deploy robi `git fetch` + `git reset --hard <sha>` w klonie repo na VPS-ie —
+# dokładnie tak, jak opisuje README (nginx serwuje wprost z tego klona).
+# Dzięki temu na serwerze ląduje konkretny commit, a nie "to, co akurat zdążyło
+# się przesłać". Wariant przez rsync (dla docroota, który nie jest klonem git)
+# został w deploy/deploy.sh.
 
-name: Deploy to VPS
+name: Deploy
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false      # nigdy nie przerywaj deployu w locie
 
 jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
   deploy:
+    name: Deploy to VPS
+    needs: ci
     if: ${{ vars.DEPLOY_ENABLED == 'true' }}
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ vars.SITE_URL || 'https://portfolio.pawelrogoza.pl' }}
     steps:
-      - uses: actions/checkout@v4
-
       - name: Setup SSH
+        env:
+          SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.VPS_SSH_KNOWN_HOSTS }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          set -euo pipefail
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
+          if [ -n "$KNOWN_HOSTS" ]; then
+            printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          else
+            echo "::warning::VPS_SSH_KNOWN_HOSTS nie jest ustawiony — klucz hosta jest pobierany na ślepo. Ustaw go, żeby wykluczyć MITM."
+            ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          fi
+          chmod 600 ~/.ssh/known_hosts
 
-      - name: Rsync site to VPS
+      - name: Deploy commit ${{ github.sha }}
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          DEPLOY_REPO: ${{ vars.DEPLOY_REPO || '/home/portfolio/portfolio' }}
         run: |
-          rsync -avz --delete public/ \
-            "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ vars.DEPLOY_PATH || '/home/portfolio/portfolio/public' }}/"
+          set -euo pipefail
+          ssh -o StrictHostKeyChecking=yes "$VPS_USER@$VPS_HOST" \
+            "set -eu; \
+             cd '$DEPLOY_REPO'; \
+             git fetch --prune origin; \
+             git reset --hard '${{ github.sha }}'; \
+             git clean -fd public; \
+             git --no-pager log -1 --format='deployed %h %s'"
+
+      # Deploy bez sprawdzenia, czy strona żyje, to tylko kopiowanie plików.
+      - name: Health check
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://portfolio.pawelrogoza.pl' }}
+        run: |
+          set -euo pipefail
+          echo "Sprawdzam $SITE_URL"
+          for attempt in 1 2 3; do
+            if curl -fsS --max-time 15 -o live.html "$SITE_URL/"; then break; fi
+            echo "próba $attempt nieudana, ponawiam za ${attempt}0s"
+            sleep "${attempt}0"
+          done
+
+          grep -q 'pawel@portfolio' live.html \
+            || { echo "::error::Strona odpowiada, ale nie zawiera terminala"; exit 1; }
+          grep -q 'js/app.js' live.html \
+            || { echo "::error::Brak referencji do js/app.js"; exit 1; }
+
+          # zasoby, bez których strona jest połamana
+          for asset in css/style.css js/theme.js js/app.js favicon.svg og.png; do
+            curl -fsS --max-time 15 -o /dev/null "$SITE_URL/$asset" \
+              || { echo "::error::$asset nie odpowiada"; exit 1; }
+          done
+
+          # nagłówki z vhosta — łatwo je zgubić edytując blok location
+          headers=$(curl -fsSI --max-time 15 "$SITE_URL/")
+          for header in content-security-policy x-content-type-options referrer-policy; do
+            grep -qi "^$header:" <<<"$headers" \
+              || { echo "::error::Brakuje nagłówka $header"; exit 1; }
+          done
+
+          echo "Deploy OK"
+
+      - name: Remove SSH key
+        if: always()
+        run: rm -f ~/.ssh/id_ed25519
