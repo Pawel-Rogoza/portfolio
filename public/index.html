@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme-default="auto">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Paweł Rogoża — Linux Administration &amp; SysOps</title>
-<meta name="description" content="Portfolio of Paweł Rogoża — Linux administration & SysOps, building toward Cloud / DevOps / Platform Engineering. Main project: Harbor, a self-hosted VPS.">
+<meta name="description" content="Portfolio of Paweł Rogoża — Linux administration &amp; SysOps, building toward Cloud / DevOps / Platform Engineering. Main project: Harbor, a self-hosted VPS.">
+<meta name="author" content="Paweł Rogoża">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1e28" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://portfolio.pawelrogoza.pl/">
+
 <meta property="og:title" content="Paweł Rogoża — Linux Administration &amp; SysOps">
 <meta property="og:description" content="Interactive terminal portfolio. Main project: Harbor, a self-hosted VPS I run and document.">
 <meta property="og:url" content="https://portfolio.pawelrogoza.pl/">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23181b26'/%3E%3Ctext%20x='11'%20y='44'%20font-family='monospace'%20font-size='28'%20font-weight='bold'%20fill='%234ade80'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:image" content="https://portfolio.pawelrogoza.pl/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Terminal window reading: pawel@portfolio — Linux administration &amp; SysOps.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
 </head>
 <body>
+
+<a class="skip-link" href="#terminal" data-i18n="skipLink">Skip to the terminal</a>
 
 <!-- ===== sticky nav ===== -->
 <header class="nav">
@@ -24,80 +43,134 @@
       <span class="brand">pawel rogoża</span>
     </div>
     <div class="nav-right">
-      <nav class="nav-links">
-        <span data-cmd="about" data-i18n="navAbout">About</span>
-        <span data-cmd="harbor" data-i18n="navHarbor">Harbor</span>
-        <span data-cmd="projects" data-i18n="navProjects">Projects</span>
-        <span data-cmd="skills" data-i18n="navSkills">Skills</span>
-        <span data-cmd="contact" data-i18n="navContact">Contact</span>
+      <nav class="nav-links" aria-label="Sections">
+        <button type="button" data-cmd="about" data-i18n="navAbout">About</button>
+        <button type="button" data-cmd="harbor" data-i18n="navHarbor">Harbor</button>
+        <button type="button" data-cmd="projects" data-i18n="navProjects">Projects</button>
+        <button type="button" data-cmd="skills" data-i18n="navSkills">Skills</button>
+        <button type="button" data-cmd="contact" data-i18n="navContact">Contact</button>
       </nav>
-      <div class="lang-toggle">
-        <span id="lang-en" class="lang-btn">EN</span>
-        <span id="lang-pl" class="lang-btn lang-btn-pl">PL</span>
+      <button class="icon-btn" id="btn-theme" type="button" aria-label="Switch theme" data-i18n-aria="themeToggle">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="lang-en" class="lang-btn" type="button" aria-pressed="true" lang="en">EN</button>
+        <button id="lang-pl" class="lang-btn" type="button" aria-pressed="false" lang="pl">PL</button>
       </div>
     </div>
   </div>
 </header>
 
 <!-- ===== hero ===== -->
-<div class="hero">
+<main class="hero">
   <!-- left -->
   <div class="hero-left">
     <h1 class="hero-h1" data-i18n="heroH1">Hi, I'm Paweł Rogoża.</h1>
     <p class="hero-sub" data-i18n="heroSub">I work in Linux administration and SysOps. My main project, Harbor, is a self-hosted VPS where I run and document a real server stack — web, mail, databases, monitoring, backups and automation.</p>
     <div class="hero-ctas">
-      <button class="btn-primary" data-cmd="harbor"><span data-i18n="ctaHarbor">Open Harbor</span> →</button>
-      <button class="btn-secondary" data-cmd="contact" data-i18n="ctaContact">Get in touch</button>
+      <button class="btn-primary" type="button" data-cmd="harbor"><span data-i18n="ctaHarbor">Open Harbor</span> →</button>
+      <button class="btn-secondary" type="button" data-cmd="contact" data-i18n="ctaContact">Get in touch</button>
     </div>
+
+    <dl class="hero-meta">
+      <div>
+        <dt data-i18n="metaRoleLabel">Role</dt>
+        <dd data-i18n="metaRoleValue">Linux admin · SysOps</dd>
+      </div>
+      <div>
+        <dt data-i18n="metaFocusLabel">Focus</dt>
+        <dd data-i18n="metaFocusValue">Harbor — self-hosted VPS</dd>
+      </div>
+      <div>
+        <dt data-i18n="metaNextLabel">Heading for</dt>
+        <dd data-i18n="metaNextValue">Cloud / DevOps</dd>
+      </div>
+      <div>
+        <dt data-i18n="metaBasedLabel">Based in</dt>
+        <dd data-i18n="metaBasedValue">Gdańsk, Poland</dd>
+      </div>
+    </dl>
   </div>
 
   <!-- right: terminal (drag the bottom-right corner to resize) -->
-  <div class="terminal" id="terminal">
+  <section class="terminal" id="terminal" aria-label="Interactive terminal">
     <div class="term-header">
       <div class="term-header-left">
-        <span class="dot dot-red"></span>
-        <span class="dot dot-amber"></span>
-        <span class="dot dot-green"></span>
-        <span class="term-title">visitor@portfolio</span>
+        <span class="dot dot-red" aria-hidden="true"></span>
+        <span class="dot dot-amber" aria-hidden="true"></span>
+        <span class="dot dot-green" aria-hidden="true"></span>
+        <span class="term-title" id="term-title">visitor@portfolio: ~/home/pawel</span>
       </div>
-      <button class="term-expand" id="btn-expand" type="button"><span id="expand-icon">⤢</span> <span id="expand-label">expand</span></button>
+      <div class="term-header-right">
+        <button class="term-btn" id="btn-expand" type="button" aria-expanded="false">
+          <span id="expand-icon" aria-hidden="true">⤢</span>
+          <span id="expand-label" data-i18n="expand">expand</span>
+        </button>
+      </div>
     </div>
+
     <div class="term-path">
-      <span class="path-seg" data-cmd="ls">~</span><span class="path-sep">/</span>
-      <span class="path-seg" data-cmd="ls">home</span><span class="path-sep">/</span>
-      <span class="path-seg path-cur" data-cmd="ls">pawel</span>
-      <span class="path-tree" data-cmd="tree">tree ⌄</span>
+      <span class="path-crumbs" id="path-crumbs"></span>
+      <button class="path-tree" type="button" data-cmd="tree">tree ⌄</button>
     </div>
-    <div class="term-body tscroll" id="term-output"></div>
+
+    <div class="term-body tscroll" id="term-output" role="log" aria-live="polite" aria-label="Terminal output" tabindex="0"></div>
+
     <div class="term-input-row">
-      <span class="prompt-user">pawel@portfolio</span><span class="prompt-sep">:~$</span>
-      <input id="term-input" type="text" placeholder="type a command…" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <span class="prompt-user">pawel@portfolio</span><span class="prompt-sep" id="prompt-cwd">:~$</span>
+      <label class="visually-hidden" for="term-input" data-i18n="inputLabel">Terminal command</label>
+      <span class="term-field">
+        <input id="term-input" type="text" placeholder="type a command…" data-i18n-placeholder="inputPlaceholder"
+               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+               enterkeyhint="go" aria-describedby="term-status">
+        <span class="term-cursor" aria-hidden="true"></span>
+      </span>
     </div>
-    <div class="term-chips">
+
+    <div class="term-chips" id="term-chips">
       <button class="chip" data-cmd="whoami" type="button">whoami</button>
       <button class="chip" data-cmd="harbor" type="button">harbor</button>
       <button class="chip" data-cmd="projects" type="button">projects</button>
       <button class="chip" data-cmd="skills" type="button">skills</button>
+      <button class="chip" data-cmd="htop" type="button">htop</button>
+      <button class="chip" data-cmd="neofetch" type="button">neofetch</button>
       <button class="chip" data-cmd="contact" type="button">contact</button>
       <button class="chip" data-cmd="help" type="button">help</button>
     </div>
-    <div class="term-grip" title="drag to resize"></div>
-  </div>
-</div>
+
+    <div class="term-status" id="term-status">
+      <span><b id="status-cwd">~/home/pawel</b></span>
+      <span class="status-hint">
+        <kbd>Tab</kbd> <span data-i18n="hintTab">completes</span>
+        · <kbd>↑</kbd> <span data-i18n="hintHistory">history</span>
+        · <kbd>Ctrl</kbd>+<kbd>L</kbd> <span data-i18n="hintClear">clear</span>
+      </span>
+    </div>
+
+    <div class="term-grip" aria-hidden="true"></div>
+  </section>
+</main>
 
 <!-- ===== filesystem strip ===== -->
 <div class="fs-strip">
-  <span class="fs-home">~/home/pawel</span>
-  <span class="fs-dot">·</span>
-  <span class="fs-file" data-cmd="about">about.md</span>
-  <span class="fs-file" data-cmd="harbor">projects/harbor.md</span>
-  <span class="fs-file" data-cmd="skills">skills.txt</span>
-  <span class="fs-file" data-cmd="education">education.txt</span>
-  <span class="fs-file" data-cmd="goals">goals.txt</span>
-  <span class="fs-file" data-cmd="contact">contact.txt</span>
+  <span class="fs-home">/home/pawel</span>
+  <span class="fs-dot" aria-hidden="true">·</span>
+  <button class="fs-file" type="button" data-cmd="cat about.md">about.md</button>
+  <button class="fs-file" type="button" data-cmd="cat projects/harbor.md">projects/harbor.md</button>
+  <button class="fs-file" type="button" data-cmd="cat skills.txt">skills.txt</button>
+  <button class="fs-file" type="button" data-cmd="cat education.txt">education.txt</button>
+  <button class="fs-file" type="button" data-cmd="cat goals.txt">goals.txt</button>
+  <button class="fs-file" type="button" data-cmd="cat contact.txt">contact.txt</button>
 </div>
 
-<div class="spacer"></div>
+<footer class="site-foot">
+  <span data-i18n="footBuilt">Static site — HTML, CSS and vanilla JS. No build step, no dependencies.</span>
+  <span class="foot-spacer"></span>
+  <a href="https://github.com/pawel-rogoza" rel="me noopener">GitHub</a>
+  <a href="mailto:pawel.rogoza@proton.me">Email</a>
+  <a href="https://www.linkedin.com/in/pawel-rogoza" rel="me noopener">LinkedIn</a>
+</footer>
 
 <script src="js/app.js"></script>
 </body>

@@ -1,224 +1,620 @@
 /* Portfolio — Paweł Rogoża
    Static implementation of the Claude Design file "Portfolio - Desktop (Live)".
-   Colors are kept in oklch() exactly as in the design. */
 
-*{box-sizing:border-box}
-html,body{margin:0;height:100%}
-body{
-  min-height:100vh;
-  background:oklch(0.95 0.004 95);
-  font-family:'IBM Plex Sans',system-ui,sans-serif;
-  color:oklch(0.26 0.012 255);
+   Everything colour-ish lives in the token block below. The page has two
+   themes (paper / night); the terminal stays dark in both, just re-tuned so it
+   still reads as a window sitting on the page rather than a hole in it. */
+
+/* ==========================================================================
+   1. tokens
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* type */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-serif: 'IBM Plex Serif', Georgia, serif;
+
+  --text-hero: clamp(2rem, 1.25rem + 3.2vw, 3.375rem);
+  --text-lead: clamp(1rem, 0.94rem + 0.28vw, 1.125rem);
+  --text-term: clamp(0.8125rem, 0.78rem + 0.14vw, 0.90625rem);
+
+  /* page — paper */
+  --bg: oklch(0.958 0.005 95);
+  --bg-elev: oklch(0.985 0.005 95 / 0.86);
+  --fg: oklch(0.2 0.012 60);
+  --fg-muted: oklch(0.4 0.012 60);
+  --fg-dim: oklch(0.54 0.01 60);
+  --rule: oklch(0.89 0.008 80);
+  --rule-strong: oklch(0.82 0.01 80);
+
+  --accent: oklch(0.42 0.075 155);
+  --accent-hover: oklch(0.5 0.09 155);
+  --accent-on: oklch(0.97 0.015 150);
+  --accent-quiet: oklch(0.45 0.06 155);
+
+  /* terminal — same window in both themes */
+  --term-bg: oklch(0.19 0.015 258);
+  --term-chrome: oklch(0.235 0.015 258);
+  --term-rule: oklch(0.3 0.014 258);
+  --term-fg: oklch(0.95 0.006 258);
+  --term-dim: oklch(0.72 0.012 258);
+  --term-faint: oklch(0.6 0.012 258);
+  --term-green: oklch(0.84 0.14 150);
+  --term-amber: oklch(0.85 0.11 78);
+  --term-blue: oklch(0.78 0.1 235);
+  --term-red: oklch(0.72 0.15 25);
+  --term-magenta: oklch(0.78 0.11 330);
+
+  --term-shadow: 0 40px 70px -34px oklch(0.2 0.02 258 / 0.65);
+  --term-glow: 0 0 0 1px oklch(0.3 0.014 258);
+
+  /* geometry */
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shell: 1260px;
+  --shell-narrow: 1180px;
+  --gutter: clamp(1.125rem, 0.7rem + 1.8vw, 2.25rem);
+
+  --focus: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  --tap: 0.15s ease;
 }
-button{font:inherit;cursor:pointer}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: oklch(0.175 0.012 258);
+  --bg-elev: oklch(0.215 0.014 258 / 0.86);
+  --fg: oklch(0.94 0.006 258);
+  --fg-muted: oklch(0.75 0.01 258);
+  --fg-dim: oklch(0.62 0.012 258);
+  --rule: oklch(0.3 0.014 258);
+  --rule-strong: oklch(0.38 0.016 258);
+
+  --accent: oklch(0.82 0.13 152);
+  --accent-hover: oklch(0.88 0.15 152);
+  --accent-on: oklch(0.19 0.03 155);
+  --accent-quiet: oklch(0.74 0.1 152);
+
+  /* terminal drops below the page so the window still has an edge */
+  --term-bg: oklch(0.135 0.014 258);
+  --term-chrome: oklch(0.175 0.015 258);
+  --term-rule: oklch(0.27 0.014 258);
+
+  --term-shadow: 0 40px 70px -40px oklch(0 0 0 / 0.8);
+  --term-glow: 0 0 0 1px oklch(0.32 0.02 258), 0 0 60px -18px oklch(0.6 0.12 152 / 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --bg: oklch(0.175 0.012 258);
+    --bg-elev: oklch(0.215 0.014 258 / 0.86);
+    --fg: oklch(0.94 0.006 258);
+    --fg-muted: oklch(0.75 0.01 258);
+    --fg-dim: oklch(0.62 0.012 258);
+    --rule: oklch(0.3 0.014 258);
+    --rule-strong: oklch(0.38 0.016 258);
+
+    --accent: oklch(0.82 0.13 152);
+    --accent-hover: oklch(0.88 0.15 152);
+    --accent-on: oklch(0.19 0.03 155);
+    --accent-quiet: oklch(0.74 0.1 152);
+
+    --term-bg: oklch(0.135 0.014 258);
+    --term-chrome: oklch(0.175 0.015 258);
+    --term-rule: oklch(0.27 0.014 258);
+
+    --term-shadow: 0 40px 70px -40px oklch(0 0 0 / 0.8);
+    --term-glow: 0 0 0 1px oklch(0.32 0.02 258), 0 0 60px -18px oklch(0.6 0.12 152 / 0.35);
+  }
+}
+
+/* ==========================================================================
+   2. base
+   ========================================================================== */
+
+* { box-sizing: border-box }
+
+html { -webkit-text-size-adjust: 100% }
+
+html, body { margin: 0; height: 100% }
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+button { font: inherit; cursor: pointer; color: inherit }
+
+a { color: var(--accent); text-underline-offset: 2px }
+
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+  border-radius: 4px;
+}
+
+::selection { background: var(--accent); color: var(--accent-on) }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip-path: inset(50%); overflow: hidden; white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--accent); color: var(--accent-on);
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  font-family: var(--font-mono); font-size: 13px; text-decoration: none;
+  transition: top .18s ease;
+}
+.skip-link:focus { top: 12px }
 
 /* terminal scrollbar */
-.tscroll::-webkit-scrollbar{width:10px;height:10px}
-.tscroll::-webkit-scrollbar-thumb{background:oklch(0.46 0.014 255);border-radius:6px}
-.tscroll::-webkit-scrollbar-thumb:hover{background:oklch(0.56 0.02 150)}
-.tscroll::-webkit-scrollbar-track{background:transparent}
+.tscroll { scrollbar-width: thin; scrollbar-color: oklch(0.46 0.014 258) transparent }
+.tscroll::-webkit-scrollbar { width: 10px; height: 10px }
+.tscroll::-webkit-scrollbar-thumb { background: oklch(0.46 0.014 258); border-radius: 6px }
+.tscroll::-webkit-scrollbar-thumb:hover { background: oklch(0.56 0.02 150) }
+.tscroll::-webkit-scrollbar-track { background: transparent }
 
-/* ===== sticky nav ===== */
-.nav{
-  position:sticky;top:0;z-index:20;
-  backdrop-filter:saturate(1.4) blur(8px);
-  -webkit-backdrop-filter:saturate(1.4) blur(8px);
-  background:oklch(0.985 0.006 95 / 0.86);
-  border-bottom:1px solid oklch(0.9 0.008 80);
-}
-.nav-inner{
-  max-width:1180px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 36px;
-}
-.nav-brand{display:flex;align-items:baseline;gap:12px}
-.brand{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:15px;font-weight:500;letter-spacing:0.01em;
-  color:oklch(0.3 0.012 60);
-}
-.nav-right{display:flex;align-items:center;gap:28px}
-.nav-links{display:flex;gap:26px;font-size:14.5px;color:oklch(0.38 0.012 60)}
-.nav-links span{cursor:pointer;transition:color .15s}
-.nav-links span:hover{color:oklch(0.45 0.07 150)}
-.lang-toggle{
-  display:flex;align-items:center;
-  font-family:'IBM Plex Mono',monospace;font-size:13px;
-  border:1px solid oklch(0.86 0.008 80);border-radius:8px;overflow:hidden;
-}
-.lang-btn{padding:5px 10px;cursor:pointer;background:transparent;color:oklch(0.4 0.012 60)}
-.lang-btn-pl{border-left:1px solid oklch(0.9 0.008 80)}
-.lang-btn.active{background:oklch(0.32 0.03 150);color:oklch(0.97 0.01 150)}
+/* ==========================================================================
+   3. sticky nav
+   ========================================================================== */
 
-/* ===== hero ===== */
-.hero{
-  max-width:1260px;margin:0 auto;
-  display:grid;grid-template-columns:0.92fr 1.5fr;gap:54px;
-  padding:64px 36px 40px;align-items:start;
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: saturate(1.4) blur(8px);
+  -webkit-backdrop-filter: saturate(1.4) blur(8px);
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--rule);
 }
-.hero-h1{
-  font-family:'IBM Plex Serif',serif;font-weight:600;
-  font-size:54px;line-height:1.05;letter-spacing:-0.018em;
-  margin:0 0 18px;color:oklch(0.18 0.012 60);
+.nav-inner {
+  max-width: var(--shell-narrow); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px var(--gutter);
 }
-.hero-sub{
-  font-size:18px;line-height:1.6;color:oklch(0.38 0.012 60);
-  margin:0 0 30px;max-width:500px;text-wrap:pretty;
+.nav-brand { display: flex; align-items: baseline; gap: 12px; min-width: 0 }
+.brand {
+  font-family: var(--font-mono);
+  font-size: 15px; font-weight: 500; letter-spacing: 0.01em;
+  color: var(--fg);
+  white-space: nowrap;
 }
-.hero-ctas{display:flex;gap:12px}
-.btn-primary{
-  font-family:'IBM Plex Mono',monospace;font-size:14px;
-  padding:12px 20px;border-radius:9px;border:none;
-  background:oklch(0.32 0.03 150);color:oklch(0.97 0.01 150);
-  transition:background .15s;
-}
-.btn-primary:hover{background:oklch(0.4 0.05 150)}
-.btn-secondary{
-  font-family:'IBM Plex Mono',monospace;font-size:14px;
-  padding:12px 20px;border-radius:9px;
-  border:1px solid oklch(0.82 0.01 80);background:transparent;
-  color:oklch(0.32 0.012 60);transition:border-color .15s;
-}
-.btn-secondary:hover{border-color:oklch(0.6 0.04 150)}
+.brand::before { content: '> '; color: var(--accent) }
 
-/* ===== terminal shell ===== */
-.terminal{
-  position:relative;
-  background:oklch(0.19 0.015 258);
-  border-radius:14px;overflow:hidden;
-  box-shadow:0 40px 70px -34px oklch(0.2 0.02 258 / 0.65);
-  border:1px solid oklch(0.3 0.014 258);
-  display:flex;flex-direction:column;
-  resize:both;
-  width:100%;height:620px;
-  min-width:340px;min-height:300px;
-  max-width:94vw;max-height:86vh;
+.nav-right { display: flex; align-items: center; gap: clamp(12px, 2vw, 28px) }
+.nav-links { display: flex; gap: clamp(14px, 1.6vw, 26px) }
+.nav-links button {
+  background: none; border: 0; padding: 4px 2px;
+  font-size: 14.5px; color: var(--fg-muted);
+  transition: color var(--tap);
 }
-.term-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 16px;background:oklch(0.235 0.015 258);
-  border-bottom:1px solid oklch(0.3 0.014 258);flex-shrink:0;
-}
-.term-header-left{display:flex;align-items:center;gap:8px}
-.dot{width:12px;height:12px;border-radius:50%}
-.dot-red{background:oklch(0.65 0.16 25)}
-.dot-amber{background:oklch(0.78 0.13 80)}
-.dot-green{background:oklch(0.72 0.14 150)}
-.term-title{
-  margin-left:6px;font-family:'IBM Plex Mono',monospace;
-  font-size:12.5px;color:oklch(0.68 0.012 258);
-}
-.term-expand{
-  font-family:'IBM Plex Mono',monospace;font-size:12px;
-  color:oklch(0.78 0.012 258);background:transparent;
-  border:1px solid oklch(0.36 0.014 258);border-radius:6px;
-  padding:5px 10px;transition:border-color .15s,color .15s;
-}
-.term-expand:hover{border-color:oklch(0.6 0.04 235);color:oklch(0.85 0.08 235)}
+.nav-links button:hover { color: var(--accent) }
 
-.term-path{
-  padding:11px 18px 0;font-family:'IBM Plex Mono',monospace;
-  font-size:12.5px;color:oklch(0.62 0.012 258);
-  display:flex;gap:5px;align-items:center;flex-shrink:0;
+.icon-btn {
+  display: inline-grid; place-items: center;
+  width: 32px; height: 32px; padding: 0;
+  border: 1px solid var(--rule-strong); border-radius: var(--radius-sm);
+  background: transparent; color: var(--fg-muted);
+  transition: color var(--tap), border-color var(--tap);
 }
-.path-seg{cursor:pointer;transition:color .15s}
-.path-seg:hover{color:oklch(0.82 0.13 150)}
-.path-sep{color:oklch(0.46 0.012 258)}
-.path-cur{color:oklch(0.8 0.08 150)}
-.path-tree{margin-left:auto;cursor:pointer;color:oklch(0.62 0.012 258);transition:color .15s}
-.path-tree:hover{color:oklch(0.82 0.13 150)}
-
-.term-body{
-  flex:1;min-height:0;overflow-y:auto;
-  padding:14px 18px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:14.5px;line-height:1.62;
-}
-.term-input-row{
-  padding:12px 18px 8px;display:flex;align-items:center;gap:8px;
-  font-family:'IBM Plex Mono',monospace;font-size:14.5px;
-  border-top:1px solid oklch(0.3 0.014 258);flex-shrink:0;
-}
-.prompt-user{color:oklch(0.82 0.14 150)}
-.prompt-sep{color:oklch(0.66 0.012 258)}
-#term-input{
-  flex:1;background:transparent;border:none;outline:none;
-  color:oklch(0.95 0.006 258);
-  font-family:'IBM Plex Mono',monospace;font-size:14.5px;
-}
-#term-input::placeholder{color:oklch(0.55 0.012 258)}
-
-.term-chips{display:flex;flex-wrap:wrap;gap:7px;padding:8px 18px 18px;flex-shrink:0}
-.chip{
-  font-family:'IBM Plex Mono',monospace;font-size:12.5px;
-  padding:5px 11px;border-radius:6px;
-  border:1px solid oklch(0.36 0.014 258);background:transparent;
-  color:oklch(0.82 0.012 258);transition:border-color .15s,color .15s;
-}
-.chip:hover{border-color:oklch(0.82 0.13 150);color:oklch(0.88 0.07 150)}
-
-.term-grip{
-  position:absolute;right:2px;bottom:2px;width:16px;height:16px;
-  pointer-events:none;
-  background:repeating-linear-gradient(135deg, oklch(0.6 0.02 258) 0 1.5px, transparent 1.5px 4px);
-  opacity:0.55;border-bottom-right-radius:13px;
+.icon-btn:hover { color: var(--accent); border-color: var(--accent) }
+.icon-btn svg { width: 16px; height: 16px }
+/* One icon per theme — the other is folded away. These selectors are scoped to
+   .icon-btn so they outrank the `.icon-btn svg` rule above; a bare .icon-sun
+   would lose on specificity and both icons would stack. */
+.icon-btn .icon-moon { display: block }
+.icon-btn .icon-sun { display: none }
+:root[data-theme='dark'] .icon-btn .icon-sun { display: block }
+:root[data-theme='dark'] .icon-btn .icon-moon { display: none }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .icon-btn .icon-sun { display: block }
+  :root:not([data-theme='light']) .icon-btn .icon-moon { display: none }
 }
 
-/* expanded (fullscreen) terminal — !important so it also beats
-   inline width/height left behind by a corner-drag resize */
-.terminal.expanded{
-  position:fixed;inset:0;z-index:80;
-  border-radius:0;border:none;box-shadow:none;resize:none;
-  width:100vw !important;height:100vh !important;
-  max-width:none;max-height:none;
+.lang-toggle {
+  display: flex; align-items: center;
+  font-family: var(--font-mono); font-size: 13px;
+  border: 1px solid var(--rule-strong); border-radius: var(--radius-sm); overflow: hidden;
 }
-.terminal.expanded .term-body{font-size:16px;padding:26px 44px}
-.terminal.expanded .term-grip{display:none}
-body.term-expanded{overflow:hidden}
-
-/* ===== terminal output ===== */
-.term-screen{margin-bottom:14px}
-.term-line{white-space:pre-wrap;color:oklch(0.95 0.006 258)}
-.t-dim{color:oklch(0.72 0.012 258)}
-.t-green{color:oklch(0.84 0.14 150)}
-.t-amber{color:oklch(0.85 0.11 78)}
-.t-blue{color:oklch(0.78 0.1 235)}
-.t-bold{font-weight:600}
-.term-prompt-line{white-space:pre-wrap;margin-bottom:2px}
-.term-suggestion{color:oklch(0.84 0.14 150);cursor:pointer;text-decoration:underline;margin-right:10px}
-
-/* ===== filesystem strip ===== */
-.fs-strip{
-  max-width:1180px;margin:0 auto;
-  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-  padding:8px 36px 4px;
-  font-family:'IBM Plex Mono',monospace;font-size:13px;
-  color:oklch(0.52 0.012 60);
+.lang-btn {
+  padding: 6px 10px; border: 0; background: transparent;
+  color: var(--fg-muted); transition: background-color var(--tap), color var(--tap);
 }
-.fs-home{color:oklch(0.45 0.06 150)}
-.fs-dot{color:oklch(0.8 0.008 80)}
-.fs-file{cursor:pointer;transition:color .15s}
-.fs-file:hover{color:oklch(0.4 0.07 150)}
+.lang-btn + .lang-btn { border-left: 1px solid var(--rule) }
+.lang-btn:hover { color: var(--fg) }
+.lang-btn[aria-pressed='true'] { background: var(--accent); color: var(--accent-on) }
+.lang-btn:focus-visible { border-radius: 0 }
 
-.spacer{height:48px}
+/* ==========================================================================
+   4. hero
+   ========================================================================== */
 
-/* ===== mobile (<760px) ===== */
-@media (max-width:759px){
-  .nav-inner{padding:13px 18px}
-  .nav-links{display:none}
-  .hero{
-    max-width:1180px;
-    display:flex;flex-direction:column;gap:26px;
-    padding:30px 18px 24px;
+.hero {
+  max-width: var(--shell); margin: 0 auto;
+  display: grid; grid-template-columns: 0.92fr 1.5fr; gap: clamp(28px, 4vw, 54px);
+  padding: clamp(28px, 5vw, 64px) var(--gutter) 40px;
+  align-items: start;
+}
+.hero-h1 {
+  font-family: var(--font-serif); font-weight: 600;
+  font-size: var(--text-hero); line-height: 1.05; letter-spacing: -0.018em;
+  margin: 0 0 18px; color: var(--fg); text-wrap: balance;
+}
+.hero-sub {
+  font-size: var(--text-lead); line-height: 1.6; color: var(--fg-muted);
+  margin: 0 0 26px; max-width: 52ch; text-wrap: pretty;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px }
+.btn-primary, .btn-secondary {
+  font-family: var(--font-mono); font-size: 14px;
+  padding: 12px 20px; border-radius: 9px;
+  transition: background-color var(--tap), border-color var(--tap), color var(--tap), transform var(--tap);
+}
+.btn-primary { border: 1px solid transparent; background: var(--accent); color: var(--accent-on) }
+.btn-primary:hover { background: var(--accent-hover) }
+.btn-secondary { border: 1px solid var(--rule-strong); background: transparent; color: var(--fg) }
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent) }
+.btn-primary:active, .btn-secondary:active { transform: translateY(1px) }
+
+/* small stat rail under the CTAs — quiet, factual */
+.hero-meta {
+  margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--rule);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 22px;
+  max-width: 460px;
+  font-family: var(--font-mono);
+}
+.hero-meta dt { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-dim) }
+.hero-meta dd { margin: 5px 0 0; font-size: 13.5px; color: var(--fg); line-height: 1.45 }
+
+/* ==========================================================================
+   5. terminal shell
+   ========================================================================== */
+
+.terminal {
+  position: relative;
+  background: var(--term-bg);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--term-glow), var(--term-shadow);
+  display: flex; flex-direction: column;
+  resize: both;
+  width: 100%; height: 620px;
+  min-width: 340px; min-height: 320px;
+  max-width: 94vw; max-height: 86vh;
+  transition: box-shadow .25s ease, background-color .25s ease;
+}
+/* faint sheen across the glass — pure decoration, never eats clicks */
+.terminal::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(160deg, oklch(1 0 0 / 0.045), transparent 42%);
+}
+
+.term-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 11px 14px; background: var(--term-chrome);
+  border-bottom: 1px solid var(--term-rule); flex-shrink: 0;
+}
+.term-header-left { display: flex; align-items: center; gap: 8px; min-width: 0 }
+.dot { width: 12px; height: 12px; border-radius: 50% }
+.dot-red { background: oklch(0.65 0.16 25) }
+.dot-amber { background: oklch(0.78 0.13 80) }
+.dot-green { background: oklch(0.72 0.14 150) }
+.term-title {
+  margin-left: 6px; font-family: var(--font-mono);
+  font-size: 12.5px; color: var(--term-dim);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.term-header-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0 }
+.term-btn {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--term-dim); background: transparent;
+  border: 1px solid oklch(0.36 0.014 258); border-radius: 6px;
+  padding: 5px 10px; white-space: nowrap;
+  transition: border-color var(--tap), color var(--tap);
+}
+.term-btn:hover { border-color: oklch(0.6 0.04 235); color: oklch(0.85 0.08 235) }
+.term-btn:focus-visible { box-shadow: 0 0 0 2px var(--term-bg), 0 0 0 4px var(--term-blue) }
+
+/* the breadcrumb bar shares the header's surface, so scrollback visibly
+   passes underneath the chrome instead of colliding with it */
+.term-path {
+  padding: 9px 16px; font-family: var(--font-mono);
+  font-size: 12.5px; color: var(--term-faint);
+  display: flex; gap: 5px; align-items: center; flex-shrink: 0;
+  background: var(--term-chrome); border-bottom: 1px solid var(--term-rule);
+}
+.path-crumbs { display: flex; align-items: center; gap: 2px; min-width: 0; flex-wrap: wrap }
+.path-seg {
+  background: none; border: 0; padding: 0;
+  color: inherit; font: inherit; transition: color var(--tap);
+}
+.path-seg:hover { color: var(--term-green) }
+.path-sep { color: oklch(0.46 0.012 258) }
+.path-cur { color: oklch(0.8 0.08 150) }
+.path-tree {
+  margin-left: auto; background: none; border: 0; padding: 0;
+  color: var(--term-faint); font: inherit; transition: color var(--tap);
+}
+.path-tree:hover { color: var(--term-green) }
+/* the default ring is drawn against the page background — inside the terminal
+   it has to sit on the terminal's own surface instead */
+.path-seg:focus-visible, .path-tree:focus-visible {
+  box-shadow: 0 0 0 2px var(--term-chrome), 0 0 0 4px var(--term-green);
+}
+
+.term-body {
+  flex: 1; min-height: 0; overflow-y: auto;
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: var(--text-term); line-height: 1.62;
+  overscroll-behavior: contain;
+}
+/* the transcript is focusable so it can be scrolled from the keyboard */
+.term-body:focus-visible { box-shadow: inset 0 0 0 2px var(--term-green); border-radius: 0 }
+
+/* gap:0 — `pawel@portfolio` and `:~$` are one prompt and must not be split by
+   flex spacing; the field carries the single space that follows it */
+.term-input-row {
+  padding: 10px 16px 8px; display: flex; align-items: center; gap: 0;
+  font-family: var(--font-mono); font-size: var(--text-term);
+  border-top: 1px solid var(--term-rule); flex-shrink: 0;
+}
+.prompt-user { color: var(--term-green); white-space: nowrap }
+.prompt-sep { color: oklch(0.66 0.012 258); white-space: nowrap }
+.term-field { position: relative; flex: 1; display: flex; align-items: center; min-width: 0; margin-left: 8px }
+#term-input {
+  position: relative; z-index: 1;
+  flex: 1; min-width: 0;
+  background: transparent; border: none; outline: none;
+  color: var(--term-fg);
+  font-family: var(--font-mono); font-size: var(--text-term);
+  caret-color: var(--term-green);
+}
+#term-input::placeholder { color: oklch(0.55 0.012 258) }
+#term-input:focus::placeholder { color: transparent }
+#term-input:focus-visible { box-shadow: none }
+
+/* Block cursor for the idle prompt. It only appears when the field is empty,
+   so it can sit at a fixed offset and never drift from the real caret — which
+   takes over (as a coloured caret) the moment there is text to edit. */
+.term-cursor {
+  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 8px; height: 1.05em; pointer-events: none;
+  background: var(--term-green); opacity: 0;
+}
+.term-field.is-empty #term-input { caret-color: transparent }
+.terminal.focused .term-field.is-empty .term-cursor { animation: blink 1.1s steps(1) infinite }
+@keyframes blink { 0%, 49% { opacity: 0.85 } 50%, 100% { opacity: 0 } }
+
+.term-chips { display: flex; flex-wrap: wrap; gap: 7px; padding: 6px 16px 12px; flex-shrink: 0 }
+.chip {
+  font-family: var(--font-mono); font-size: 12.5px;
+  padding: 5px 11px; border-radius: 6px;
+  border: 1px solid oklch(0.36 0.014 258); background: transparent;
+  color: oklch(0.82 0.012 258);
+  transition: border-color var(--tap), color var(--tap), background-color var(--tap);
+}
+.chip:hover { border-color: var(--term-green); color: oklch(0.88 0.07 150) }
+.chip:focus-visible { box-shadow: 0 0 0 2px var(--term-bg), 0 0 0 4px var(--term-green) }
+
+.term-status {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 7px 26px 7px 16px; flex-shrink: 0;   /* right pad clears the resize grip */
+  border-top: 1px solid var(--term-rule); background: var(--term-chrome);
+  font-family: var(--font-mono); font-size: 11.5px; color: var(--term-faint);
+}
+.term-status b { font-weight: 500; color: var(--term-dim) }
+.term-status .status-hint { margin-left: auto }
+.term-status kbd {
+  font: inherit; padding: 1px 5px; border-radius: 4px;
+  border: 1px solid oklch(0.36 0.014 258); color: var(--term-dim);
+}
+
+.term-grip {
+  position: absolute; right: 2px; bottom: 2px; width: 16px; height: 16px;
+  pointer-events: none; z-index: 1;
+  background: repeating-linear-gradient(135deg, oklch(0.6 0.02 258) 0 1.5px, transparent 1.5px 4px);
+  opacity: 0.55; border-bottom-right-radius: 13px;
+}
+
+/* expanded (fullscreen) — !important so it also beats inline width/height
+   left behind by a corner-drag resize */
+.terminal.expanded {
+  position: fixed; inset: 0; z-index: 80;
+  border-radius: 0; box-shadow: none; resize: none;
+  width: 100vw !important; height: 100vh !important;
+  height: 100dvh !important;
+  max-width: none; max-height: none;
+}
+.terminal.expanded .term-body { font-size: 15.5px; padding: 24px clamp(20px, 5vw, 44px) }
+.terminal.expanded .term-path,
+.terminal.expanded .term-input-row,
+.terminal.expanded .term-chips,
+.terminal.expanded .term-status { padding-left: clamp(20px, 5vw, 44px); padding-right: clamp(20px, 5vw, 44px) }
+.terminal.expanded .term-grip { display: none }
+body.term-expanded { overflow: hidden }
+
+/* ==========================================================================
+   6. terminal output
+   ========================================================================== */
+
+.term-block { margin-bottom: 12px }
+.term-block:last-child { margin-bottom: 0 }
+
+/* Spacing utilities for terminal output. They exist so app.js never has to set
+   an inline style attribute, which keeps the CSP free of 'unsafe-inline'. */
+.mt-2 { margin-top: 2px }
+.mt-4 { margin-top: 4px }
+.mt-6 { margin-top: 6px }
+.mt-8 { margin-top: 8px }
+.mt-12 { margin-top: 12px }
+.term-line { white-space: pre-wrap; overflow-wrap: anywhere; color: var(--term-fg) }
+.t-dim { color: var(--term-dim) }
+.t-faint { color: var(--term-faint) }
+.t-green { color: var(--term-green) }
+.t-amber { color: var(--term-amber) }
+.t-blue { color: var(--term-blue) }
+.t-red { color: var(--term-red) }
+.t-magenta { color: var(--term-magenta) }
+.t-bold { font-weight: 600 }
+/* colour is explicit: without it the echoed command inherits the page
+   foreground, which is near-black on the light theme — invisible on the
+   terminal's dark background */
+.term-prompt-line {
+  white-space: pre-wrap; overflow-wrap: anywhere; margin-bottom: 2px;
+  color: var(--term-fg);
+}
+
+.term-link {
+  color: var(--term-blue); text-decoration: underline;
+  text-underline-offset: 2px; transition: color var(--tap);
+}
+.term-link:hover { color: var(--term-green) }
+.term-link:focus-visible { box-shadow: 0 0 0 2px var(--term-bg), 0 0 0 4px var(--term-blue) }
+
+.term-suggestion {
+  background: none; border: 0; padding: 0; margin-right: 10px;
+  font: inherit; color: var(--term-green);
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.term-suggestion:focus-visible { box-shadow: 0 0 0 2px var(--term-bg), 0 0 0 4px var(--term-green) }
+
+.term-art {
+  white-space: pre; overflow-x: auto; color: var(--term-green);
+  line-height: 1.15; font-size: 0.92em;
+}
+
+/* two-column key/value block — reflows instead of relying on padEnd alignment,
+   so nothing breaks when the terminal is dragged narrow */
+.term-grid {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr);
+  gap: 1px 18px; align-items: baseline;
+}
+.term-grid-even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1px 12px }
+.grid-k { color: var(--term-fg); white-space: pre-wrap; overflow-wrap: anywhere }
+.grid-v { color: var(--term-fg); white-space: pre-wrap; overflow-wrap: anywhere }
+
+@media (max-width: 520px) {
+  .term-grid { grid-template-columns: minmax(0, 1fr); gap: 0 }
+  .term-grid .grid-v { margin-bottom: 4px }
+  .term-grid-even { grid-template-columns: minmax(0, 1fr) }
+}
+
+.neofetch { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-start }
+.neofetch-art {
+  white-space: pre; color: var(--term-green);
+  line-height: 1.15; font-size: 0.85em; flex-shrink: 0;
+}
+.neofetch-info { min-width: 0; flex: 1 1 240px }
+.neofetch-info .grid-k { color: var(--term-green) }
+
+/* htop-style meter */
+.meter { display: flex; align-items: center; gap: 10px; white-space: pre }
+.meter-label { color: var(--term-dim); flex-shrink: 0 }
+.meter-track {
+  display: block;
+  flex: 1; min-width: 60px; max-width: 260px; height: 9px; border-radius: 3px;
+  background: oklch(0.28 0.014 258); overflow: hidden;
+}
+/* display:block — a bare inline span ignores height/width and the bar vanishes */
+.meter-fill { display: block; height: 100%; border-radius: 3px; background: var(--term-green); transition: width .55s ease }
+.meter-head .meter-track { background: transparent; height: auto; color: var(--term-dim) }
+.meter-fill.is-amber { background: var(--term-amber) }
+.meter-fill.is-blue { background: var(--term-blue) }
+.meter-fill.is-dim { background: oklch(0.5 0.012 258) }
+.meter-value { color: var(--term-faint); flex-shrink: 0; font-variant-numeric: tabular-nums }
+
+/* ==========================================================================
+   7. filesystem strip
+   ========================================================================== */
+
+.fs-strip {
+  max-width: var(--shell-narrow); margin: 0 auto;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 8px var(--gutter) 4px;
+  font-family: var(--font-mono); font-size: 13px;
+  color: var(--fg-dim);
+}
+.fs-home { color: var(--accent-quiet) }
+.fs-dot { color: var(--rule-strong) }
+.fs-file {
+  background: none; border: 0; padding: 2px 0;
+  font: inherit; color: var(--fg-dim); transition: color var(--tap);
+}
+.fs-file:hover { color: var(--accent) }
+
+.site-foot {
+  max-width: var(--shell-narrow); margin: 0 auto;
+  padding: 28px var(--gutter) 48px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px;
+  border-top: 1px solid var(--rule); margin-top: 32px;
+  font-family: var(--font-mono); font-size: 12.5px; color: var(--fg-dim);
+}
+.site-foot a { color: var(--fg-muted); text-decoration: none; transition: color var(--tap) }
+.site-foot a:hover { color: var(--accent); text-decoration: underline }
+.site-foot .foot-spacer { margin-left: auto }
+
+/* ==========================================================================
+   8. responsive
+   ========================================================================== */
+
+/* tablet — one column, terminal keeps a generous height */
+@media (max-width: 1080px) and (min-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 34px }
+  .hero-sub { max-width: 62ch }
+  .hero-meta { max-width: 640px }
+  .terminal { height: 560px; max-width: 100% }
+}
+
+@media (max-width: 759px) {
+  .nav-links { display: none }
+  .hero {
+    display: flex; flex-direction: column; gap: 24px;
+    padding: 26px var(--gutter) 22px;
   }
-  .hero-h1{font-size:33px}
+  .hero-meta { margin-top: 22px; padding-top: 18px; grid-template-columns: repeat(2, 1fr) }
   /* fixed full-width terminal on mobile (drag-resize makes no sense on touch);
      !important also overrides inline sizes left behind by a desktop drag */
-  .terminal{
-    resize:none;
-    width:100% !important;height:480px !important;
-    min-width:0;max-width:100%;max-height:none;
+  .terminal {
+    resize: none;
+    width: 100% !important; height: 500px !important;
+    min-width: 0; max-width: 100%; max-height: none;
   }
-  .term-grip{display:none}
-  .fs-strip{padding:10px 18px 4px}
+  .term-grip, .term-status { display: none }
+  /* 16px keeps iOS Safari from zooming the page when the field takes focus */
+  #term-input { font-size: 16px }
+  .site-foot { padding-bottom: 36px }
+}
+
+@media (max-width: 400px) {
+  .term-title { display: none }
+}
+
+/* ==========================================================================
+   9. motion & print
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .terminal.focused .term-cursor { animation: none; opacity: 0.85 }
+}
+
+@media print {
+  .nav, .term-chips, .term-status, .term-input-row, .term-grip, .skip-link { display: none }
+  .terminal { height: auto; box-shadow: none; resize: none }
+  body { background: #fff }
 }
