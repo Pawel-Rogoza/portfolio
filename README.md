@@ -33,8 +33,10 @@ Skróty klawiszowe: `Tab` uzupełnia · `↑`/`↓` historia · `Ctrl+L` czyści
 - Wirtualny system plików — `ls`, `cd`, `tree`, `cat`, `grep` i `find` działają
   na jednym drzewie (`TREE` w `app.js`), więc ścieżki i treść nie mogą się
   rozjechać. Ścieżka w nagłówku terminala jest klikalna i zmienia się przy `cd`.
-- Motyw jasny / ciemny — domyślnie z ustawień systemu, przełącznik w nawigacji
-  albo komenda `theme dark|light|auto`, zapamiętywany w `localStorage`.
+- Motyw **ciemny domyślnie**, niezależnie od ustawień systemu. Przełącznik
+  w nawigacji albo komenda `theme dark|light|auto` — `auto` oddaje decyzję
+  `prefers-color-scheme`. Wybór zapamiętywany w `localStorage` i stosowany
+  przed pierwszym paintem (`js/theme.js`), więc nie ma migotania.
 - Pełne EN/PL — również **wnętrze terminala**, nie tylko nagłówki
   (przełącznik w nawigacji albo `lang pl`).
 - `htop` z animowanymi paskami (wyłączonymi przy `prefers-reduced-motion`).

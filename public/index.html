@@ -7,8 +7,9 @@
 <meta name="description" content="Portfolio of Paweł Rogoża — Linux administration &amp; SysOps, building toward Cloud / DevOps / Platform Engineering. Main project: Harbor, a self-hosted VPS.">
 <meta name="author" content="Paweł Rogoża">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1b1e28" media="(prefers-color-scheme: dark)">
+<!-- utrzymywany z JS (app.js), bo domyślny motyw jest ciemny niezależnie od
+     ustawień systemu — warianty `media` pokazywałyby zły kolor większości osób -->
+<meta name="theme-color" id="theme-color" content="#1b1e28">
 <link rel="canonical" href="https://portfolio.pawelrogoza.pl/">
 
 <meta property="og:title" content="Paweł Rogoża — Linux Administration &amp; SysOps">
@@ -35,10 +36,11 @@
      serwera. Zmiana Cache-Control tego nie cofa, bo żeby zobaczyć nowy
      nagłówek, przeglądarka musiałaby najpierw wykonać zapytanie. Jedyne, co
      działa wstecz, to inny URL.
-     Vhost serwuje teraz .css/.js jako no-cache, więc tego numeru nie trzeba
-     podbijać przy każdym deployu — chyba że kiedyś wrócisz do długiego cache. -->
-<link rel="stylesheet" href="css/style.css?v=2">
-<script src="js/theme.js?v=2"></script>
+     Numer podbijaj TYLKO dopóki działający vhost serwuje .css/.js z `expires 7d`.
+     Gdy jest tam już `expires -1` (wersja z deploy/nginx/), przeglądarka
+     rewaliduje przy każdym wejściu i podbijanie przestaje być potrzebne. -->
+<link rel="stylesheet" href="css/style.css?v=3">
+<script src="js/theme.js?v=3"></script>
 </head>
 <body>
 
@@ -180,6 +182,6 @@
   <a href="https://www.linkedin.com/in/pawel-rogoza" rel="me noopener">LinkedIn</a>
 </footer>
 
-<script src="js/app.js?v=2"></script>
+<script src="js/app.js?v=3"></script>
 </body>
 </html>
