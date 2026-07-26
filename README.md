@@ -195,10 +195,22 @@ Job `deploy` jest domyślnie **pomijany**. Żeby go włączyć, ustaw w repo
 | variable | `DEPLOY_ENABLED` | `true` — bez tego deploy się nie uruchamia |
 | variable | `DEPLOY_REPO` | ścieżka klona na VPS (default `/home/portfolio/portfolio`) |
 | variable | `SITE_URL` | adres do health checku (default `https://portfolio.pawelrogoza.pl`) |
-| secret | `VPS_HOST` | adres VPS-a |
-| secret | `VPS_USER` | użytkownik SSH |
+| secret | `VPS_SSH_HOST` | adres VPS-a |
+| secret | `VPS_SSH_USER` | użytkownik SSH — **nie potrzebuje sudo** (patrz niżej) |
 | secret | `VPS_SSH_KEY` | prywatny klucz ed25519 (publiczny w `authorized_keys`) |
-| secret | `VPS_SSH_KNOWN_HOSTS` | **zalecane** — output `ssh-keyscan twoj-vps`; bez tego workflow ufa kluczowi hosta przy pierwszym połączeniu |
+| secret | `VPS_SSH_PORT` | opcjonalnie, domyślnie `22` |
+| secret | `VPS_SSH_KNOWN_HOSTS` | **zalecane** — output `ssh-keyscan -p PORT twoj-vps`; bez tego workflow ufa kluczowi hosta przy pierwszym połączeniu |
+
+Deploy celowo nie wymaga uprawnień: robi tylko `git fetch` / `git reset --hard`
+w katalogu domowym użytkownika, który jest jego właścicielem, a nginx te pliki
+wyłącznie czyta (konfiguracja się nie zmienia, więc nie ma czego przeładowywać).
+Użytkownik deployu **nie powinien** być w sudoers — klucz trafia na runnera
+GitHuba przy każdym pushu, więc im mniej może, tym lepiej.
+
+> Przy porcie innym niż 22 wpis w `VPS_SSH_KNOWN_HOSTS` musi mieć postać
+> `[host]:port` — taki właśnie wypluwa `ssh-keyscan -p PORT host`. Wpis
+> wygenerowany bez `-p` nie pasuje i `StrictHostKeyChecking` odrzuci połączenie
+> mimo poprawnego klucza.
 
 Ręczny deploy przez rsync (`deploy/deploy.sh`) został jako wariant awaryjny —
 nie mieszaj go z `git reset` na tym samym katalogu.
