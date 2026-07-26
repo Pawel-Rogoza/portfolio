@@ -367,17 +367,29 @@
     ? window.matchMedia('(prefers-color-scheme: dark)')
     : { matches: false, addEventListener: function () {} };
 
+  /* Dark is the default — see js/theme.js, which applies it before first paint.
+     'auto' is opt-in and is the only value that defers to the system. */
+  var DEFAULT_THEME = 'dark';
+  var THEME_COLOR = { light: '#f3f1ec', dark: '#1b1e28' };
+  var themeColorMeta = document.getElementById('theme-color');
+
   function activeTheme() {
     var attr = root.getAttribute('data-theme');
     if (attr === 'light' || attr === 'dark') return attr;
-    return prefersDark.matches ? 'dark' : 'light';
+    return prefersDark.matches ? 'dark' : 'light';   // only reached in 'auto'
+  }
+  function syncThemeColor() {
+    if (themeColorMeta) themeColorMeta.setAttribute('content', THEME_COLOR[activeTheme()]);
   }
   function setTheme(mode) {
     if (mode === 'auto') root.removeAttribute('data-theme');
     else root.setAttribute('data-theme', mode);
     save(KEY.theme, mode);
+    syncThemeColor();
   }
-  if (load(KEY.theme, 'auto') === 'auto') root.removeAttribute('data-theme');
+  /* theme.js already set the attribute; only an explicit 'auto' clears it */
+  if (load(KEY.theme, DEFAULT_THEME) === 'auto') root.removeAttribute('data-theme');
+  syncThemeColor();
 
   /* =====================================================================
      4. virtual filesystem
@@ -1363,7 +1375,9 @@
   });
   if (prefersDark.addEventListener) {
     prefersDark.addEventListener('change', function () {
-      if (load(KEY.theme, 'auto') === 'auto') root.removeAttribute('data-theme');
+      if (load(KEY.theme, DEFAULT_THEME) !== 'auto') return;
+      root.removeAttribute('data-theme');
+      syncThemeColor();
     });
   }
 

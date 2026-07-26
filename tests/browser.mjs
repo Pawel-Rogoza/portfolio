@@ -102,6 +102,21 @@ async function run(page, cmd) {
   await page.waitForTimeout(50);
 }
 
+/* getComputedStyle returns oklch() verbatim for oklch-authored colours, so the
+   value is round-tripped through a canvas to land in sRGB. Reading the digits
+   out of the oklch string directly would compare lightness against a red
+   channel — which is how the earlier version of this check passed regardless
+   of what colour the page actually was. */
+const bodyBrightness = page => page.evaluate(() => {
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = 1;
+  const ctx = cv.getContext('2d');
+  ctx.fillStyle = getComputedStyle(document.body).backgroundColor;
+  ctx.fillRect(0, 0, 1, 1);
+  const [r, g, b] = ctx.getImageData(0, 0, 1, 1).data;
+  return (r + g + b) / 3;
+});
+
 console.log('\nbrowser suite');
 
 const page = await open();
@@ -356,12 +371,29 @@ await check('reduced motion skips the boot animation and the meters', async () =
   await quiet.context().close();
 });
 
-await check('dark is the default when the system asks for it', async () => {
-  const dark = await open({ colorScheme: 'dark' });
-  const bg = await dark.$eval('body', el => getComputedStyle(el).backgroundColor);
-  const light = bg.match(/[\d.]+/g).slice(0, 3).reduce((a, b) => a + Number(b), 0) / 3;
-  assert(light < 90, `body background is ${bg} — too light for a dark default`);
-  await dark.context().close();
+await check('dark is the default even when the system prefers light', async () => {
+  const fresh = await open({ colorScheme: 'light' });
+
+  assert(await fresh.getAttribute('html', 'data-theme') === 'dark',
+    'a first visit did not land on the dark theme');
+  const dark = await bodyBrightness(fresh);
+  assert(dark < 80, `body background brightness ${dark.toFixed(0)} — that is not a dark page`);
+  assert(await fresh.getAttribute('#theme-color', 'content') === '#1b1e28',
+    'theme-color meta does not match the dark theme');
+
+  /* `theme auto` is the opt-out that hands the choice back to the system */
+  await run(fresh, 'theme auto');
+  assert(await fresh.getAttribute('html', 'data-theme') === null,
+    'theme auto did not clear the override');
+  /* body animates its background over .25s — sampling sooner reads a colour
+     part way through the transition, not the theme that was applied */
+  await fresh.waitForTimeout(450);
+  const auto = await bodyBrightness(fresh);
+  assert(auto > 200,
+    `under theme auto on a light system the page should be light, got ${auto.toFixed(0)}`);
+
+  await fresh.context().close();
+  return `default ${dark.toFixed(0)} → auto/light ${auto.toFixed(0)}`;
 });
 
 await check('the page survives its own Content-Security-Policy', async () => {
