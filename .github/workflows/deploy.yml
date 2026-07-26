@@ -49,6 +49,26 @@ jobs:
       name: production
       url: ${{ vars.SITE_URL || 'https://portfolio.pawelrogoza.pl' }}
     steps:
+      # Bez tego brakujący sekret objawia się dopiero jako `ssh @` — czyli
+      # zrzut usage ssh-a i exit 255, z którego nie widać, czego zabrakło.
+      # Sekretów nie da się sprawdzić w `if:` na poziomie joba, stąd osobny krok.
+      - name: Check required secrets
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          set -eo pipefail
+          missing=""
+          [ -n "$VPS_HOST" ]    || missing="$missing VPS_HOST"
+          [ -n "$VPS_USER" ]    || missing="$missing VPS_USER"
+          [ -n "$VPS_SSH_KEY" ] || missing="$missing VPS_SSH_KEY"
+          if [ -n "$missing" ]; then
+            echo "::error::Brakuje sekretów:$missing — dodaj je w Settings → Secrets and variables → Actions → zakładka Secrets. Uwaga: nazwy muszą się zgadzać co do znaku."
+            exit 1
+          fi
+          echo "Wszystkie wymagane sekrety są ustawione."
+
       - name: Setup SSH
         env:
           SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
