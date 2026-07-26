@@ -29,8 +29,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/theme.js"></script>
+<!-- ?v= to jednorazowe unieważnienie cache. Poprzedni vhost serwował .css/.js
+     z `expires 7d`, a nazwy plików się nie zmieniają — przeglądarki, które
+     odwiedziły stronę wcześniej, trzymają stary arkusz i w ogóle nie pytają
+     serwera. Zmiana Cache-Control tego nie cofa, bo żeby zobaczyć nowy
+     nagłówek, przeglądarka musiałaby najpierw wykonać zapytanie. Jedyne, co
+     działa wstecz, to inny URL.
+     Vhost serwuje teraz .css/.js jako no-cache, więc tego numeru nie trzeba
+     podbijać przy każdym deployu — chyba że kiedyś wrócisz do długiego cache. -->
+<link rel="stylesheet" href="css/style.css?v=2">
+<script src="js/theme.js?v=2"></script>
 </head>
 <body>
 
@@ -172,6 +180,6 @@
   <a href="https://www.linkedin.com/in/pawel-rogoza" rel="me noopener">LinkedIn</a>
 </footer>
 
-<script src="js/app.js"></script>
+<script src="js/app.js?v=2"></script>
 </body>
 </html>
