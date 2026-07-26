@@ -93,11 +93,18 @@ python3 -m http.server 8080
    nginx serwuje bezpośrednio `/home/portfolio/portfolio/public`, więc
    aktualizacja strony to po prostu `git pull` w tym katalogu.
 
-3. **nginx:**
+3. **nginx** — ścieżka zależy od dystrybucji:
 
    ```bash
+   # RHEL / Fedora / Rocky / Alma
+   sudo cp deploy/nginx/portfolio.pawelrogoza.pl.conf /etc/nginx/conf.d/
+
+   # Debian / Ubuntu
    sudo cp deploy/nginx/portfolio.pawelrogoza.pl.conf /etc/nginx/sites-available/
    sudo ln -s /etc/nginx/sites-available/portfolio.pawelrogoza.pl.conf /etc/nginx/sites-enabled/
+   ```
+
+   ```bash
    sudo nginx -t && sudo systemctl reload nginx
    ```
 
@@ -108,6 +115,33 @@ python3 -m http.server 8080
    ```
 
    Po sprawdzeniu, że HTTPS na pewno działa, odkomentuj HSTS w vhoście.
+
+> **Certbot przepisuje vhost w miejscu.** Po `certbot --nginx` zainstalowany
+> plik nie wygląda już jak ten z repo: blok `:80` zamienia się w przekierowanie
+> na HTTPS, a cała treść ląduje w nowym bloku `:443` z liniami `ssl_certificate`.
+>
+> Dlatego **aktualizacja vhosta nie jest zwykłym `cp` z repo** — nadpisanie
+> skasowałoby konfigurację TLS i zdjęło stronę z HTTPS. Zmiany przenoś ręcznie
+> do bloku `:443` w zainstalowanym pliku, albo skopiuj plik i uruchom certbota
+> ponownie. Zawsze `sudo nginx -t` przed `reload` i nie zamykaj bieżącej sesji
+> SSH, dopóki nie potwierdzisz, że nowa działa.
+
+### Cache a deploy
+
+Nazwy plików nie są hashowane (nie ma build stepu), więc `style.css` po deployu
+ma ten sam URL co poprzednio. Gdyby serwować go z `expires 7d`, powracający
+odwiedzający dostałby **nowy HTML ze starym CSS-em** — i zobaczyłby rozjechany
+layout aż do wygaśnięcia cache.
+
+Dlatego vhost rozdziela zasoby:
+
+| co | nagłówek | dlaczego |
+| --- | --- | --- |
+| `index.html`, `.css`, `.js` | `no-cache` (`expires -1`) | rewalidacja przy każdym wejściu; odpowiedź 304 to ~200 bajtów |
+| `.svg`, `.png`, `.woff2`, … | `max-age=604800` (`expires 7d`) | zmieniają się rzadko, nieświeży favicon nie psuje strony |
+
+Jeśli kiedyś dojdzie build step z hashowaniem nazw, wtedy `.css`/`.js` można
+przestawić na długi cache — hash w nazwie załatwia unieważnianie sam.
 
 ### Nagłówki bezpieczeństwa
 
@@ -214,6 +248,40 @@ GitHuba przy każdym pushu, więc im mniej może, tym lepiej.
 
 Ręczny deploy przez rsync (`deploy/deploy.sh`) został jako wariant awaryjny —
 nie mieszaj go z `git reset` na tym samym katalogu.
+
+### Kiedy deploy nie przechodzi
+
+Klient SSH nigdy nie powie, *dlaczego* serwer odrzucił klucz — zawsze dostaniesz
+to samo `Permission denied (publickey)`. Prawdziwy powód jest w logu sshd:
+
+```bash
+sudo journalctl -u sshd -n 30 --no-pager
+```
+
+Rzeczy, które faktycznie potrafiły to zablokować:
+
+| objaw w logu / zachowanie | przyczyna |
+| --- | --- |
+| `User X not allowed because not listed in AllowUsers` | użytkownik deployu nie jest wpisany w `AllowUsers`. Sprawdź konfigurację **efektywną**: `sudo sshd -T \| grep -i allowusers` — dyrektywa bywa w `Include`owanym pliku, nie w głównym |
+| `Authentication refused: bad ownership or modes for ...` | katalog domowy zapisywalny dla grupy/innych, `.ssh` ≠ 700 albo `authorized_keys` ≠ 600 |
+| `Permission denied`, a uprawnienia wyglądają idealnie | SELinux — `.ssh` utworzony ręcznie gubi kontekst `ssh_home_t`. Diagnoza: `sudo ausearch -m avc -ts recent \| grep ssh`, naprawa: `sudo restorecon -RFv /home/<user>/.ssh` |
+| `Host key verification failed` przy niestandardowym porcie | wpis w `VPS_SSH_KNOWN_HOSTS` musi mieć postać `[host]:port` — taką generuje `ssh-keyscan -p PORT host`, bez `-p` nie pasuje |
+| krok deployu wypisuje usage `ssh` i kończy się kodem 255 | brakujący sekret rozwinął się w pustą wartość — od tego jest krok `Check required secrets`, który nazwie brakujący po imieniu |
+
+Sprawdzenie, czy serwer w ogóle ma właściwy klucz (odciski muszą być identyczne):
+
+```bash
+sudo ssh-keygen -lf /home/<user>/.ssh/authorized_keys
+ssh-keygen -lf ~/.ssh/<twój_klucz>            # u siebie
+```
+
+Test uwierzytelnienia bez czekania na workflow:
+
+```bash
+ssh -i ~/.ssh/<twój_klucz> -p <PORT> <user>@<host> 'echo OK'
+```
+
+Przejdzie tu — przejdzie i w Actions. To ten sam klucz i ta sama ścieżka.
 
 ## Edycja treści
 
