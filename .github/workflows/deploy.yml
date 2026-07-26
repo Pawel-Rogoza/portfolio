@@ -10,11 +10,15 @@
 #     DEPLOY_REPO    = /home/portfolio/portfolio        (opcjonalnie, to jest default)
 #     SITE_URL       = https://portfolio.pawelrogoza.pl (opcjonalnie, do health checku)
 #   Secrets:
-#     VPS_HOST            - adres VPS-a (np. 1.2.3.4 albo vps.pawelrogoza.pl)
-#     VPS_USER            - użytkownik SSH do deployu
+#     VPS_SSH_HOST        - adres VPS-a (np. 1.2.3.4 albo vps.pawelrogoza.pl)
+#     VPS_SSH_USER        - użytkownik SSH do deployu (nie potrzebuje sudo)
 #     VPS_SSH_KEY         - prywatny klucz SSH (ed25519) dodany na VPS do authorized_keys
-#     VPS_SSH_KNOWN_HOSTS - (zalecane) output `ssh-keyscan twoj-vps`; bez tego
-#                           workflow ufa kluczowi przy pierwszym połączeniu
+#     VPS_SSH_PORT        - (opcjonalnie) port SSH, domyślnie 22
+#     VPS_SSH_KNOWN_HOSTS - (zalecane) output `ssh-keyscan -p PORT twoj-vps`; bez tego
+#                           workflow ufa kluczowi przy pierwszym połączeniu.
+#                           UWAGA: przy porcie innym niż 22 wpis w known_hosts musi
+#                           mieć postać [host]:port — inaczej StrictHostKeyChecking
+#                           odrzuci połączenie mimo poprawnego klucza.
 #
 # Deploy robi `git fetch` + `git reset --hard <sha>` w klonie repo na VPS-ie —
 # dokładnie tak, jak opisuje README (nginx serwuje wprost z tego klona).
@@ -49,13 +53,35 @@ jobs:
       name: production
       url: ${{ vars.SITE_URL || 'https://portfolio.pawelrogoza.pl' }}
     steps:
+      # Bez tego brakujący sekret objawia się dopiero jako `ssh @` — czyli
+      # zrzut usage ssh-a i exit 255, z którego nie widać, czego zabrakło.
+      # Sekretów nie da się sprawdzić w `if:` na poziomie joba, stąd osobny krok.
+      - name: Check required secrets
+        env:
+          VPS_SSH_HOST: ${{ secrets.VPS_SSH_HOST }}
+          VPS_SSH_USER: ${{ secrets.VPS_SSH_USER }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          set -eo pipefail
+          missing=""
+          [ -n "$VPS_SSH_HOST" ] || missing="$missing VPS_SSH_HOST"
+          [ -n "$VPS_SSH_USER" ] || missing="$missing VPS_SSH_USER"
+          [ -n "$VPS_SSH_KEY" ]  || missing="$missing VPS_SSH_KEY"
+          if [ -n "$missing" ]; then
+            echo "::error::Brakuje sekretów:$missing — dodaj je w Settings → Secrets and variables → Actions → zakładka Secrets. Uwaga: nazwy muszą się zgadzać co do znaku."
+            exit 1
+          fi
+          echo "Wszystkie wymagane sekrety są ustawione."
+
       - name: Setup SSH
         env:
           SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
           KNOWN_HOSTS: ${{ secrets.VPS_SSH_KNOWN_HOSTS }}
-          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_SSH_HOST: ${{ secrets.VPS_SSH_HOST }}
+          VPS_SSH_PORT: ${{ secrets.VPS_SSH_PORT }}
         run: |
           set -euo pipefail
+          PORT="${VPS_SSH_PORT:-22}"
           mkdir -p ~/.ssh && chmod 700 ~/.ssh
           printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
@@ -63,18 +89,20 @@ jobs:
             printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
           else
             echo "::warning::VPS_SSH_KNOWN_HOSTS nie jest ustawiony — klucz hosta jest pobierany na ślepo. Ustaw go, żeby wykluczyć MITM."
-            ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+            ssh-keyscan -H -p "$PORT" "$VPS_SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
           fi
           chmod 600 ~/.ssh/known_hosts
 
       - name: Deploy commit ${{ github.sha }}
         env:
-          VPS_HOST: ${{ secrets.VPS_HOST }}
-          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_SSH_HOST: ${{ secrets.VPS_SSH_HOST }}
+          VPS_SSH_USER: ${{ secrets.VPS_SSH_USER }}
+          VPS_SSH_PORT: ${{ secrets.VPS_SSH_PORT }}
           DEPLOY_REPO: ${{ vars.DEPLOY_REPO || '/home/portfolio/portfolio' }}
         run: |
           set -euo pipefail
-          ssh -o StrictHostKeyChecking=yes "$VPS_USER@$VPS_HOST" \
+          ssh -o StrictHostKeyChecking=yes -p "${VPS_SSH_PORT:-22}" \
+            "$VPS_SSH_USER@$VPS_SSH_HOST" \
             "set -eu; \
              cd '$DEPLOY_REPO'; \
              git fetch --prune origin; \
