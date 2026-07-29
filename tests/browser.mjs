@@ -46,13 +46,24 @@ function assert(cond, msg) { if (!cond) throw new Error(msg); }
 
 /* Every command, plus the paths that used to be handled by string matching. */
 const COMMANDS = [
-  'whoami', 'about', 'projects', 'harbor', 'skills', 'htop', 'education', 'goals',
+  'whoami', 'about', 'projects', 'harbor', 'robust', 'advokat', 'zabbix', 'umami',
+  'skills', 'htop', 'education', 'goals',
   'contact', 'ls', 'pwd', 'tree', 'cat about.md', 'cat projects/harbor.md',
+  'cat projects/robust.md', 'cat projects/advokat-varshava.md',
+  'cat projects/zabbix.md', 'cat projects/umami.md',
+  'cat scripts/redis-check.sh', 'cat scripts/calve.sh', 'cat .plan',
   'grep linux', 'grep harbor ~/projects', 'find harbor', 'help', 'man cat', 'man top',
   'history', 'echo hello', 'date', 'uptime', 'neofetch', 'banner', 'open github',
   'sudo rm -rf /', 'exit',
   'cd projects', 'ls', 'cd ..', 'cd /home/pawel/projects', 'cd ~',
-  'projects/', 'about.md', 'skills.txt', 'projects/harbor.md',
+  'cd scripts', 'ls -l', 'cd ~',
+  'ls -la', 'ls -l projects', 'ls -a', 'll',
+  'head about.md', 'tail -n 2 about.md', 'head -3 skills.txt', 'head', 'tail',
+  'uname', 'uname -a', 'hostname', 'id', 'df', 'df -h', 'free', 'free -h',
+  'w', 'who', 'systemctl', 'systemctl status nginx', 'ping harbor', 'ssh harbor',
+  'vim about.md', 'nano', 'rm -rf /', 'touch x', 'mkdir y', 'chmod 777 x',
+  'wget cyberfolks.pl', 'curl -I example.com', 'apt install nginx', 'yum update',
+  'projects/', 'about.md', 'skills.txt', 'projects/harbor.md', 'scripts/calve.sh',
   'top', 'dir', 'email', 'motd', 'show me the projects',
   'cat nope.txt', 'cat projects', 'ls /etc', 'cd nope', 'grep', 'find', 'man nope',
   'theme nonsense', 'open nope', 'echo', 'zzzz',
@@ -60,7 +71,7 @@ const COMMANDS = [
 
 /* Strings that are legitimately the same in both languages. Anything else that
    does not change when the language flips means a missing PL translation. */
-const SAME_IN_BOTH = new Set(['navHarbor', 'metaNextValue']);
+const SAME_IN_BOTH = new Set(['metaNextValue']);
 
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
 
@@ -178,6 +189,29 @@ await check('tab lists candidates on an ambiguous prefix', async () => {
   for (const name of ['cat', 'cd', 'clear', 'contact']) {
     assert(listed.includes(name), `candidate list is missing ${name}`);
   }
+});
+
+await check('ls understands -l and -a (long listing + dotfiles)', async () => {
+  await run(page, 'ls -la');
+  const long = await page.$eval('#term-output', el => el.lastElementChild.textContent);
+  assert(long.includes('total'), 'no total line in the long listing');
+  assert(long.includes('drwxr-xr-x'), 'no directory permission bits');
+  assert(long.includes('.plan'), '-a did not reveal the hidden .plan');
+  assert(long.includes('projects/'), 'listing is missing projects/');
+  assert(long.includes('scripts/'), 'listing is missing scripts/');
+  await run(page, 'ls');
+  const plain = await page.$eval('#term-output', el => el.lastElementChild.textContent);
+  assert(!plain.includes('.plan'), 'plain ls must hide dotfiles');
+  assert(!plain.includes('drwx'), 'plain ls must not switch to long format');
+  await run(page, 'll');
+  const ll = await page.$eval('#term-output', el => el.lastElementChild.textContent);
+  assert(ll.includes('drwxr-xr-x') && ll.includes('.plan'), 'll is not ls -la');
+});
+
+await check("'open github' reaches the open command, not the lead-in stripper", async () => {
+  await run(page, 'open github');
+  const text = await page.$eval('#term-output', el => el.lastElementChild.textContent);
+  assert(text.includes('github.com'), `open github printed: ${text.slice(0, 80)}`);
 });
 
 await check('tab completes a path argument', async () => {
@@ -306,9 +340,9 @@ await check('the whole terminal translates to Polish', async () => {
 
 await check('chips, nav and the file strip all drive the terminal', async () => {
   await run(page, 'clear');
-  await page.click('.chip[data-cmd="harbor"]');
+  await page.click('.chip[data-cmd="projects"]');
   await page.waitForTimeout(120);
-  assert((await page.$eval('#term-output', el => el.textContent)).includes('Harbor'), 'chip did nothing');
+  assert((await page.$eval('#term-output', el => el.textContent)).includes('harbor.md'), 'chip did nothing');
 
   await page.click('.fs-file');
   await page.waitForTimeout(120);
@@ -362,7 +396,10 @@ await check('contact exposes real links', async () => {
 await check('reduced motion skips the boot animation and the meters', async () => {
   const quiet = await open({ reducedMotion: 'reduce' });
   const blocks = await quiet.$eval('#term-output', el => el.children.length);
-  assert(blocks === 2, `expected boot + welcome as 2 blocks, got ${blocks}`);
+  assert(blocks === 3, `expected boot + welcome + home listing as 3 blocks, got ${blocks}`);
+  const listing = await quiet.$eval('#term-output', el => el.lastElementChild.textContent);
+  assert(listing.includes('projects/') && listing.includes('scripts/'),
+    'the boot listing does not show the home directories');
   await run(quiet, 'htop');
   const before = await quiet.$$eval('.meter-fill', els => els.map(e => e.style.width));
   await quiet.waitForTimeout(1600);

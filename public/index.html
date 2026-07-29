@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Paweł Rogoża — Linux Administration &amp; SysOps</title>
-<meta name="description" content="Portfolio of Paweł Rogoża — Linux administration &amp; SysOps, building toward Cloud / DevOps / Platform Engineering. Main project: Harbor, a self-hosted VPS.">
+<meta name="description" content="Portfolio of Paweł Rogoża — Linux administration &amp; SysOps, building toward Cloud / DevOps / Platform Engineering. Projects: Harbor (self-hosted VPS), Robust, monitoring and more.">
 <meta name="author" content="Paweł Rogoża">
 <meta name="color-scheme" content="light dark">
 <!-- utrzymywany z JS (app.js), bo domyślny motyw jest ciemny niezależnie od
@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://portfolio.pawelrogoza.pl/">
 
 <meta property="og:title" content="Paweł Rogoża — Linux Administration &amp; SysOps">
-<meta property="og:description" content="Interactive terminal portfolio. Main project: Harbor, a self-hosted VPS I run and document.">
+<meta property="og:description" content="Interactive terminal portfolio — Linux administration &amp; SysOps: Harbor, Robust, monitoring and more.">
 <meta property="og:url" content="https://portfolio.pawelrogoza.pl/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
@@ -39,7 +39,7 @@
      Numer podbijaj TYLKO dopóki działający vhost serwuje .css/.js z `expires 7d`.
      Gdy jest tam już `expires -1` (wersja z deploy/nginx/), przeglądarka
      rewaliduje przy każdym wejściu i podbijanie przestaje być potrzebne. -->
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=4">
 <script src="js/theme.js?v=3"></script>
 </head>
 <body>
@@ -55,7 +55,6 @@
     <div class="nav-right">
       <nav class="nav-links" aria-label="Sections">
         <button type="button" data-cmd="about" data-i18n="navAbout">About</button>
-        <button type="button" data-cmd="harbor" data-i18n="navHarbor">Harbor</button>
         <button type="button" data-cmd="projects" data-i18n="navProjects">Projects</button>
         <button type="button" data-cmd="skills" data-i18n="navSkills">Skills</button>
         <button type="button" data-cmd="contact" data-i18n="navContact">Contact</button>
@@ -77,9 +76,9 @@
   <!-- left -->
   <div class="hero-left">
     <h1 class="hero-h1" data-i18n="heroH1">Hi, I'm Paweł Rogoża.</h1>
-    <p class="hero-sub" data-i18n="heroSub">I work in Linux administration and SysOps. My main project, Harbor, is a self-hosted VPS where I run and document a real server stack — web, mail, databases, monitoring, backups and automation.</p>
+    <p class="hero-sub" data-i18n="heroSub">I work in Linux administration and SysOps at cyberfolks.pl (hosting support). After hours I run Harbor — a self-hosted VPS — plus monitoring, analytics and the small tools that keep servers healthy.</p>
     <div class="hero-ctas">
-      <button class="btn-primary" type="button" data-cmd="harbor"><span data-i18n="ctaHarbor">Open Harbor</span> →</button>
+      <button class="btn-primary" type="button" data-cmd="projects"><span data-i18n="ctaProjects">Browse projects</span> →</button>
       <button class="btn-secondary" type="button" data-cmd="contact" data-i18n="ctaContact">Get in touch</button>
     </div>
 
@@ -90,7 +89,7 @@
       </div>
       <div>
         <dt data-i18n="metaFocusLabel">Focus</dt>
-        <dd data-i18n="metaFocusValue">Harbor — self-hosted VPS</dd>
+        <dd data-i18n="metaFocusValue">Hosting ops · side projects</dd>
       </div>
       <div>
         <dt data-i18n="metaNextLabel">Heading for</dt>
@@ -140,7 +139,7 @@
 
     <div class="term-chips" id="term-chips">
       <button class="chip" data-cmd="whoami" type="button">whoami</button>
-      <button class="chip" data-cmd="harbor" type="button">harbor</button>
+      <button class="chip" data-cmd="ls -la" type="button">ls -la</button>
       <button class="chip" data-cmd="projects" type="button">projects</button>
       <button class="chip" data-cmd="skills" type="button">skills</button>
       <button class="chip" data-cmd="htop" type="button">htop</button>
@@ -167,7 +166,8 @@
   <span class="fs-home">/home/pawel</span>
   <span class="fs-dot" aria-hidden="true">·</span>
   <button class="fs-file" type="button" data-cmd="cat about.md">about.md</button>
-  <button class="fs-file" type="button" data-cmd="cat projects/harbor.md">projects/harbor.md</button>
+  <button class="fs-file" type="button" data-cmd="ls -l projects">projects/</button>
+  <button class="fs-file" type="button" data-cmd="ls -l scripts">scripts/</button>
   <button class="fs-file" type="button" data-cmd="cat skills.txt">skills.txt</button>
   <button class="fs-file" type="button" data-cmd="cat education.txt">education.txt</button>
   <button class="fs-file" type="button" data-cmd="cat goals.txt">goals.txt</button>
@@ -182,6 +182,6 @@
   <a href="https://www.linkedin.com/in/pawel-rogoza" rel="me noopener">LinkedIn</a>
 </footer>
 
-<script src="js/app.js?v=3"></script>
+<script src="js/app.js?v=4"></script>
 </body>
 </html>
