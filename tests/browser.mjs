@@ -158,6 +158,24 @@ await check('scrollback appends instead of replacing', async () => {
   assert(blocks === 2, `expected 2 blocks after 2 commands, got ${blocks}`);
 });
 
+await check('an empty Enter prints a bare prompt line (spacing)', async () => {
+  await run(page, 'clear');
+  await page.click('#term-input');
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(50);
+  const state = await page.$eval('#term-output', el => ({
+    blocks: el.children.length,
+    text: el.lastElementChild ? el.lastElementChild.textContent : '',
+  }));
+  assert(state.blocks === 1, `expected 1 block after empty Enter, got ${state.blocks}`);
+  assert(/pawel@portfolio/.test(state.text), 'no prompt was echoed');
+  assert(state.text.trim().endsWith('$'), `prompt line is not bare: ${JSON.stringify(state.text)}`);
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(50);
+  const blocks = await page.$eval('#term-output', el => el.children.length);
+  assert(blocks === 2, 'a second empty Enter should add another bare prompt');
+});
+
 await check('cd moves the prompt, the breadcrumb and the status bar', async () => {
   await run(page, 'cd projects');
   const state = await page.evaluate(() => ({

@@ -1511,8 +1511,14 @@
   }
 
   function run(raw) {
-    if (!raw || !raw.trim()) return;
     flushBoot();
+    /* an empty Enter prints a bare prompt — breathing room, like a real shell */
+    if (!raw || !raw.trim()) {
+      emit([], '');
+      input.value = '';
+      syncField();
+      return;
+    }
     var entry = raw.trim();
     if (cmdLog[cmdLog.length - 1] !== entry) cmdLog.push(entry);   // no consecutive dupes
     if (cmdLog.length > 60) cmdLog = cmdLog.slice(-60);
