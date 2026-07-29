@@ -64,11 +64,11 @@
       title: 'Paweł Rogoża — Linux Administration & SysOps',
       skipLink: 'Skip to the terminal',
       heroH1: "Hi, I'm Paweł Rogoża.",
-      heroSub: 'I work in Linux administration and SysOps. My main project, Harbor, is a self-hosted VPS where I run and document a real server stack — web, mail, databases, monitoring, backups and automation.',
-      navAbout: 'About', navHarbor: 'Harbor', navProjects: 'Projects', navSkills: 'Skills', navContact: 'Contact',
-      ctaHarbor: 'Open Harbor', ctaContact: 'Get in touch',
+      heroSub: 'I work in Linux administration and SysOps at cyberfolks.pl (hosting support). After hours I run Harbor — a self-hosted VPS — plus monitoring, analytics and the small tools that keep servers healthy.',
+      navAbout: 'About', navProjects: 'Projects', navSkills: 'Skills', navContact: 'Contact',
+      ctaProjects: 'Browse projects', ctaContact: 'Get in touch',
       metaRoleLabel: 'Role', metaRoleValue: 'Linux admin · SysOps',
-      metaFocusLabel: 'Focus', metaFocusValue: 'Harbor — self-hosted VPS',
+      metaFocusLabel: 'Focus', metaFocusValue: 'Hosting ops · side projects',
       metaNextLabel: 'Heading for', metaNextValue: 'Cloud / DevOps',
       metaBasedLabel: 'Based in', metaBasedValue: 'Gdańsk, Poland',
       expand: 'expand', minimize: 'minimize',
@@ -82,11 +82,11 @@
       title: 'Paweł Rogoża — administracja Linuksem i SysOps',
       skipLink: 'Przejdź do terminala',
       heroH1: 'Cześć, jestem Paweł Rogoża.',
-      heroSub: 'Zajmuję się administracją Linuksem i SysOps. Mój główny projekt, Harbor, to samodzielnie hostowany VPS, na którym uruchamiam i dokumentuję realny stack serwerowy — web, pocztę, bazy danych, monitoring, kopie zapasowe i automatyzację.',
-      navAbout: 'O mnie', navHarbor: 'Harbor', navProjects: 'Projekty', navSkills: 'Umiejętności', navContact: 'Kontakt',
-      ctaHarbor: 'Otwórz Harbor', ctaContact: 'Kontakt',
+      heroSub: 'Zajmuję się administracją Linuksem i SysOps w cyberfolks.pl (wsparcie hostingu). Po godzinach utrzymuję Harbor — własny VPS — a do tego monitoring, analitykę i małe narzędzia, które dbają o zdrowie serwerów.',
+      navAbout: 'O mnie', navProjects: 'Projekty', navSkills: 'Umiejętności', navContact: 'Kontakt',
+      ctaProjects: 'Zobacz projekty', ctaContact: 'Kontakt',
       metaRoleLabel: 'Rola', metaRoleValue: 'Administracja Linuksem · SysOps',
-      metaFocusLabel: 'Skupienie', metaFocusValue: 'Harbor — własny VPS',
+      metaFocusLabel: 'Skupienie', metaFocusValue: 'Hosting · projekty po godzinach',
       metaNextLabel: 'Kierunek', metaNextValue: 'Cloud / DevOps',
       metaBasedLabel: 'Miejsce', metaBasedValue: 'Gdańsk, Polska',
       expand: 'pełny ekran', minimize: 'zmniejsz',
@@ -101,20 +101,26 @@
   /* terminal content */
   var TERM = {
     en: {
-      boot: ['portfolio-shell 1.0 — booting…', 'mounting /home/pawel … ok', 'session opened for visitor … ok'],
+      boot: ['portfolio-shell 1.1 — booting…', 'mounting /home/pawel … ok', 'session opened for visitor … ok'],
       welcomeHi: 'Hi — type a command, hit Tab, or click a chip.',
-      welcomeTry: 'Try: harbor · skills · htop · neofetch · help',
+      welcomeTry: 'Try: ls -la · projects · skills · htop · help',
 
       whoami: 'pawel — Linux administration & SysOps, building toward infrastructure engineering.',
 
       aboutRole: 'Linux administration & SysOps.',
       aboutHeading: 'Building toward Cloud / DevOps / Platform Engineering.',
+      aboutWork: 'Work: hosting support / SysOps at cyberfolks.pl (CST).',
       aboutEdu: 'BSc Informatics & Econometrics — University of Gdańsk (2019–2022).',
-      aboutMain: 'Main project: Harbor, a self-hosted VPS I run and document.',
+      aboutMain: 'After hours: Harbor (self-hosted VPS), monitoring, analytics — see projects/.',
 
-      projectsHarbor: 'active · self-hosted VPS / Linux server stack',
-      projectsMore: 'More will appear here as I build and document them.',
-      projectsOpen: "→ type 'harbor' to open it.",
+      projectsRows: [
+        ['harbor.md', 'self-hosted VPS · Linux server stack'],
+        ['robust.md', 'work · spam detection for hosting servers'],
+        ['advokat-varshava.md', 'law-firm website + mobile CRM app'],
+        ['zabbix.md', 'monitoring for my servers'],
+        ['umami.md', 'self-hosted web analytics'],
+      ],
+      projectsHint: "→ 'cat projects/<file>' opens a write-up · work scripts: 'ls ~/scripts'",
 
       harborLead: 'Self-hosted VPS for practical Linux administration.',
       harborIntro: 'A small hosting-like environment I run and document:',
@@ -126,6 +132,27 @@
       ],
       harborWhy: 'Why it exists: real services, real failures, real fixes — the parts a tutorial skips.',
       harborNote: '→ a dedicated write-up lives at projects/harbor.md',
+
+      robustLead: 'Spam detection for shared hosting servers.',
+      robustBody: 'A tool I develop at work (cyberfolks.pl): it detects spam being sent from hosting servers, so problem accounts are caught early.',
+      robustStatus: 'status: work project · in active development',
+
+      advokatLead: 'Law-firm website + a mobile CRM app.',
+      advokatBody: 'Public website at advokat-varshava.pl and a companion mobile CRM application used to run the practice.',
+
+      zabbixLead: 'Monitoring for my servers.',
+      zabbixBody: 'Hosts, services, triggers and alerts — Zabbix keeps an eye on Harbor and the rest of my infrastructure.',
+
+      umamiLead: 'Self-hosted, privacy-friendly web analytics.',
+      umamiBody: 'Traffic stats for my sites without handing visitor data to third parties.',
+
+      redisLead: 'redis-check.sh — support script from work (CST).',
+      redisBody: 'Checks whether Redis for a given DirectAdmin user is running. If it is not, the script restarts the process on the Redis server — the most common fix.',
+      redisUsage: 'usage: redis-check.sh <directadmin-user>',
+
+      calveLead: 'calve.sh — CloudLinux LVE resource check (work).',
+      calveBody: 'Shows the key LVE numbers for a user on a given www-cl-X server — CPU, RAM, processes and IOPS — in a friendly form.',
+      calveExampleHead: 'example:',
 
       skillsRows: [
         ['Linux', 'shell · users & permissions · systemd · networking'],
@@ -165,8 +192,28 @@
       helpTitle: 'Commands',
       helpTip: 'Tab completes · ↑ / ↓ recalls · Ctrl+L clears · Esc leaves fullscreen.',
       helpMore: "→ 'man <command>' explains a single command.",
+      helpSecContent: 'content', helpSecFiles: 'files',
+      helpSecSystem: 'system', helpSecShell: 'shell',
 
       lsEmpty: 'directory is empty',
+      headUsage: 'usage: head [-n N] <file>',
+      tailUsage: 'usage: tail [-n N] <file>',
+      idNote: "not in the sudo group — see 'sudo'.",
+      wWhat: 'reading the portfolio',
+      sysctlRows: [
+        ['nginx.service', 'serves this portfolio'],
+        ['postfix.service', 'mail — harbor'],
+        ['mariadb.service', 'databases — harbor'],
+        ['zabbix-agent.service', 'monitoring — zabbix'],
+        ['umami.service', 'web analytics — umami'],
+        ['redis-watch.timer', 'redis-check.sh for DirectAdmin users'],
+      ],
+      sysctlFoot: 'all units green — as it should be.',
+      rofs: 'read-only filesystem — nothing to change here.',
+      editor: "no $EDITOR in this shell — the files are read-only. try 'cat <file>'.",
+      net: "outbound network is disabled in this shell — 'open github' works, though.",
+      pkg: 'no package manager needed — this site has zero dependencies.',
+      ssh: 'visitor@harbor: Permission denied (publickey) — harbor only talks to me.',
       grepUsage: 'usage: grep <pattern> [path]',
       grepNone: 'no matches',
       grepIn: 'searched',
@@ -198,10 +245,10 @@
 
       neoRows: [
         ['host', 'portfolio.pawelrogoza.pl'],
-        ['shell', 'portfolio-shell 1.0'],
+        ['shell', 'portfolio-shell 1.1'],
         ['role', 'Linux administration & SysOps'],
-        ['project', 'Harbor — self-hosted VPS'],
-        ['stack', 'web · mail · db · monitoring · backups'],
+        ['work', 'cyberfolks.pl — hosting support'],
+        ['projects', 'harbor · robust · advokat-varshava · zabbix · umami'],
         ['next', 'Cloud / DevOps / Platform Engineering'],
       ],
       neoTheme: 'theme',
@@ -210,20 +257,26 @@
     },
 
     pl: {
-      boot: ['portfolio-shell 1.0 — uruchamianie…', 'montowanie /home/pawel … ok', 'sesja otwarta dla visitor … ok'],
+      boot: ['portfolio-shell 1.1 — uruchamianie…', 'montowanie /home/pawel … ok', 'sesja otwarta dla visitor … ok'],
       welcomeHi: 'Cześć — wpisz komendę, użyj Tab albo kliknij chip.',
-      welcomeTry: 'Spróbuj: harbor · skills · htop · neofetch · help',
+      welcomeTry: 'Spróbuj: ls -la · projects · skills · htop · help',
 
       whoami: 'pawel — administracja Linuksem i SysOps, w drodze do inżynierii infrastruktury.',
 
       aboutRole: 'Administracja Linuksem i SysOps.',
       aboutHeading: 'Kierunek: Cloud / DevOps / Platform Engineering.',
+      aboutWork: 'Praca: wsparcie hostingu / SysOps w cyberfolks.pl (CST).',
       aboutEdu: 'Licencjat: Informatyka i Ekonometria — Uniwersytet Gdański (2019–2022).',
-      aboutMain: 'Główny projekt: Harbor — własny VPS, który utrzymuję i dokumentuję.',
+      aboutMain: 'Po godzinach: Harbor (własny VPS), monitoring, analityka — zobacz projects/.',
 
-      projectsHarbor: 'aktywny · własny VPS / linuksowy stack serwerowy',
-      projectsMore: 'Kolejne pojawią się tu w miarę budowania i dokumentowania.',
-      projectsOpen: "→ wpisz 'harbor', żeby otworzyć.",
+      projectsRows: [
+        ['harbor.md', 'własny VPS · linuksowy stack serwerowy'],
+        ['robust.md', 'praca · wykrywanie spamu na serwerach hostingowych'],
+        ['advokat-varshava.md', 'strona kancelarii + mobilna aplikacja CRM'],
+        ['zabbix.md', 'monitoring moich serwerów'],
+        ['umami.md', 'własna analityka www'],
+      ],
+      projectsHint: "→ 'cat projects/<plik>' otwiera opis · skrypty z pracy: 'ls ~/scripts'",
 
       harborLead: 'Własny VPS do praktycznej administracji Linuksem.',
       harborIntro: 'Małe środowisko hostingowe, które utrzymuję i dokumentuję:',
@@ -235,6 +288,27 @@
       ],
       harborWhy: 'Po co: prawdziwe usługi, prawdziwe awarie, prawdziwe naprawy — to, co tutorial pomija.',
       harborNote: '→ pełny opis znajdziesz w projects/harbor.md',
+
+      robustLead: 'Wykrywanie spamu na serwerach hostingowych.',
+      robustBody: 'Narzędzie, które rozwijam w pracy (cyberfolks.pl): wykrywa spam wysyłany z serwerów hostingowych, więc problematyczne konta są łapane wcześnie.',
+      robustStatus: 'status: projekt z pracy · w aktywnym rozwoju',
+
+      advokatLead: 'Strona kancelarii + mobilna aplikacja CRM.',
+      advokatBody: 'Publiczna strona advokat-varshava.pl oraz towarzysząca jej mobilna aplikacja CRM do obsługi kancelarii.',
+
+      zabbixLead: 'Monitoring moich serwerów.',
+      zabbixBody: 'Hosty, usługi, wyzwalacze i alerty — Zabbix pilnuje Harbora i reszty mojej infrastruktury.',
+
+      umamiLead: 'Samodzielnie hostowana analityka www, przyjazna prywatności.',
+      umamiBody: 'Statystyki ruchu moich stron bez oddawania danych odwiedzających firmom trzecim.',
+
+      redisLead: 'redis-check.sh — skrypt supportowy z pracy (CST).',
+      redisBody: 'Sprawdza, czy Redis danego użytkownika DirectAdmin działa. Jeśli nie — restartuje proces na serwerze redisowym, co jest najczęstszym fixem.',
+      redisUsage: 'użycie: redis-check.sh <użytkownik-directadmin>',
+
+      calveLead: 'calve.sh — sprawdzanie zasobów CloudLinux LVE (praca).',
+      calveBody: 'Pokazuje najważniejsze parametry LVE użytkownika na danym serwerze www-cl-X — CPU, RAM, procesy i IOPS — w przyjaznej formie.',
+      calveExampleHead: 'przykład:',
 
       skillsRows: [
         ['Linux', 'shell · użytkownicy i uprawnienia · systemd · sieci'],
@@ -274,8 +348,28 @@
       helpTitle: 'Komendy',
       helpTip: 'Tab uzupełnia · ↑ / ↓ historia · Ctrl+L czyści · Esc wychodzi z pełnego ekranu.',
       helpMore: "→ 'man <komenda>' opisuje pojedynczą komendę.",
+      helpSecContent: 'treść', helpSecFiles: 'pliki',
+      helpSecSystem: 'system', helpSecShell: 'powłoka',
 
       lsEmpty: 'katalog jest pusty',
+      headUsage: 'użycie: head [-n N] <plik>',
+      tailUsage: 'użycie: tail [-n N] <plik>',
+      idNote: "poza grupą sudo — sprawdź 'sudo'.",
+      wWhat: 'przegląda portfolio',
+      sysctlRows: [
+        ['nginx.service', 'serwuje to portfolio'],
+        ['postfix.service', 'poczta — harbor'],
+        ['mariadb.service', 'bazy danych — harbor'],
+        ['zabbix-agent.service', 'monitoring — zabbix'],
+        ['umami.service', 'analityka www — umami'],
+        ['redis-watch.timer', 'redis-check.sh dla użytkowników DirectAdmin'],
+      ],
+      sysctlFoot: 'wszystkie usługi zielone — tak ma być.',
+      rofs: 'system plików tylko do odczytu — nic tu nie zmienisz.',
+      editor: "w tej powłoce nie ma $EDITOR — pliki są tylko do odczytu. spróbuj 'cat <plik>'.",
+      net: "ruch wychodzący jest tu wyłączony — ale 'open github' działa.",
+      pkg: 'menedżer pakietów niepotrzebny — ta strona nie ma żadnych zależności.',
+      ssh: 'visitor@harbor: Permission denied (publickey) — harbor rozmawia tylko ze mną.',
       grepUsage: 'użycie: grep <wzorzec> [ścieżka]',
       grepNone: 'brak dopasowań',
       grepIn: 'przeszukano',
@@ -307,10 +401,10 @@
 
       neoRows: [
         ['host', 'portfolio.pawelrogoza.pl'],
-        ['powłoka', 'portfolio-shell 1.0'],
+        ['powłoka', 'portfolio-shell 1.1'],
         ['rola', 'administracja Linuksem i SysOps'],
-        ['projekt', 'Harbor — własny VPS'],
-        ['stack', 'web · poczta · bazy · monitoring · backupy'],
+        ['praca', 'cyberfolks.pl — wsparcie hostingu'],
+        ['projekty', 'harbor · robust · advokat-varshava · zabbix · umami'],
         ['dalej', 'Cloud / DevOps / Platform Engineering'],
       ],
       neoTheme: 'motyw',
@@ -323,11 +417,17 @@
   var DESC = {
     en: {
       whoami: 'short intro', about: 'about me', projects: 'list projects',
-      harbor: 'open Harbor', skills: 'tech skill map', htop: 'skills as processes',
+      harbor: 'open Harbor', robust: 'spam detection (work)', advokat: 'law-firm site + CRM',
+      zabbix: 'monitoring project', umami: 'web analytics project',
+      skills: 'tech skill map', htop: 'skills as processes',
       education: 'background', goals: 'career direction', contact: 'links & email',
-      ls: 'list files', cd: 'change directory', pwd: 'print working directory',
-      tree: 'show the file tree', cat: 'print a file', grep: 'search inside files',
-      find: 'find a file by name', open: 'open an external link',
+      ls: 'list files (-l, -a)', cd: 'change directory', pwd: 'print working directory',
+      tree: 'show the file tree', cat: 'print a file',
+      head: 'first lines of a file', tail: 'last lines of a file',
+      grep: 'search inside files', find: 'find a file by name', open: 'open an external link',
+      uname: 'kernel info', hostname: 'host name', id: 'who you are',
+      df: 'disk usage', free: 'memory usage', w: 'who is logged in',
+      systemctl: 'service status', ping: 'reach a host',
       neofetch: 'system card', banner: 'ascii banner', uptime: 'a small note',
       date: 'current date and time', echo: 'print text back', history: 'commands you ran',
       man: 'explain a command', theme: 'dark / light / auto', lang: 'switch EN / PL',
@@ -335,11 +435,17 @@
     },
     pl: {
       whoami: 'krótkie intro', about: 'o mnie', projects: 'lista projektów',
-      harbor: 'otwórz Harbor', skills: 'mapa umiejętności', htop: 'umiejętności jako procesy',
+      harbor: 'otwórz Harbor', robust: 'wykrywanie spamu (praca)', advokat: 'strona kancelarii + CRM',
+      zabbix: 'projekt: monitoring', umami: 'projekt: analityka www',
+      skills: 'mapa umiejętności', htop: 'umiejętności jako procesy',
       education: 'wykształcenie', goals: 'kierunek rozwoju', contact: 'linki i e-mail',
-      ls: 'lista plików', cd: 'zmień katalog', pwd: 'pokaż bieżący katalog',
-      tree: 'drzewo plików', cat: 'wypisz plik', grep: 'szukaj w plikach',
-      find: 'znajdź plik po nazwie', open: 'otwórz link zewnętrzny',
+      ls: 'lista plików (-l, -a)', cd: 'zmień katalog', pwd: 'pokaż bieżący katalog',
+      tree: 'drzewo plików', cat: 'wypisz plik',
+      head: 'pierwsze linie pliku', tail: 'ostatnie linie pliku',
+      grep: 'szukaj w plikach', find: 'znajdź plik po nazwie', open: 'otwórz link zewnętrzny',
+      uname: 'informacje o jądrze', hostname: 'nazwa hosta', id: 'kim jesteś',
+      df: 'zajętość dysku', free: 'zużycie pamięci', w: 'kto jest zalogowany',
+      systemctl: 'status usług', ping: 'sprawdź host',
       neofetch: 'wizytówka systemu', banner: 'baner ascii', uptime: 'drobna notka',
       date: 'aktualna data i godzina', echo: 'powtórz tekst', history: 'wpisane komendy',
       man: 'opis komendy', theme: 'ciemny / jasny / auto', lang: 'przełącz EN / PL',
@@ -398,19 +504,32 @@
   var HOME = '/home/pawel';
 
   /* Files carry the name of the renderer that prints them, so `cat about.md`
-     and the `about` command cannot drift apart. */
+     and the `about` command cannot drift apart. `size` feeds `ls -l`; names
+     starting with a dot stay hidden until `ls -a`. */
   var TREE = {
     type: 'dir',
     children: {
-      'about.md': { type: 'file', render: 'about' },
-      'skills.txt': { type: 'file', render: 'skills' },
-      'education.txt': { type: 'file', render: 'education' },
-      'goals.txt': { type: 'file', render: 'goals' },
-      'contact.txt': { type: 'file', render: 'contact' },
+      '.plan': { type: 'file', render: 'goals', size: 214 },
+      'about.md': { type: 'file', render: 'about', size: 512 },
+      'skills.txt': { type: 'file', render: 'skills', size: 486 },
+      'education.txt': { type: 'file', render: 'education', size: 208 },
+      'goals.txt': { type: 'file', render: 'goals', size: 214 },
+      'contact.txt': { type: 'file', render: 'contact', size: 342 },
       'projects': {
         type: 'dir',
         children: {
-          'harbor.md': { type: 'file', render: 'harbor' },
+          'harbor.md': { type: 'file', render: 'harbor', size: 1024 },
+          'robust.md': { type: 'file', render: 'robust', size: 768 },
+          'advokat-varshava.md': { type: 'file', render: 'advokat', size: 640 },
+          'zabbix.md': { type: 'file', render: 'zabbix', size: 420 },
+          'umami.md': { type: 'file', render: 'umami', size: 386 },
+        },
+      },
+      'scripts': {
+        type: 'dir',
+        children: {
+          'redis-check.sh': { type: 'file', render: 'redisCheck', size: 1337 },
+          'calve.sh': { type: 'file', render: 'calve', size: 2048 },
         },
       },
     },
@@ -459,9 +578,11 @@
   function absLabel(segments) {
     return segments.length ? HOME + '/' + segments.join('/') : HOME;
   }
-  function childNames(node) {
+  function childNames(node, withHidden) {
     if (!node || node.type !== 'dir') return [];
-    return Object.keys(node.children).sort(function (a, b) {
+    return Object.keys(node.children).filter(function (name) {
+      return withHidden || name.charAt(0) !== '.';         // dotfiles need -a
+    }).sort(function (a, b) {
       var ad = node.children[a].type === 'dir', bd = node.children[b].type === 'dir';
       if (ad !== bd) return ad ? -1 : 1;                   // directories first
       return a.localeCompare(b);
@@ -538,7 +659,7 @@
     'commands': 'help', '?': 'help', 'h': 'help', 'info': 'about', 'me': 'about',
     'project': 'projects', 'work': 'projects', 'edu': 'education', 'cv': 'about',
     'mail': 'contact', 'email': 'contact', 'links': 'contact', 'hire': 'contact',
-    'motd': 'banner', 'logo': 'banner', 'fetch': 'neofetch',
+    'motd': 'banner', 'logo': 'banner', 'fetch': 'neofetch', 'who': 'w',
     'language': 'lang', 'colour': 'theme', 'color': 'theme', 'dark': 'theme', 'light': 'theme',
     'quit': 'exit', 'logout': 'exit', 'q': 'exit', 'man': 'man', 'search': 'grep',
   };
@@ -566,29 +687,83 @@
         ln('Paweł Rogoża', { cls: 't-bold' }),
         ln(t('aboutRole'), { cls: 't-dim', mt: 2 }),
         ln(t('aboutHeading'), { cls: 't-dim' }),
-        ln(t('aboutEdu'), { cls: 't-dim', mt: 6 }),
-        ln(t('aboutMain'), { mt: 6 }),
+        ln(t('aboutWork'), { mt: 8 }),
+        ln(t('aboutEdu'), { cls: 't-dim', mt: 4 }),
+        ln(t('aboutMain'), { mt: 8 }),
       ];
     },
     projects: function () {
       return [
         ln('projects/', { cls: 't-blue t-bold' }),
-        grid([['harbor.md', t('projectsHarbor')]], { mt: 4, keyCls: 't-green' }),
-        ln(t('projectsMore'), { cls: 't-dim', mt: 6 }),
-        ln(t('projectsOpen'), { cls: 't-dim' }),
+        grid(t('projectsRows'), { mt: 4, keyCls: 't-green' }),
+        ln(t('projectsHint'), { cls: 't-dim', mt: 8 }),
       ];
     },
     harbor: function () {
       var out = [
         ln('# Harbor', { cls: 't-green t-bold' }),
         ln(t('harborLead'), { mt: 4 }),
-        ln(t('harborIntro'), { mt: 6 }),
+        ln(t('harborIntro'), { mt: 8 }),
       ];
       t('harborItems').forEach(function (pair, i) {
         out.push(grid([['• ' + pair[0], '• ' + pair[1]]], { cls: 'term-grid-even', mt: i === 0 ? 4 : 0, keyCls: 't-dim', valCls: 't-dim' }));
       });
-      out.push(ln(t('harborWhy'), { cls: 't-dim', mt: 6 }));
-      out.push(ln(t('harborNote'), { cls: 't-green', mt: 6 }));
+      out.push(ln(t('harborWhy'), { cls: 't-dim', mt: 8 }));
+      out.push(ln(t('harborNote'), { cls: 't-green', mt: 8 }));
+      return out;
+    },
+    robust: function () {
+      return [
+        ln('# Robust', { cls: 't-green t-bold' }),
+        ln(t('robustLead'), { mt: 4 }),
+        ln(t('robustBody'), { cls: 't-dim', mt: 8 }),
+        ln(t('robustStatus'), { cls: 't-amber', mt: 8 }),
+      ];
+    },
+    advokat: function () {
+      return [
+        ln('# advokat-varshava.pl', { cls: 't-green t-bold' }),
+        ln(t('advokatLead'), { mt: 4 }),
+        ln(t('advokatBody'), { cls: 't-dim', mt: 8 }),
+        parts([tx('→ ', 't-dim'), link('advokat-varshava.pl', 'https://advokat-varshava.pl')], { mt: 8 }),
+      ];
+    },
+    zabbix: function () {
+      return [
+        ln('# Zabbix', { cls: 't-green t-bold' }),
+        ln(t('zabbixLead'), { mt: 4 }),
+        ln(t('zabbixBody'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    umami: function () {
+      return [
+        ln('# Umami', { cls: 't-green t-bold' }),
+        ln(t('umamiLead'), { mt: 4 }),
+        ln(t('umamiBody'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    redisCheck: function () {
+      return [
+        ln('#!/usr/bin/env bash', { cls: 't-faint' }),
+        ln(t('redisLead'), { cls: 't-green t-bold', mt: 4 }),
+        ln(t('redisBody'), { mt: 4 }),
+        ln(t('redisUsage'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    calve: function () {
+      var out = [
+        ln('#!/usr/bin/env bash', { cls: 't-faint' }),
+        ln(t('calveLead'), { cls: 't-green t-bold', mt: 4 }),
+        ln(t('calveBody'), { mt: 4 }),
+        ln(t('calveExampleHead'), { cls: 't-dim', mt: 8 }),
+      ];
+      ['$ calve jkowalski www-cl-7',
+        'CPU    38% / 100%',
+        'RAM    512M / 1024M',
+        'EP     7 / 20 processes',
+        'IOPS   122 / 1024'].forEach(function (l, i) {
+        out.push(ln(l, { cls: 't-faint', mt: i === 0 ? 4 : 0 }));
+      });
       return out;
     },
     skills: function () {
@@ -599,7 +774,7 @@
       return [
         ln('skills.txt', { cls: 't-blue t-bold' }),
         g,
-        ln(t('skillsHint'), { cls: 't-dim', mt: 6 }),
+        ln(t('skillsHint'), { cls: 't-dim', mt: 8 }),
       ];
     },
     education: function () {
@@ -616,7 +791,7 @@
         ln(t('goalsNow'), { cls: 't-green', mt: 4 }),
         ln(t('goalsNext'), { cls: 't-amber' }),
         ln(t('goalsLater'), { cls: 't-blue' }),
-        ln(t('goalsNote'), { cls: 't-dim', mt: 6 }),
+        ln(t('goalsNote'), { cls: 't-dim', mt: 8 }),
       ];
     },
     contact: function () {
@@ -628,7 +803,7 @@
           ['GitHub', link('github.com/pawel-rogoza', LINKS.github)],
           ['LinkedIn', link('linkedin.com/in/pawel-rogoza', LINKS.linkedin)],
         ], { mt: 6, keyCls: 't-dim' }),
-        ln(t('contactHint'), { cls: 't-dim', mt: 6 }),
+        ln(t('contactHint'), { cls: 't-dim', mt: 8 }),
       ];
     },
   };
@@ -665,12 +840,70 @@
     return out;
   }
 
+  /* --- small command plumbing ------------------------------------------ */
+
+  /* "-la" and "-l -a" both land in { flags: { l, a }, rest: [paths…] };
+     unknown letters are accepted and ignored, like a forgiving shell. */
+  function splitFlags(args) {
+    var flags = {}, rest = [];
+    args.forEach(function (a) {
+      if (/^-[A-Za-z]+$/.test(a)) a.slice(1).split('').forEach(function (c) { flags[c] = true; });
+      else rest.push(a);
+    });
+    return { flags: flags, rest: rest };
+  }
+
+  var LS_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function lsStamp() {
+    var d = new Date();
+    return LS_MONTHS[d.getMonth()] + ' ' + String(d.getDate()).padStart(2, ' ') + ' 09:41';
+  }
+
+  function lsCls(name, isDir) {
+    return isDir ? 't-blue' : /\.sh$/.test(name) ? 't-green' : '';
+  }
+
+  /* one row of `ls -l`; node is null for the '.' / '..' pseudo entries */
+  function longLine(node, name) {
+    var isDir = !node || node.type === 'dir';
+    var perms = isDir ? 'drwxr-xr-x' : /\.sh$/.test(name) ? '-rwxr-xr-x' : '-rw-r--r--';
+    var size = isDir ? 4096 : node.size || 640;
+    var meta = perms + '  pawel pawel ' + String(size).padStart(5, ' ') + ' ' + lsStamp() + ' ';
+    return parts([tx(meta, 't-dim'), tx(name + (isDir && name.charAt(0) !== '.' ? '/' : ''), lsCls(name, isDir))]);
+  }
+
+  function headTail(args, fromEnd) {
+    var n = 10, path = null, label = fromEnd ? 'tail' : 'head';
+    for (var i = 0; i < args.length; i++) {
+      var a = args[i], m;
+      if (a === '-n' && args[i + 1]) n = parseInt(args[++i], 10) || n;
+      else if ((m = a.match(/^-n?(\d+)$/))) n = parseInt(m[1], 10) || n;
+      else if (a.charAt(0) === '-') { /* ignore other flags */ }
+      else if (!path) path = a;
+    }
+    if (!path) return [ln(t(fromEnd ? 'tailUsage' : 'headUsage'), { cls: 't-dim' })];
+    var target = resolvePath(path);
+    if (!target || !target.node) return [ln(label + ': ' + path + ': ' + t('catNoFile'), { cls: 't-amber' })];
+    if (target.node.type === 'dir') return [ln(label + ': ' + path + ': ' + t('catIsDir'), { cls: 't-amber' })];
+    var lines = fileText(target.node.render);
+    return (fromEnd ? lines.slice(-n) : lines.slice(0, n)).map(function (text) { return ln(text); });
+  }
+
+  /* easter eggs share one shape: a single translated line */
+  function saysT(key, cls) {
+    return { run: function () { return [ln(t(key), { cls: cls || 't-dim' })]; } };
+  }
+
   var COMMANDS = {
     /* --- content ---------------------------------------------------- */
     whoami: { run: function () { return [ln(t('whoami'))]; } },
     about: { run: RENDER.about },
     projects: { run: RENDER.projects },
     harbor: { run: RENDER.harbor },
+    robust: { run: RENDER.robust },
+    advokat: { run: RENDER.advokat },
+    zabbix: { run: RENDER.zabbix },
+    umami: { run: RENDER.umami },
     skills: { run: RENDER.skills },
     education: { run: RENDER.education },
     goals: { run: RENDER.goals },
@@ -727,6 +960,89 @@
       },
     },
 
+    /* --- system --------------------------------------------------------
+       Real terminal output is English; only the human-facing bits translate. */
+    uname: {
+      usage: 'uname [-a]',
+      run: function (args) {
+        return [ln(splitFlags(args).flags.a
+          ? 'Linux portfolio 6.1.0-portfolio #1 SMP PREEMPT_DYNAMIC x86_64 GNU/Linux'
+          : 'Linux')];
+      },
+    },
+
+    hostname: { run: function () { return [ln('portfolio.pawelrogoza.pl')]; } },
+
+    id: {
+      run: function () {
+        return [
+          ln('uid=1000(visitor) gid=1000(visitor) groups=1000(visitor)'),
+          ln(t('idNote'), { cls: 't-dim', mt: 2 }),
+        ];
+      },
+    },
+
+    df: {
+      usage: 'df [-h]',
+      run: function () {
+        return [
+          ln('Filesystem      Size  Used Avail Use% Mounted on', { cls: 't-dim' }),
+          ln('/dev/vda1        25G  8.1G   17G  33% /'),
+          ln('/dev/vdb1        50G   19G   31G  38% /backup'),
+          ln('tmpfs           2.0G     0  2.0G   0% /dev/shm'),
+        ];
+      },
+    },
+
+    free: {
+      usage: 'free [-h]',
+      run: function () {
+        return [
+          ln('               total        used        free   available', { cls: 't-dim' }),
+          ln('Mem:            4096        1742        2354        2354'),
+          ln('Swap:           1024           0        1024        1024'),
+        ];
+      },
+    },
+
+    w: {
+      run: function () {
+        var now = new Date().toTimeString().slice(0, 8);
+        return [
+          ln(' ' + now + ' up 27 years,  1 user,  load average: 0.42, 0.35, 0.30', { cls: 't-dim' }),
+          ln('USER     TTY      FROM     LOGIN@   WHAT', { cls: 't-dim' }),
+          ln('visitor  pts/0    web      now      ' + t('wWhat')),
+        ];
+      },
+    },
+
+    systemctl: {
+      usage: 'systemctl [status]',
+      run: function () {
+        var out = [ln('UNIT'.padEnd(22, ' ') + 'ACTIVE  DESCRIPTION', { cls: 't-dim' })];
+        t('sysctlRows').forEach(function (r) {
+          out.push(parts([tx(r[0].padEnd(22, ' ')), tx('active  ', 't-green'), tx(r[1], 't-dim')]));
+        });
+        out.push(ln(t('sysctlFoot'), { cls: 't-faint', mt: 4 }));
+        return out;
+      },
+    },
+
+    ping: {
+      usage: 'ping <host>',
+      run: function (args) {
+        var host = (splitFlags(args).rest[0] || 'harbor').replace(/^https?:\/\//, '');
+        return [
+          ln('PING ' + host + ' (10.13.37.7) 56(84) bytes of data.'),
+          ln('64 bytes from ' + host + ': icmp_seq=1 ttl=64 time=0.42 ms'),
+          ln('64 bytes from ' + host + ': icmp_seq=2 ttl=64 time=0.38 ms'),
+          ln('64 bytes from ' + host + ': icmp_seq=3 ttl=64 time=0.45 ms'),
+          ln('--- ' + host + ' ping statistics ---', { mt: 4 }),
+          ln('3 packets transmitted, 3 received, 0% packet loss', { cls: 't-dim' }),
+        ];
+      },
+    },
+
     banner: {
       run: function () {
         return [art(), ln(t('bannerSub'), { cls: 't-dim', mt: 4 })];
@@ -762,22 +1078,43 @@
     pwd: { run: function () { return [ln(absLabel(cwd))]; } },
 
     ls: {
-      usage: 'ls [path]',
+      usage: 'ls [-l] [-a] [path]',
       run: function (args) {
-        var target = resolvePath(args[0] || '.');
-        if (!target || !target.node) return [ln(t('cdNoDir') + ' ' + (args[0] || '.'), { cls: 't-amber' })];
-        if (target.node.type !== 'dir') return [ln(target.segments[target.segments.length - 1])];
-        var names = childNames(target.node);
-        if (!names.length) return [ln(t('lsEmpty'), { cls: 't-dim' })];
+        var parsed = splitFlags(args);
+        var arg0 = parsed.rest[0] || '.';
+        var target = resolvePath(arg0);
+        if (!target || !target.node) return [ln(t('cdNoDir') + ' ' + arg0, { cls: 't-amber' })];
+
+        if (target.node.type !== 'dir') {
+          var base = target.segments[target.segments.length - 1];
+          return [parsed.flags.l ? longLine(target.node, base) : ln(base)];
+        }
+
+        var names = childNames(target.node, parsed.flags.a);
+        var all = parsed.flags.a ? ['.', '..'].concat(names) : names;
+
+        if (parsed.flags.l) {
+          var out = [ln('total ' + all.length * 4, { cls: 't-faint' })];
+          all.forEach(function (name) {
+            out.push(longLine(name === '.' || name === '..' ? null : target.node.children[name], name));
+          });
+          return out;
+        }
+
+        if (!all.length) return [ln(t('lsEmpty'), { cls: 't-dim' })];
         var row = ln(null);
-        names.forEach(function (name, i) {
-          var isDir = target.node.children[name].type === 'dir';
+        all.forEach(function (name, i) {
+          var child = target.node.children[name];
+          var isDir = !child || child.type === 'dir';       // '.' / '..' count as dirs
           if (i) row.appendChild(tx('   '));
-          row.appendChild(tx(name + (isDir ? '/' : ''), isDir ? 't-blue' : ''));
+          row.appendChild(tx(name + (isDir && child ? '/' : ''), lsCls(name, isDir)));
         });
         return [row];
       },
     },
+
+    head: { usage: 'head [-n N] <file>', run: function (args) { return headTail(args, false); } },
+    tail: { usage: 'tail [-n N] <file>', run: function (args) { return headTail(args, true); } },
 
     cd: {
       usage: 'cd <dir>',
@@ -862,16 +1199,20 @@
     /* --- shell ------------------------------------------------------ */
     help: {
       run: function () {
-        var order = ['whoami', 'about', 'projects', 'harbor', 'skills', 'htop',
-          'education', 'goals', 'contact', 'ls', 'cd', 'pwd', 'tree', 'cat',
-          'grep', 'find', 'open', 'neofetch', 'banner', 'uptime', 'date',
-          'echo', 'history', 'man', 'theme', 'lang', 'clear', 'help'];
-        return [
-          ln(t('helpTitle'), { cls: 't-bold' }),
-          grid(order.map(function (name) { return [name, desc(name)]; }), { mt: 4, keyCls: 't-green', valCls: 't-dim' }),
-          ln(t('helpMore'), { cls: 't-dim', mt: 6 }),
-          ln(t('helpTip'), { cls: 't-green', mt: 2 }),
+        var groups = [
+          ['helpSecContent', ['whoami', 'about', 'projects', 'skills', 'htop', 'education', 'goals', 'contact']],
+          ['helpSecFiles', ['ls', 'cd', 'pwd', 'tree', 'cat', 'head', 'tail', 'grep', 'find']],
+          ['helpSecSystem', ['uname', 'hostname', 'id', 'uptime', 'date', 'df', 'free', 'w', 'systemctl', 'neofetch', 'banner']],
+          ['helpSecShell', ['echo', 'history', 'man', 'open', 'theme', 'lang', 'clear', 'help']],
         ];
+        var out = [ln(t('helpTitle'), { cls: 't-bold' })];
+        groups.forEach(function (g) {
+          out.push(ln(t(g[0]), { cls: 't-blue t-bold', mt: 8 }));
+          out.push(grid(g[1].map(function (name) { return [name, desc(name)]; }), { mt: 2, keyCls: 't-green', valCls: 't-dim' }));
+        });
+        out.push(ln(t('helpMore'), { cls: 't-dim', mt: 8 }));
+        out.push(ln(t('helpTip'), { cls: 't-green', mt: 2 }));
+        return out;
       },
     },
 
@@ -954,9 +1295,16 @@
     },
 
     sudo: { run: function () { return [ln(t('sudo'), { cls: 't-amber' })]; } },
+    ssh: { run: function () { return [ln(t('ssh'), { cls: 't-amber' })]; } },
     exit: { run: function () { return [ln(t('exit'), { cls: 't-dim' })]; } },
     clear: { run: function () { return null; } },   // handled in exec()
   };
+
+  /* easter eggs — the muscle-memory commands every admin types anyway */
+  ['vim', 'vi', 'nano', 'emacs'].forEach(function (n) { COMMANDS[n] = saysT('editor'); });
+  ['touch', 'mkdir', 'rm', 'rmdir', 'mv', 'cp', 'chmod', 'chown'].forEach(function (n) { COMMANDS[n] = saysT('rofs', 't-amber'); });
+  ['wget', 'curl'].forEach(function (n) { COMMANDS[n] = saysT('net'); });
+  ['apt', 'apt-get', 'dnf', 'yum'].forEach(function (n) { COMMANDS[n] = saysT('pkg'); });
 
   /* --- live htop meters ------------------------------------------------ */
   function animateMeters(wrap, bars) {
@@ -1029,6 +1377,8 @@
       ln(t('welcomeHi')),
       ln(t('welcomeTry'), { cls: 't-dim' }),
     ]);
+    /* show the lay of the land right away — visitors should not have to ask */
+    emit(COMMANDS.ls.run([]), 'ls');
   }
 
   function bootSequence() {
@@ -1073,14 +1423,6 @@
 
   /* --- parsing ---------------------------------------------------------- */
 
-  /* Strips the conversational lead-in people type on a portfolio ("show me
-     the projects") so it still lands on a real command. */
-  function normalise(raw) {
-    return raw.trim()
-      .replace(/\s+/g, ' ')
-      .replace(/^(please\s+)?(open|show|view|read|go\s+to|goto)\s+(me\s+)?(the\s+)?/i, '');
-  }
-
   function suggest(word) {
     var names = Object.keys(COMMANDS);
     var scored = names.map(function (c) {
@@ -1120,16 +1462,31 @@
   }
 
   function exec(raw) {
-    var line = normalise(raw);
+    var line = raw.trim().replace(/\s+/g, ' ');
     if (!line) return;
 
     var tokens = line.split(' ');
     var name = tokens[0].toLowerCase();
+
+    /* Conversational lead-in ("show me the projects") — stripped only when
+       the first word is not already a command, so `open github` stays on the
+       real `open` instead of losing its verb. */
+    if (!COMMANDS[name] && !ALIAS[name]) {
+      var stripped = line.replace(/^(please\s+)?(open|show|view|read|go\s+to|goto)\s+(me\s+)?(the\s+)?/i, '');
+      if (stripped && stripped !== line) {
+        line = stripped;
+        tokens = line.split(' ');
+        name = tokens[0].toLowerCase();
+      }
+    }
+
     var args = tokens.slice(1);
     var rest = line.slice(tokens[0].length).trim();
 
     /* `dark` / `light` are aliases of `theme` and carry their own argument */
     if ((name === 'dark' || name === 'light') && !args.length) args = [name];
+    /* `ll` is the classic `ls -la` shorthand, not a plain rename */
+    if (name === 'll') { name = 'ls'; args.unshift('-la'); }
     if (ALIAS[name]) name = ALIAS[name];
 
     if (name === 'clear') { clearScreen(); return; }

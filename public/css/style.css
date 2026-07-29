@@ -447,7 +447,9 @@ body.term-expanded { overflow: hidden }
    6. terminal output
    ========================================================================== */
 
-.term-block { margin-bottom: 12px }
+/* generous gap between command blocks — the transcript reads as sections,
+   not as one dense wall of text */
+.term-block { margin-bottom: 22px }
 .term-block:last-child { margin-bottom: 0 }
 
 /* Spacing utilities for terminal output. They exist so app.js never has to set
@@ -470,7 +472,7 @@ body.term-expanded { overflow: hidden }
    foreground, which is near-black on the light theme — invisible on the
    terminal's dark background */
 .term-prompt-line {
-  white-space: pre-wrap; overflow-wrap: anywhere; margin-bottom: 2px;
+  white-space: pre-wrap; overflow-wrap: anywhere; margin-bottom: 6px;
   color: var(--term-fg);
 }
 

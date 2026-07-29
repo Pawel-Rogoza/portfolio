@@ -16,13 +16,16 @@ Komendy:
 
 | grupa | komendy |
 | --- | --- |
-| treść | `whoami` `about` `projects` `harbor` `skills` `htop` `education` `goals` `contact` |
-| pliki | `ls` `cd` `pwd` `tree` `cat` `grep` `find` |
-| powłoka | `help` `man` `history` `echo` `date` `uptime` `clear` |
+| treść | `whoami` `about` `projects` `skills` `htop` `education` `goals` `contact` (+ skróty `harbor` `robust` `advokat` `zabbix` `umami`) |
+| pliki | `ls` (z `-l` / `-a`, `ll` = `ls -la`) `cd` `pwd` `tree` `cat` `head` `tail` `grep` `find` |
+| system | `uname` `hostname` `id` `uptime` `date` `df` `free` `w` `systemctl` |
+| powłoka | `help` `man` `history` `echo` `clear` |
 | reszta | `neofetch` `banner` `open` `theme` `lang` |
 
-Plus aliasy (`top`, `cls`, `dir`, `email`, `motd`, `q`…) i luźne frazy typu
-`show me the projects` — wszystko ląduje na właściwej komendzie.
+Plus aliasy (`top`, `cls`, `dir`, `email`, `motd`, `q`…), luźne frazy typu
+`show me the projects` oraz easter eggi z pamięci mięśniowej admina
+(`sudo`, `ping`, `ssh`, `vim`, `rm`, `wget`, `apt`…) — wszystko ląduje na
+właściwej komendzie albo dostaje sensowną odpowiedź.
 
 Skróty klawiszowe: `Tab` uzupełnia · `↑`/`↓` historia · `Ctrl+L` czyści ·
 `Ctrl+C` przerywa linię · `Ctrl+U`/`Ctrl+K` kasują do początku/końca ·
@@ -30,9 +33,13 @@ Skróty klawiszowe: `Tab` uzupełnia · `↑`/`↓` historia · `Ctrl+L` czyści
 
 **Reszta strony**
 
-- Wirtualny system plików — `ls`, `cd`, `tree`, `cat`, `grep` i `find` działają
-  na jednym drzewie (`TREE` w `app.js`), więc ścieżki i treść nie mogą się
-  rozjechać. Ścieżka w nagłówku terminala jest klikalna i zmienia się przy `cd`.
+- Wirtualny system plików — `ls`, `cd`, `tree`, `cat`, `head`, `tail`, `grep`
+  i `find` działają na jednym drzewie (`TREE` w `app.js`), więc ścieżki i treść
+  nie mogą się rozjechać. Ścieżka w nagłówku terminala jest klikalna i zmienia
+  się przy `cd`. W drzewie: `~/projects` (harbor, robust, advokat-varshava,
+  zabbix, umami), `~/scripts` (redis-check.sh, calve.sh — skrypty z pracy)
+  oraz ukryty `.plan` widoczny dopiero po `ls -a`. Terminal na starcie sam
+  wykonuje `ls`, żeby od razu pokazać strukturę.
 - Motyw **ciemny domyślnie**, niezależnie od ustawień systemu. Przełącznik
   w nawigacji albo komenda `theme dark|light|auto` — `auto` oddaje decyzję
   `prefers-color-scheme`. Wybór zapamiętywany w `localStorage` i stosowany
@@ -184,7 +191,7 @@ Dwa joby, obie bramki muszą być zielone:
 vhost** (policy jest czytana z pliku konfiguracyjnego, więc testy nie mogą się
 z nią rozjechać). Sprawdza m.in.:
 
-- wszystkie ~54 komendy i ścieżki błędów — każda musi coś wypisać, zero
+- wszystkie ~90 komend i ścieżek błędów — każda musi coś wypisać, zero
   wyjątków JS w całym przebiegu,
 - scrollback dopisuje, `clear` czyści, `cd` przestawia prompt, breadcrumb,
   pasek statusu i tytuł okna,
