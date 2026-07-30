@@ -114,7 +114,7 @@
       aboutMain: 'After hours: Harbor (self-hosted VPS), monitoring, analytics — see projects/.',
 
       projectsRows: [
-        ['harbor.md', 'self-hosted VPS · Linux server stack'],
+        ['harbor.md', 'own hosting infrastructure on a VPS (web + mail)'],
         ['robust.md', 'work · Exim log analysis, spam detection'],
         ['advokat-varshava.md', 'law-firm website + mobile CRM app'],
         ['zabbix.md', 'monitoring for my servers'],
@@ -122,16 +122,29 @@
       ],
       projectsHint: "→ 'cat projects/<file>' opens a write-up · work scripts: 'ls ~/scripts'",
 
-      harborLead: 'Self-hosted VPS for practical Linux administration.',
-      harborIntro: 'A small hosting-like environment I run and document:',
-      harborItems: [
-        ['web server', 'monitoring'],
-        ['mail stack', 'backups'],
-        ['databases', 'user isolation'],
-        ['basic automation', 'security hardening'],
+      harborLead: 'My own hosting infrastructure (web + mail), built from scratch on a VPS.',
+      harborGoal: 'Part study, part business: I learn server administration on real services, host a few small web projects on the side, and write every decision down as open knowledge.',
+      harborStackHead: 'stack:',
+      harborStack: [
+        ['os', 'AlmaLinux 10 · Hetzner Cloud (Falkenstein)'],
+        ['web', 'nginx 1.26.3 built from source + Apache backend + PHP-FPM'],
+        ['app', 'Python / FastAPI + Uvicorn over unix sockets (multi-tenant)'],
+        ['db', 'MariaDB + SQLite'],
+        ['cache', 'Redis + nginx FastCGI cache'],
+        ['security', 'firewalld · fail2ban · ModSecurity v3 + OWASP CRS v4'],
+        ['monitoring', 'Netdata → Prometheus + Grafana'],
+        ['backup', 'restic → Hetzner'],
+        ['mail', 'Postfix + Dovecot + Rspamd (planned)'],
+        ['iac', 'Ansible (planned)'],
+      ],
+      harborStagesHead: 'stages:',
+      harborStages: [
+        ['done', 'hardening & setup · web stack · SSL + WordPress · FastAPI isolation · L7 security'],
+        ['wip', 'client separation (PHP / MariaDB)'],
+        ['next', 'monitoring · backups · mail server · Ansible'],
       ],
       harborWhy: 'Why it exists: real services, real failures, real fixes — the parts a tutorial skips.',
-      harborNote: '→ a dedicated write-up lives at projects/harbor.md',
+      harborStatus: 'status: in active development · MIT license (notes and example configs — help yourself)',
 
       robustLead: 'Analyzes Exim logs and flags accounts likely to be sending spam.',
       robustNoBlock: 'It builds a report for manual review — it never blocks accounts or changes server config.',
@@ -308,7 +321,7 @@
       aboutMain: 'Po godzinach: Harbor (własny VPS), monitoring, analityka — zobacz projects/.',
 
       projectsRows: [
-        ['harbor.md', 'własny VPS · linuxowy stack serwerowy'],
+        ['harbor.md', 'własna infrastruktura hostingowa na VPS (www + mail)'],
         ['robust.md', 'praca · analiza logów Exima, wykrywanie spamu'],
         ['advokat-varshava.md', 'strona kancelarii + mobilna aplikacja CRM'],
         ['zabbix.md', 'monitoring moich serwerów'],
@@ -316,16 +329,29 @@
       ],
       projectsHint: "→ 'cat projects/<plik>' otwiera opis · skrypty z pracy: 'ls ~/scripts'",
 
-      harborLead: 'Własny VPS do praktycznej administracji Linuxem.',
-      harborIntro: 'Małe środowisko hostingowe, które utrzymuję i dokumentuję:',
-      harborItems: [
-        ['serwer www', 'monitoring'],
-        ['stack pocztowy', 'kopie zapasowe'],
-        ['bazy danych', 'izolacja użytkowników'],
-        ['podstawowa automatyzacja', 'utwardzanie bezpieczeństwa'],
+      harborLead: 'Własna infrastruktura hostingowa (www + mail), budowana od zera na VPS-ie.',
+      harborGoal: 'Trochę nauka, trochę komercja: uczę się administracji na prawdziwych usługach, przy okazji hostuję kilka małych projektów WWW, a każdą decyzję spisuję jako open knowledge.',
+      harborStackHead: 'stack:',
+      harborStack: [
+        ['os', 'AlmaLinux 10 · Hetzner Cloud (Falkenstein)'],
+        ['web', 'nginx 1.26.3 ze źródeł + Apache jako backend + PHP-FPM'],
+        ['app', 'Python / FastAPI + Uvicorn po socketach unix (multi-tenant)'],
+        ['db', 'MariaDB + SQLite'],
+        ['cache', 'Redis + nginx FastCGI cache'],
+        ['security', 'firewalld · fail2ban · ModSecurity v3 + OWASP CRS v4'],
+        ['monitoring', 'Netdata → Prometheus + Grafana'],
+        ['backup', 'restic → Hetzner'],
+        ['mail', 'Postfix + Dovecot + Rspamd (planowane)'],
+        ['iac', 'Ansible (planowane)'],
+      ],
+      harborStagesHead: 'etapy:',
+      harborStages: [
+        ['gotowe', 'hardening i setup · web stack · SSL + WordPress · izolacja FastAPI · bezpieczeństwo L7'],
+        ['w toku', 'separacja klientów (PHP / MariaDB)'],
+        ['dalej', 'monitoring · backupy · serwer pocztowy · Ansible'],
       ],
       harborWhy: 'Po co: prawdziwe usługi, prawdziwe awarie, prawdziwe naprawy — to, co tutorial pomija.',
-      harborNote: '→ pełny opis znajdziesz w projects/harbor.md',
+      harborStatus: 'status: w aktywnym rozwoju · licencja MIT (notatki i przykładowe configi do wzięcia)',
 
       robustLead: 'Analizuje logi Exima i wskazuje konta z prawdopodobieństwem wysyłki SPAMu.',
       robustNoBlock: 'Tworzy raport do ręcznej weryfikacji — niczego nie blokuje i nie zmienia konfiguracji serwera.',
@@ -593,7 +619,7 @@
       'projects': {
         type: 'dir',
         children: {
-          'harbor.md': { type: 'file', render: 'harbor', size: 1024 },
+          'harbor.md': { type: 'file', render: 'harbor', size: 2048 },
           'robust.md': { type: 'file', render: 'robust', size: 2048 },
           'advokat-varshava.md': { type: 'file', render: 'advokat', size: 1024 },
           'zabbix.md': { type: 'file', render: 'zabbix', size: 420 },
@@ -776,17 +802,17 @@
       ];
     },
     harbor: function () {
-      var out = [
+      return [
         ln('# Harbor', { cls: 't-green t-bold' }),
         ln(t('harborLead'), { mt: 4 }),
-        ln(t('harborIntro'), { mt: 8 }),
+        ln(t('harborGoal'), { cls: 't-dim' }),
+        ln(t('harborStackHead'), { cls: 't-blue t-bold', mt: 8 }),
+        grid(t('harborStack'), { mt: 2, keyCls: 't-green' }),
+        ln(t('harborStagesHead'), { cls: 't-blue t-bold', mt: 8 }),
+        grid(t('harborStages'), { mt: 2, keyCls: 't-amber' }),
+        ln(t('harborWhy'), { cls: 't-dim', mt: 8 }),
+        ln(t('harborStatus'), { cls: 't-amber', mt: 8 }),
       ];
-      t('harborItems').forEach(function (pair, i) {
-        out.push(grid([['• ' + pair[0], '• ' + pair[1]]], { cls: 'term-grid-even', mt: i === 0 ? 4 : 0, keyCls: 't-dim', valCls: 't-dim' }));
-      });
-      out.push(ln(t('harborWhy'), { cls: 't-dim', mt: 8 }));
-      out.push(ln(t('harborNote'), { cls: 't-green', mt: 8 }));
-      return out;
     },
     robust: function () {
       var out = [
