@@ -37,9 +37,9 @@ Skróty klawiszowe: `Tab` uzupełnia · `↑`/`↓` historia · `Ctrl+L` czyści
   i `find` działają na jednym drzewie (`TREE` w `app.js`), więc ścieżki i treść
   nie mogą się rozjechać. Ścieżka w nagłówku terminala jest klikalna i zmienia
   się przy `cd`. W drzewie: `~/projects` (harbor, robust, advokat-varshava,
-  zabbix, umami), `~/scripts` (redis-check.sh, calve.sh — skrypty z pracy)
-  oraz ukryty `.plan` widoczny dopiero po `ls -a`. Terminal na starcie sam
-  wykonuje `ls`, żeby od razu pokazać strukturę.
+  zabbix, umami) oraz `~/scripts` (redis-check.sh, calve.sh, casearch.sh —
+  skrypty z pracy). Terminal na starcie sam wykonuje `ls`, żeby od razu
+  pokazać strukturę.
 - Motyw **ciemny domyślnie**, niezależnie od ustawień systemu. Przełącznik
   w nawigacji albo komenda `theme dark|light|auto` — `auto` oddaje decyzję
   `prefers-color-scheme`. Wybór zapamiętywany w `localStorage` i stosowany

@@ -304,10 +304,13 @@ a { color: var(--accent); text-underline-offset: 2px }
   border-bottom: 1px solid var(--term-rule); flex-shrink: 0;
 }
 .term-header-left { display: flex; align-items: center; gap: 8px; min-width: 0 }
-.dot { width: 12px; height: 12px; border-radius: 50% }
-.dot-red { background: oklch(0.65 0.16 25) }
-.dot-amber { background: oklch(0.78 0.13 80) }
-.dot-green { background: oklch(0.72 0.14 150) }
+/* Linux console badge — a `>_` prompt glyph instead of macOS traffic lights */
+.term-icon {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  color: var(--term-green); line-height: 1;
+  border: 1px solid oklch(0.36 0.014 258); border-radius: 5px;
+  padding: 3px 5px; flex-shrink: 0;
+}
 .term-title {
   margin-left: 6px; font-family: var(--font-mono);
   font-size: 12.5px; color: var(--term-dim);

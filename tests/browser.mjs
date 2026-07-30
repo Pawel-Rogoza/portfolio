@@ -51,7 +51,7 @@ const COMMANDS = [
   'contact', 'ls', 'pwd', 'tree', 'cat about.md', 'cat projects/harbor.md',
   'cat projects/robust.md', 'cat projects/advokat-varshava.md',
   'cat projects/zabbix.md', 'cat projects/umami.md',
-  'cat scripts/redis-check.sh', 'cat scripts/calve.sh', 'cat .plan',
+  'cat scripts/redis-check.sh', 'cat scripts/calve.sh', 'cat scripts/casearch.sh',
   'grep linux', 'grep harbor ~/projects', 'find harbor', 'help', 'man cat', 'man top',
   'history', 'echo hello', 'date', 'uptime', 'neofetch', 'banner', 'open github',
   'sudo rm -rf /', 'exit',
@@ -71,7 +71,7 @@ const COMMANDS = [
 
 /* Strings that are legitimately the same in both languages. Anything else that
    does not change when the language flips means a missing PL translation. */
-const SAME_IN_BOTH = new Set(['metaNextValue']);
+const SAME_IN_BOTH = new Set([]);
 
 await new Promise(r => server.listen(PORT, '127.0.0.1', r));
 
@@ -209,21 +209,21 @@ await check('tab lists candidates on an ambiguous prefix', async () => {
   }
 });
 
-await check('ls understands -l and -a (long listing + dotfiles)', async () => {
+await check('ls understands -l and -a (long listing + dot entries)', async () => {
   await run(page, 'ls -la');
   const long = await page.$eval('#term-output', el => el.lastElementChild.textContent);
   assert(long.includes('total'), 'no total line in the long listing');
   assert(long.includes('drwxr-xr-x'), 'no directory permission bits');
-  assert(long.includes('.plan'), '-a did not reveal the hidden .plan');
+  assert(long.includes('..'), '-a did not add the . / .. entries');
   assert(long.includes('projects/'), 'listing is missing projects/');
   assert(long.includes('scripts/'), 'listing is missing scripts/');
   await run(page, 'ls');
   const plain = await page.$eval('#term-output', el => el.lastElementChild.textContent);
-  assert(!plain.includes('.plan'), 'plain ls must hide dotfiles');
+  assert(!plain.includes('..'), 'plain ls must not show the dot entries');
   assert(!plain.includes('drwx'), 'plain ls must not switch to long format');
   await run(page, 'll');
   const ll = await page.$eval('#term-output', el => el.lastElementChild.textContent);
-  assert(ll.includes('drwxr-xr-x') && ll.includes('.plan'), 'll is not ls -la');
+  assert(ll.includes('drwxr-xr-x') && ll.includes('..'), 'll is not ls -la');
 });
 
 await check("'open github' reaches the open command, not the lead-in stripper", async () => {
@@ -351,7 +351,7 @@ await check('the whole terminal translates to Polish', async () => {
 
   await run(page, 'skills');
   const skills = await page.$eval('#term-output', el => el.textContent);
-  assert(/Bezpiecze/.test(skills), 'skills output is still English');
+  assert(/Skrypty/.test(skills), 'skills output is still English');
   await run(page, 'lang en');
   return `${Object.keys(before).length} page strings + terminal body`;
 });
