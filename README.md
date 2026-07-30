@@ -130,10 +130,14 @@ python3 -m http.server 8080
 > na HTTPS, a cała treść ląduje w nowym bloku `:443` z liniami `ssl_certificate`.
 >
 > Dlatego **aktualizacja vhosta nie jest zwykłym `cp` z repo** — nadpisanie
-> skasowałoby konfigurację TLS i zdjęło stronę z HTTPS. Zmiany przenoś ręcznie
-> do bloku `:443` w zainstalowanym pliku, albo skopiuj plik i uruchom certbota
-> ponownie. Zawsze `sudo nginx -t` przed `reload` i nie zamykaj bieżącej sesji
-> SSH, dopóki nie potwierdzisz, że nowa działa.
+> "czystą" wersją `:80` skasowałoby konfigurację TLS i zdjęło stronę z HTTPS.
+> Docelowy kształt zainstalowanego pliku (z blokiem `:443`, HSTS i `expires -1`
+> dla `.css`/`.js`) leży w repo jako
+> `deploy/nginx/portfolio.pawelrogoza.pl-ssl.conf` — sprawdź w nim ścieżki
+> certyfikatów i jego użyj do aktualizacji. Zawsze `sudo nginx -t` przed
+> `reload` i nie zamykaj bieżącej sesji SSH, dopóki nie potwierdzisz, że nowa
+> konfiguracja działa. Gdy wersja z `expires -1` jest już na serwerze,
+> podbijanie `?v=` w `index.html` przestaje być potrzebne.
 
 ### Cache a deploy
 
