@@ -46,10 +46,11 @@ function assert(cond, msg) { if (!cond) throw new Error(msg); }
 
 /* Every command, plus the paths that used to be handled by string matching. */
 const COMMANDS = [
-  'whoami', 'about', 'projects', 'harbor', 'robust', 'advokat', 'zabbix', 'umami',
-  'skills', 'htop', 'education', 'goals',
+  'whoami', 'about', 'projects', 'harbor', 'robust', 'advokat', 'nocleg', 'zabbix', 'umami',
+  'skills', 'htop', 'education', 'books', 'goals',
   'contact', 'ls', 'pwd', 'tree', 'cat about.md', 'cat projects/harbor.md',
   'cat projects/robust.md', 'cat projects/advokat-varshava.md',
+  'cat projects/noclegwsopocie.md', 'cat books.txt',
   'cat projects/zabbix.md', 'cat projects/umami.md',
   'cat scripts/redis-check.sh', 'cat scripts/calve.sh', 'cat scripts/casearch.sh',
   'grep linux', 'grep harbor ~/projects', 'find harbor', 'help', 'man cat', 'man top',
@@ -449,6 +450,43 @@ await check('dark is the default even when the system prefers light', async () =
 
   await fresh.context().close();
   return `default ${dark.toFixed(0)} → auto/light ${auto.toFixed(0)}`;
+});
+
+await check('long output parks the prompt line at the top of the viewport', async () => {
+  /* a small window guarantees harbor.md overflows on desktop and mobile alike */
+  const small = await open({ viewport: { width: 800, height: 640 } });
+  await run(small, 'cat projects/harbor.md');
+  const state = await small.evaluate(() => {
+    const out = document.getElementById('term-output');
+    const block = out.lastElementChild;
+    return {
+      tall: block.offsetHeight > out.clientHeight,
+      delta: Math.abs(block.getBoundingClientRect().top - out.getBoundingClientRect().top),
+      atBottom: out.scrollTop + out.clientHeight >= out.scrollHeight - 4,
+    };
+  });
+  assert(state.tall, 'harbor.md did not overflow the test viewport');
+  assert(state.delta <= 2, `prompt line sits ${state.delta.toFixed(1)}px below the viewport top`);
+  assert(!state.atBottom, 'long output still auto-scrolled to the bottom');
+
+  /* typing again returns to the input line at the bottom */
+  await small.type('#term-input', 'x');
+  const back = await small.evaluate(() => {
+    const out = document.getElementById('term-output');
+    return out.scrollTop + out.clientHeight >= out.scrollHeight - 4;
+  });
+  assert(back, 'keydown did not scroll back to the input line');
+  await small.fill('#term-input', '');
+
+  /* short output keeps the classic stick-to-bottom behaviour */
+  await run(small, 'pwd');
+  const short = await small.evaluate(() => {
+    const out = document.getElementById('term-output');
+    return out.scrollTop + out.clientHeight >= out.scrollHeight - 4;
+  });
+  assert(short, 'short output no longer sticks to the bottom');
+  await small.context().close();
+  return 'prompt on top for tall blocks, bottom otherwise';
 });
 
 await check('the page survives its own Content-Security-Policy', async () => {

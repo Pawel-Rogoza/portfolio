@@ -82,12 +82,12 @@
       title: 'Paweł Rogoża — wsparcie techniczne hostingu → SysOps',
       skipLink: 'Przejdź do terminala',
       heroH1: 'Cześć, jestem Paweł Rogoża.',
-      heroSub: 'Pracuję we wsparciu technicznym cyberfolks.pl (hosting) i rozwijam się w stronę SysOps / administracji Linuxem. Po godzinach utrzymuję Harbor — własny VPS — a do tego monitoring, analitykę i małe narzędzia, które dbają o zdrowie serwerów.',
+      heroSub: 'Pracuję we wsparciu technicznym cyberfolks.pl (hosting) i rozwijam się w stronę SysOps / administracji Linuksem. Po godzinach utrzymuję Harbor — własny VPS — a do tego monitoring, analitykę i małe narzędzia, które dbają o zdrowie serwerów.',
       navAbout: 'O mnie', navProjects: 'Projekty', navSkills: 'Umiejętności', navContact: 'Kontakt',
       ctaProjects: 'Zobacz projekty', ctaContact: 'Kontakt',
       metaRoleLabel: 'Rola', metaRoleValue: 'Wsparcie techniczne (hosting)',
       metaFocusLabel: 'Skupienie', metaFocusValue: 'Hosting · projekty po godzinach',
-      metaNextLabel: 'Kierunek', metaNextValue: 'SysOps / administracja Linuxem',
+      metaNextLabel: 'Kierunek', metaNextValue: 'SysOps / administracja Linuksem',
       metaBasedLabel: 'Miejsce', metaBasedValue: 'Gdańsk, Polska',
       expand: 'pełny ekran', minimize: 'zmniejsz',
       inputLabel: 'Komenda terminala',
@@ -105,18 +105,19 @@
       welcomeHi: 'Hi — type a command, hit Tab, or click a chip.',
       welcomeTry: 'Try: ls -la · projects · skills · htop · help',
 
-      whoami: 'pawel — tech support at a hosting provider, growing toward SysOps / Linux administration.',
+      whoami: 'pawel — tech support at cyber_Folks (since 03.2024), cyber_Admin Ambassador in the CST team (since 10.2025). Growing toward SysOps / Linux administration.',
 
-      aboutRole: 'Tech support at cyberfolks.pl (hosting, CST team).',
+      aboutRole: 'Tech support at cyber_Folks (since 03.2024) · cyber_Admin Ambassador in the CST team (since 10.2025).',
       aboutHeading: 'Growing toward SysOps / Linux administration.',
-      aboutWork: 'Day to day: DirectAdmin, Exim mail stack, CloudLinux LVE — and the tickets that need a shell.',
-      aboutEdu: 'BSc Informatics & Econometrics — University of Gdańsk (2019–2022).',
-      aboutMain: 'After hours: Harbor (self-hosted VPS), monitoring, analytics — see projects/.',
+      aboutWork: 'Day to day: diagnosing DNS, mail (Exim, SPF/DKIM/DMARC), web and security issues; working with root privileges on DirectAdmin servers (backup restores via rsync, systemd). I also run internal cyber_Admin trainings.',
+      aboutEdu: 'From 10.2026: postgraduate studies in cybersecurity (Polish Naval Academy in Gdynia).',
+      aboutMain: 'After hours: Harbor (self-hosted VPS) and the projects running on it — see projects/.',
 
       projectsRows: [
         ['harbor.md', 'own hosting infrastructure on a VPS (web + mail)'],
-        ['robust.md', 'work · Exim log analysis, spam detection'],
-        ['advokat-varshava.md', 'law-firm website + mobile CRM app'],
+        ['robust.md', 'work · Exim log analysis, spam detection (cyber_Folks)'],
+        ['advokat-varshava.md', 'law-firm web app + PWA, hosted on Harbor'],
+        ['noclegwsopocie.md', 'Python/FastAPI website, hosted on Harbor'],
         ['zabbix.md', 'monitoring for my servers'],
         ['umami.md', 'self-hosted web analytics'],
       ],
@@ -132,22 +133,23 @@
         ['db', 'MariaDB + SQLite'],
         ['cache', 'Redis + nginx FastCGI cache'],
         ['security', 'firewalld · fail2ban · ModSecurity v3 + OWASP CRS v4'],
-        ['monitoring', 'Netdata → Prometheus + Grafana'],
+        ['monitoring', 'Zabbix · Netdata'],
+        ['analytics', 'Umami'],
         ['backup', 'restic → Hetzner'],
         ['mail', 'Postfix + Dovecot + Rspamd (planned)'],
         ['iac', 'Ansible (planned)'],
       ],
       harborStagesHead: 'stages:',
       harborStages: [
-        ['done', 'hardening & setup · web stack · SSL + WordPress · FastAPI isolation · L7 security'],
+        ['done', 'hardening & setup · web stack · SSL + WordPress · FastAPI isolation · L7 security · monitoring'],
         ['wip', 'client separation (PHP / MariaDB)'],
-        ['next', 'monitoring · backups · mail server · Ansible'],
+        ['next', 'backups · mail server · Ansible'],
       ],
       harborWhy: 'Why it exists: real services, real failures, real fixes — the parts a tutorial skips.',
       harborStatus: 'status: in active development · MIT license (notes and example configs — help yourself)',
 
-      robustLead: 'Analyzes Exim logs and flags accounts likely to be sending spam.',
-      robustNoBlock: 'It builds a report for manual review — it never blocks accounts or changes server config.',
+      robustLead: 'Analyzes Exim logs and points at accounts that are likely sending spam.',
+      robustNoBlock: 'It builds a report for manual review — it never blocks anything or changes server config.',
       robustPipe: 'pipeline: fetch logs (SSH) → parse Exim → JSONL → aggregate by queue_id → SMTP & PHP scoring → verdicts → Top N report',
       robustSignals: 'signals: volume & rate spikes · recipient patterns · spam-like subjects · reputation blocks & bounces · IP-prefix spread (/24, /64) · GeoIP',
       robustReport: 'report: HIGH / MID / LOW priorities, evidence-first cards, text + JSON output',
@@ -161,17 +163,17 @@
         '   EVIDENCE: 410/11912 blocked as spam (3%)',
         '   PATTERN: 11912 sends · 3680 IP prefixes · generated list · slow-drip',
       ],
-      robustStatus: 'status: work project (cyberfolks.pl) · heading toward a continuous central service',
+      robustStatus: 'status: written for my team at cyber_Folks · now developed together with the Development Department',
 
-      advokatLead: 'Law-firm website + a mobile CRM app.',
-      advokatBody: 'Public website at advokat-varshava.pl and a companion mobile CRM application used to run the practice.',
-      advokatCrmHead: 'the CRM app:',
+      advokatLead: 'Web application + PWA for a law firm.',
+      advokatBody: 'Leads, documents, clients and finances in one place — around 50–60 users a day. Hosted on Harbor.',
+      advokatCrmHead: 'the app:',
       advokatCrm: [
         'collects leads from the site in real time',
         'built-in document editing',
-        'appointments, tasks, a shared workspace',
-        'case archiving',
-        'planned: LLM tools for real-time data analysis',
+        'client and case records',
+        'finance module',
+        'installs on the phone as a PWA',
       ],
 
       zabbixLead: 'Monitoring for my servers.',
@@ -180,7 +182,10 @@
       umamiLead: 'Self-hosted, privacy-friendly web analytics.',
       umamiBody: 'Traffic stats for my sites without handing visitor data to third parties.',
 
-      redisLead: 'redis-check.sh — support script from work (CST).',
+      noclegLead: 'noclegwsopocie.pl — a website built with Python / FastAPI.',
+      noclegBody: 'Runs on Harbor, my self-hosted VPS.',
+
+      redisLead: 'redis-check.sh — Redis diagnostics helper, used by the CST team.',
       redisSteps: [
         'checks that the user exists on the server',
         "verifies the user's Redis processes are alive",
@@ -188,7 +193,7 @@
       ],
       redisUsage: 'usage: redis-check.sh <directadmin-user>',
 
-      calveLead: 'calve.sh — CloudLinux LVE resource check (work).',
+      calveLead: 'calve.sh — CloudLinux limit usage analysis, used by the CST team.',
       calveBody: "Snapshots a user's LVE usage on a www-cl-X server — CPU, RAM, processes (EP) and IOPS — through the day, at a chosen interval.",
       calveWhen: 'use case: a client reports a slow site → see if and when the limits saturate, then read the logs from that window.',
       calveUsage: 'usage: calve <www-server> <user> [date] [interval-min]',
@@ -205,11 +210,14 @@
       exampleHead: 'example:',
 
       skillsRows: [
-        ['Linux', 'shell · users & permissions · systemd · networking'],
-        ['Hosting', 'DirectAdmin · CloudLinux LVE · Exim mail stack · DNS'],
-        ['Tools', 'nginx · Redis · Zabbix · Umami'],
-        ['Scripting', 'Bash · Python — log parsing, reports, automation'],
-        ['Now', 'tech support at cyberfolks.pl (CST)'],
+        ['Linux', 'AlmaLinux · CloudLinux · bash · systemd · rsync'],
+        ['Web', 'nginx · Apache · PHP-FPM'],
+        ['Data', 'MariaDB/MySQL · Redis'],
+        ['Mail & DNS', 'Exim · DNS · SPF/DKIM/DMARC'],
+        ['Security', 'firewalld · fail2ban · ModSecurity + OWASP CRS'],
+        ['Ops', 'Zabbix · restic'],
+        ['Scripting', 'Python (FastAPI) · bash · Git'],
+        ['Panels', 'DirectAdmin · cyber_Admin'],
         ['Next', 'SysOps / Linux administration'],
       ],
       skillsHint: "→ try 'htop' for the same thing as processes.",
@@ -228,9 +236,18 @@
 
       eduDegree: 'Bachelor of Science',
       eduField: 'Informatics & Econometrics',
+      eduSpec: 'specialization: IT Applications in Business',
       eduSchool: 'University of Gdańsk · 2019–2022',
+      eduNext: 'From 10.2026: postgraduate studies — Cybersecurity',
+      eduNextSchool: 'Polish Naval Academy in Gdynia',
 
-      goalsNow: 'now    →  tech support (hosting, cyberfolks.pl)',
+      booksRows: [
+        ['read', '“How Linux Works” — Brian Ward'],
+        ['reading', '“UNIX and Linux System Administration Handbook” — Nemeth et al.'],
+        ['up next', '“Systems Performance: Enterprise and the Cloud” — Brendan Gregg'],
+      ],
+
+      goalsNow: 'now    →  tech support (hosting, cyber_Folks)',
       goalsNext: 'next   →  SysOps / Linux administration',
       goalsLater: 'later  →  automation, monitoring, infrastructure at scale',
       goalsNote: 'Honest, incremental, hands-on.',
@@ -297,8 +314,8 @@
       neoRows: [
         ['host', 'portfolio.pawelrogoza.pl'],
         ['shell', 'portfolio-shell 1.1'],
-        ['role', 'tech support @ cyberfolks.pl (CST)'],
-        ['projects', 'harbor · robust · advokat-varshava · zabbix · umami'],
+        ['role', 'tech support @ cyber_Folks (CST) · cyber_Admin Ambassador'],
+        ['projects', 'harbor · robust · advokat-varshava · noclegwsopocie · zabbix · umami'],
         ['scripts', 'redis-check · calve · casearch'],
         ['next', 'SysOps / Linux administration'],
       ],
@@ -312,18 +329,19 @@
       welcomeHi: 'Cześć — wpisz komendę, użyj Tab albo kliknij chip.',
       welcomeTry: 'Spróbuj: ls -la · projects · skills · htop · help',
 
-      whoami: 'pawel — wsparcie techniczne w hostingu, rozwijam się w stronę SysOps / administracji Linuxem.',
+      whoami: 'pawel — wsparcie techniczne w cyber_Folks (od 03.2024), Ambasador cyber_Admin w CST (od 10.2025). Rozwijam się w stronę SysOps / administracji Linuksem.',
 
-      aboutRole: 'Wsparcie techniczne w cyberfolks.pl (hosting, zespół CST).',
-      aboutHeading: 'Kierunek: SysOps / administracja Linuxem.',
-      aboutWork: 'Na co dzień: DirectAdmin, stack pocztowy Exim, CloudLinux LVE — i zgłoszenia, które wymagają shella.',
-      aboutEdu: 'Licencjat: Informatyka i Ekonometria — Uniwersytet Gdański (2019–2022).',
-      aboutMain: 'Po godzinach: Harbor (własny VPS), monitoring, analityka — zobacz projects/.',
+      aboutRole: 'Wsparcie techniczne w cyber_Folks (od 03.2024) · Ambasador cyber_Admin w CST (od 10.2025).',
+      aboutHeading: 'Rozwijam się w stronę SysOps / administracji Linuksem.',
+      aboutWork: 'Na co dzień: diagnostyka DNS, poczty (Exim, SPF/DKIM/DMARC), WWW i bezpieczeństwa; praca na uprawnieniach root na serwerach DirectAdmin (przywracanie kopii przez rsync, systemd). Prowadzę wewnętrzne szkolenia z cyber_Admin.',
+      aboutEdu: 'Od 10.2026: studia podyplomowe z cyberbezpieczeństwa (Akademia Marynarki Wojennej w Gdyni).',
+      aboutMain: 'Po godzinach: Harbor (własny VPS) i projekty, które na nim działają — zobacz projects/.',
 
       projectsRows: [
         ['harbor.md', 'własna infrastruktura hostingowa na VPS (www + mail)'],
-        ['robust.md', 'praca · analiza logów Exima, wykrywanie spamu'],
-        ['advokat-varshava.md', 'strona kancelarii + mobilna aplikacja CRM'],
+        ['robust.md', 'praca · analiza logów Exima, wykrywanie spamu (cyber_Folks)'],
+        ['advokat-varshava.md', 'aplikacja webowa + PWA dla kancelarii, na Harborze'],
+        ['noclegwsopocie.md', 'strona w Pythonie/FastAPI, na Harborze'],
         ['zabbix.md', 'monitoring moich serwerów'],
         ['umami.md', 'własna analityka www'],
       ],
@@ -339,21 +357,22 @@
         ['db', 'MariaDB + SQLite'],
         ['cache', 'Redis + nginx FastCGI cache'],
         ['security', 'firewalld · fail2ban · ModSecurity v3 + OWASP CRS v4'],
-        ['monitoring', 'Netdata → Prometheus + Grafana'],
+        ['monitoring', 'Zabbix · Netdata'],
+        ['analytics', 'Umami'],
         ['backup', 'restic → Hetzner'],
         ['mail', 'Postfix + Dovecot + Rspamd (planowane)'],
         ['iac', 'Ansible (planowane)'],
       ],
       harborStagesHead: 'etapy:',
       harborStages: [
-        ['gotowe', 'hardening i setup · web stack · SSL + WordPress · izolacja FastAPI · bezpieczeństwo L7'],
+        ['gotowe', 'hardening i setup · web stack · SSL + WordPress · izolacja FastAPI · bezpieczeństwo L7 · monitoring'],
         ['w toku', 'separacja klientów (PHP / MariaDB)'],
-        ['dalej', 'monitoring · backupy · serwer pocztowy · Ansible'],
+        ['dalej', 'backupy · serwer pocztowy · Ansible'],
       ],
       harborWhy: 'Po co: prawdziwe usługi, prawdziwe awarie, prawdziwe naprawy — to, co tutorial pomija.',
       harborStatus: 'status: w aktywnym rozwoju · licencja MIT (notatki i przykładowe configi do wzięcia)',
 
-      robustLead: 'Analizuje logi Exima i wskazuje konta z prawdopodobieństwem wysyłki SPAMu.',
+      robustLead: 'Analizuje logi Exima i wskazuje konta z prawdopodobną wysyłką spamu.',
       robustNoBlock: 'Tworzy raport do ręcznej weryfikacji — niczego nie blokuje i nie zmienia konfiguracji serwera.',
       robustPipe: 'pipeline: pobranie logów (SSH) → parser Exim → JSONL → agregacja po queue_id → scoring SMTP i PHP → werdykty → raport Top N',
       robustSignals: 'sygnały: wolumen i piki tempa · wzorce odbiorców · spamerskie tematy · blokady reputacyjne i bounce · rozrzut prefiksów IP (/24, /64) · GeoIP',
@@ -368,17 +387,17 @@
         '   DOWÓD: 410/11912 blokad jako spam (3%)',
         '   WZORZEC: 11912 wysyłek · 3680 prefiksów IP · generowana lista · slow-drip',
       ],
-      robustStatus: 'status: projekt z pracy (cyberfolks.pl) · kierunek: ciągła usługa centralna',
+      robustStatus: 'status: napisany dla mojego zespołu w cyber_Folks · rozwijany wspólnie z Działem Rozwoju',
 
-      advokatLead: 'Strona kancelarii + mobilna aplikacja CRM.',
-      advokatBody: 'Publiczna strona advokat-varshava.pl oraz towarzysząca jej mobilna aplikacja CRM do obsługi kancelarii.',
-      advokatCrmHead: 'aplikacja CRM:',
+      advokatLead: 'Aplikacja webowa + PWA dla kancelarii adwokackiej.',
+      advokatBody: 'Leady, dokumenty, klienci i finanse w jednym miejscu — ok. 50–60 użytkowników dziennie. Hostowana na Harborze.',
+      advokatCrmHead: 'aplikacja:',
       advokatCrm: [
         'zbiera leady ze strony na bieżąco',
         'wbudowana edycja dokumentów',
-        'terminy, zadania, wspólny obszar roboczy',
-        'archiwizacja spraw',
-        'w planach: narzędzia LLM do analizy danych w czasie rzeczywistym',
+        'kartoteka klientów i spraw',
+        'moduł finansów',
+        'instaluje się na telefonie jako PWA',
       ],
 
       zabbixLead: 'Monitoring moich serwerów.',
@@ -387,7 +406,10 @@
       umamiLead: 'Samodzielnie hostowana analityka www, przyjazna prywatności.',
       umamiBody: 'Statystyki ruchu moich stron bez oddawania danych odwiedzających firmom trzecim.',
 
-      redisLead: 'redis-check.sh — skrypt supportowy z pracy (CST).',
+      noclegLead: 'noclegwsopocie.pl — strona napisana w Pythonie / FastAPI.',
+      noclegBody: 'Działa na Harborze — moim własnym VPS-ie.',
+
+      redisLead: 'redis-check.sh — pomocnik diagnostyki Redisa, używany przez zespół CST.',
       redisSteps: [
         'sprawdza, czy użytkownik istnieje na serwerze',
         'weryfikuje, czy procesy Redis użytkownika żyją',
@@ -395,7 +417,7 @@
       ],
       redisUsage: 'użycie: redis-check.sh <użytkownik-directadmin>',
 
-      calveLead: 'calve.sh — sprawdzanie zasobów CloudLinux LVE (praca).',
+      calveLead: 'calve.sh — analiza wykorzystania limitów CloudLinux, używany przez zespół CST.',
       calveBody: 'Snapshoty zużycia LVE użytkownika na serwerze www-cl-X — CPU, RAM, procesy (EP) i IOPS — w ciągu dnia, w zadanym interwale.',
       calveWhen: 'zastosowanie: klient zgłasza wolną stronę → widać, czy i kiedy limity się wysycają, a potem czyta się logi z tego okna.',
       calveUsage: 'użycie: calve <serwer-www> <user> [data] [interwał-min]',
@@ -412,12 +434,15 @@
       exampleHead: 'przykład:',
 
       skillsRows: [
-        ['Linux', 'shell · użytkownicy i uprawnienia · systemd · sieci'],
-        ['Hosting', 'DirectAdmin · CloudLinux LVE · stack pocztowy Exim · DNS'],
-        ['Narzędzia', 'nginx · Redis · Zabbix · Umami'],
-        ['Skrypty', 'Bash · Python — parsowanie logów, raporty, automatyzacja'],
-        ['Teraz', 'wsparcie techniczne w cyberfolks.pl (CST)'],
-        ['Dalej', 'SysOps / administracja Linuxem'],
+        ['Linux', 'AlmaLinux · CloudLinux · bash · systemd · rsync'],
+        ['WWW', 'nginx · Apache · PHP-FPM'],
+        ['Dane', 'MariaDB/MySQL · Redis'],
+        ['Poczta i DNS', 'Exim · DNS · SPF/DKIM/DMARC'],
+        ['Security', 'firewalld · fail2ban · ModSecurity + OWASP CRS'],
+        ['Ops', 'Zabbix · restic'],
+        ['Skrypty', 'Python (FastAPI) · bash · Git'],
+        ['Panele', 'DirectAdmin · cyber_Admin'],
+        ['Dalej', 'SysOps / administracja Linuksem'],
       ],
       skillsHint: "→ wpisz 'htop', żeby zobaczyć to samo jako procesy.",
 
@@ -435,10 +460,19 @@
 
       eduDegree: 'Licencjat',
       eduField: 'Informatyka i Ekonometria',
+      eduSpec: 'specjalność: Aplikacje Informatyczne w Biznesie',
       eduSchool: 'Uniwersytet Gdański · 2019–2022',
+      eduNext: 'Od 10.2026: studia podyplomowe — Cyberbezpieczeństwo',
+      eduNextSchool: 'Akademia Marynarki Wojennej w Gdyni',
 
-      goalsNow: 'teraz  →  wsparcie techniczne (hosting, cyberfolks.pl)',
-      goalsNext: 'dalej  →  SysOps / administracja Linuxem',
+      booksRows: [
+        ['przeczytane', '„Jak działa Linux” — Brian Ward'],
+        ['w trakcie', '„Unix i Linux. Przewodnik administratora systemów” — Nemeth i in.'],
+        ['w planach', '„Systems Performance: Enterprise and the Cloud” — Brendan Gregg'],
+      ],
+
+      goalsNow: 'teraz  →  wsparcie techniczne (hosting, cyber_Folks)',
+      goalsNext: 'dalej  →  SysOps / administracja Linuksem',
       goalsLater: 'potem  →  automatyzacja, monitoring, infrastruktura na większą skalę',
       goalsNote: 'Uczciwie, krok po kroku, w praktyce.',
 
@@ -504,10 +538,10 @@
       neoRows: [
         ['host', 'portfolio.pawelrogoza.pl'],
         ['powłoka', 'portfolio-shell 1.1'],
-        ['rola', 'wsparcie techniczne @ cyberfolks.pl (CST)'],
-        ['projekty', 'harbor · robust · advokat-varshava · zabbix · umami'],
+        ['rola', 'wsparcie techniczne @ cyber_Folks (CST) · Ambasador cyber_Admin'],
+        ['projekty', 'harbor · robust · advokat-varshava · noclegwsopocie · zabbix · umami'],
         ['skrypty', 'redis-check · calve · casearch'],
-        ['dalej', 'SysOps / administracja Linuxem'],
+        ['dalej', 'SysOps / administracja Linuksem'],
       ],
       neoTheme: 'motyw',
       neoLang: 'język',
@@ -519,10 +553,10 @@
   var DESC = {
     en: {
       whoami: 'short intro', about: 'about me', projects: 'list projects',
-      harbor: 'open Harbor', robust: 'spam detection (work)', advokat: 'law-firm site + CRM',
-      zabbix: 'monitoring project', umami: 'web analytics project',
+      harbor: 'open Harbor', robust: 'spam detection (work)', advokat: 'law-firm app + PWA',
+      nocleg: 'FastAPI website', zabbix: 'monitoring project', umami: 'web analytics project',
       skills: 'tech skill map', htop: 'skills as processes',
-      education: 'background', goals: 'career direction', contact: 'links & email',
+      education: 'background', books: 'reading list', goals: 'career direction', contact: 'links & email',
       ls: 'list files (-l, -a)', cd: 'change directory', pwd: 'print working directory',
       tree: 'show the file tree', cat: 'print a file',
       head: 'first lines of a file', tail: 'last lines of a file',
@@ -537,10 +571,10 @@
     },
     pl: {
       whoami: 'krótkie intro', about: 'o mnie', projects: 'lista projektów',
-      harbor: 'otwórz Harbor', robust: 'wykrywanie spamu (praca)', advokat: 'strona kancelarii + CRM',
-      zabbix: 'projekt: monitoring', umami: 'projekt: analityka www',
+      harbor: 'otwórz Harbor', robust: 'wykrywanie spamu (praca)', advokat: 'aplikacja kancelarii + PWA',
+      nocleg: 'strona w FastAPI', zabbix: 'projekt: monitoring', umami: 'projekt: analityka www',
       skills: 'mapa umiejętności', htop: 'umiejętności jako procesy',
-      education: 'wykształcenie', goals: 'kierunek rozwoju', contact: 'linki i e-mail',
+      education: 'wykształcenie', books: 'lista lektur', goals: 'kierunek rozwoju', contact: 'linki i e-mail',
       ls: 'lista plików (-l, -a)', cd: 'zmień katalog', pwd: 'pokaż bieżący katalog',
       tree: 'drzewo plików', cat: 'wypisz plik',
       head: 'pierwsze linie pliku', tail: 'ostatnie linie pliku',
@@ -614,6 +648,7 @@
       'about.md': { type: 'file', render: 'about', size: 512 },
       'skills.txt': { type: 'file', render: 'skills', size: 486 },
       'education.txt': { type: 'file', render: 'education', size: 208 },
+      'books.txt': { type: 'file', render: 'books', size: 264 },
       'goals.txt': { type: 'file', render: 'goals', size: 214 },
       'contact.txt': { type: 'file', render: 'contact', size: 342 },
       'projects': {
@@ -622,6 +657,7 @@
           'harbor.md': { type: 'file', render: 'harbor', size: 2048 },
           'robust.md': { type: 'file', render: 'robust', size: 2048 },
           'advokat-varshava.md': { type: 'file', render: 'advokat', size: 1024 },
+          'noclegwsopocie.md': { type: 'file', render: 'nocleg', size: 384 },
           'zabbix.md': { type: 'file', render: 'zabbix', size: 420 },
           'umami.md': { type: 'file', render: 'umami', size: 386 },
         },
@@ -764,6 +800,7 @@
     'motd': 'banner', 'logo': 'banner', 'fetch': 'neofetch', 'who': 'w',
     'language': 'lang', 'colour': 'theme', 'color': 'theme', 'dark': 'theme', 'light': 'theme',
     'quit': 'exit', 'logout': 'exit', 'q': 'exit', 'man': 'man', 'search': 'grep',
+    'noclegwsopocie': 'nocleg', 'reading': 'books',
   };
 
   var ART = [
@@ -859,6 +896,14 @@
         ln(t('umamiBody'), { cls: 't-dim', mt: 8 }),
       ];
     },
+    nocleg: function () {
+      return [
+        ln('# noclegwsopocie.pl', { cls: 't-green t-bold' }),
+        ln(t('noclegLead'), { mt: 4 }),
+        ln(t('noclegBody'), { cls: 't-dim', mt: 8 }),
+        parts([tx('→ ', 't-dim'), link('noclegwsopocie.pl', 'https://noclegwsopocie.pl')], { mt: 8 }),
+      ];
+    },
     redisCheck: function () {
       var out = [
         ln('#!/usr/bin/env bash', { cls: 't-faint' }),
@@ -907,7 +952,16 @@
         ln('education.txt', { cls: 't-blue t-bold' }),
         ln(t('eduDegree'), { mt: 4 }),
         ln(t('eduField')),
+        ln(t('eduSpec'), { cls: 't-dim' }),
         ln(t('eduSchool'), { cls: 't-dim' }),
+        ln(t('eduNext'), { cls: 't-amber', mt: 8 }),
+        ln(t('eduNextSchool'), { cls: 't-dim' }),
+      ];
+    },
+    books: function () {
+      return [
+        ln('books.txt', { cls: 't-blue t-bold' }),
+        grid(t('booksRows'), { mt: 4, keyCls: 't-green' }),
       ];
     },
     goals: function () {
@@ -1027,10 +1081,12 @@
     harbor: { run: RENDER.harbor },
     robust: { run: RENDER.robust },
     advokat: { run: RENDER.advokat },
+    nocleg: { run: RENDER.nocleg },
     zabbix: { run: RENDER.zabbix },
     umami: { run: RENDER.umami },
     skills: { run: RENDER.skills },
     education: { run: RENDER.education },
+    books: { run: RENDER.books },
     goals: { run: RENDER.goals },
     contact: { run: RENDER.contact },
 
@@ -1325,7 +1381,7 @@
     help: {
       run: function () {
         var groups = [
-          ['helpSecContent', ['whoami', 'about', 'projects', 'skills', 'htop', 'education', 'goals', 'contact']],
+          ['helpSecContent', ['whoami', 'about', 'projects', 'skills', 'htop', 'education', 'books', 'goals', 'contact']],
           ['helpSecFiles', ['ls', 'cd', 'pwd', 'tree', 'cat', 'head', 'tail', 'grep', 'find']],
           ['helpSecSystem', ['uname', 'hostname', 'id', 'uptime', 'date', 'df', 'free', 'w', 'systemctl', 'neofetch', 'banner']],
           ['helpSecShell', ['echo', 'history', 'man', 'open', 'theme', 'lang', 'clear', 'help']],
@@ -1472,6 +1528,27 @@
 
   function scrollToBottom() { output.scrollTop = output.scrollHeight; }
 
+  /* Output taller than the viewport used to land the reader on its last line.
+     Park the prompt line of such a block at the top instead, so the visitor
+     reads top-down; short output keeps the classic stick-to-bottom. */
+  function scrollToBlock(block) {
+    if (block.offsetHeight > output.clientHeight) {
+      output.scrollTop = block.getBoundingClientRect().top
+        - output.getBoundingClientRect().top + output.scrollTop;
+    } else {
+      scrollToBottom();
+    }
+  }
+
+  /* Focusing the input jumps back to the prompt at the bottom — but not when
+     the focus is a side effect of clicking around the transcript. */
+  var quietFocus = false;
+  function focusInputQuietly() {
+    quietFocus = true;
+    input.focus();
+    quietFocus = false;
+  }
+
   function promptLine(raw) {
     var d = document.createElement('div');
     d.className = 'term-prompt-line';
@@ -1489,7 +1566,7 @@
     output.appendChild(block);
     /* bound the scrollback so a long session cannot grow without limit */
     while (output.children.length > 200) output.removeChild(output.firstChild);
-    scrollToBottom();
+    scrollToBlock(block);
     return block;
   }
 
@@ -1752,11 +1829,17 @@
   }
 
   input.addEventListener('input', syncField);
-  input.addEventListener('focus', function () { terminal.classList.add('focused'); });
+  input.addEventListener('focus', function () {
+    terminal.classList.add('focused');
+    if (!quietFocus) scrollToBottom();
+  });
   input.addEventListener('blur', function () { terminal.classList.remove('focused'); });
 
   input.addEventListener('keydown', function (e) {
     var ctrl = e.ctrlKey || e.metaKey;
+
+    /* typing again means the visitor is done reading — rejoin the prompt */
+    if (output.scrollTop + output.clientHeight < output.scrollHeight - 4) scrollToBottom();
 
     if (e.key === 'Enter') { e.preventDefault(); run(input.value); return; }
     if (e.key === 'Tab') { e.preventDefault(); flushBoot(); complete(); return; }
@@ -1794,7 +1877,7 @@
     if (e && e.target.closest && e.target.closest('a, button')) return;
     var sel = window.getSelection();
     if (sel && sel.toString()) return;
-    input.focus();
+    focusInputQuietly();      /* reading position must survive the click */
   }
   output.addEventListener('click', focusInput);
   field.addEventListener('click', focusInput);
@@ -1882,7 +1965,8 @@
         block: 'nearest',
       });
     } else {
-      input.focus();
+      /* quiet — a chip may have just printed long output positioned at its top */
+      focusInputQuietly();
     }
   });
 
