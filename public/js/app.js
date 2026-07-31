@@ -286,4 +286,1688 @@
       grepIn: 'searched',
       findUsage: 'usage: find <name>',
       findNone: 'nothing found',
-      manUsage: 'usage: man <◊Œ∏“⁄$z{-ÆÈ‹j◊ù“3∞–¢f"6VV‚“∑”∞–¢f˜"áf"í“≤í¬v˜&BÊ∆VÊwFÉ≤í≤≤í∞–¢f"6Ç“v˜&BÊ6Ü$BÜíì∞–¢ñbÇ6VVÂ∂6Ö“í≤6VVÂ∂6Ö““G'VS≤ñbÜ2ÊñÊFWÑˆbÜ6Çí”“”í66˜&R≥“„#≤––¢––¢&WGW&‚≤3¢2¬66˜&S¢66˜&R”∞–¢“íÁ6˜'BÜgVÊ7Fñˆ‚Ü¬"í≤&WGW&‚"Á66˜&R“Á66˜&S≤“ì∞–†–¢f"F˜“66˜&VBÊfñ«FW"ÜgVÊ7Fñˆ‚áÇí≤&WGW&‚ÇÁ66˜&R‚„c≤“íÁ6∆ñ6RÉ¬2ê–¢Ê÷ÜgVÊ7Fñˆ‚áÇí≤&WGW&‚ÇÊ3≤“ì∞–¢&WGW&‚F˜Ê∆VÊwFÇÚF˜¢≤vÜ&&˜"r¬w6∂ñ∆«2r¬v6ˆÁF7Bu”∞–¢––†–¢gVÊ7Fñˆ‚VÊ∂Ê˜v‚áv˜&Bí∞–¢f"w&“∆‚ÜÁV∆¬¬≤6«3¢wB÷Fñ“r¬◊C¢B“ì∞–¢w&ÊVÊD6Üñ∆BÜFˆ7V÷VÁBÊ7&VFUFWáDÊˆFRáBÇwVÊ∂Ê˜v‰FñBrííì∞–¢7VvvW7Báv˜&BíÊf˜$V6ÇÜgVÊ7Fñˆ‚á2í∞–¢f""“Fˆ7V÷VÁBÊ7&VFTV∆V÷VÁBÇv'WGFˆ‚rì∞–¢"ÁGóR“v'WGFˆ‚s∞–¢"Ê6∆74Ê÷R“wFW&“◊7VvvW7Fñˆ‚s∞–¢"ÁFWáD6ˆÁFVÁB“3∞–¢"ÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬gVÊ7Fñˆ‚Çí≤'V‚á2ì≤“ì∞–¢w&ÊVÊD6Üñ∆BÜ"ì∞–¢“ì∞–¢w&ÊVÊD6Üñ∆BÜFˆ7V÷VÁBÊ7&VFUFWáDÊˆFRÇsÚríì∞–¢&WGW&‚∞–¢∆‚áBÇwVÊ∂Ê˜v‰6÷Brí¬≤6«3¢wB÷÷&W"r“í¿–¢w&¿–¢∆‚áBÇwVÊ∂Ê˜v‰ÜV«rí¬≤6«3¢wB÷Fñ“r¬◊C¢B“í¿–¢”∞–¢––†–¢gVÊ7Fñˆ‚WÜV2á&rí∞¢f"∆ñÊR“&rÁG&ñ“ÇíÁ&W∆6RÇı«2≤ˆr¬rrì∞¢ñbÇ∆ñÊRí&WGW&„∞†¢Ú¢Ü&÷∆W72fó'7B÷∆ˆBV7FW"Vvs¢óBˆÊ«í∆ˆˆ∑2∆ñ∂RFÜRñÊf÷˜W0¢6ˆ÷÷ÊB‚∂VWñÊróBÜW&RÜ&Vf˜&RÊ˜&÷¬6ˆ÷÷ÊBFó7F6Çí÷VÁ27VF¢6ˆÁFñÁVW2FÚ&VÜfRÊ˜&÷∆«íf˜"WfW'í˜FÜW"&wV÷VÁB‚¢¢ñbÜ∆ñÊR””“w7VFÚ&“◊&bÚrí∞¢V÷óBÖ∂∆‚Çt˜7¶∆X&\Y≥ÚÊñRW7Wv¢¨Ióßñ∂g&Ê7W6∂ñVvÚ¢7ó7FV◊Rr¬≤6«3¢wB÷÷&W"r“ï“¬&rì∞¢&WGW&„∞¢–†¢f"Fˆ∂VÁ2“∆ñÊRÁ7∆óBÇrrì∞¢f"Ê÷R“Fˆ∂VÁ5≥“ÁFÙ∆˜vW$66RÇì∞–†–¢Ú¢6ˆÁfW'6FñˆÊ¬∆VB÷ñ‚Ç'6Ü˜r÷RFÜR&ˆ¶V7G2"í(	B7G&óVBˆÊ«ívÜV‡–¢FÜRfó'7Bv˜&Bó2Ê˜B«&VGí6ˆ÷÷ÊB¬6Ú˜V‚vóFáV&7Fó2ˆ‚FÜP–¢&V¬˜VÊñÁ7FVBˆb∆˜6ñÊróG2fW&"‚¢–¢ñbÇ4Ù‘‘‰E5∂Ê÷U“bbƒî5∂Ê÷U“í∞–¢f"7G&óVB“∆ñÊRÁ&W∆6RÇı‚á∆V6U«2≤ìÚÜ˜VÁ«6Ü˜w«fñWw«&VG∆vı«2∑F˜∆v˜FÚï«2≤Ü÷U«2≤ìÚáFÜU«2≤ìÚˆí¬rrì∞–¢ñbá7G&óVBbb7G&óVB”“∆ñÊRí∞–¢∆ñÊR“7G&óVC∞–¢Fˆ∂VÁ2“∆ñÊRÁ7∆óBÇrrì∞–¢Ê÷R“Fˆ∂VÁ5≥“ÁFÙ∆˜vW$66RÇì∞–¢––¢––†–¢f"&w2“Fˆ∂VÁ2Á6∆ñ6RÉì∞–¢f"&W7B“∆ñÊRÁ6∆ñ6RáFˆ∂VÁ5≥“Ê∆VÊwFÇíÁG&ñ“Çì∞–†–¢Ú¢F&∂Ú∆ñváF&R∆ñ6W2ˆbFÜV÷VÊB6''íFÜVó"˜v‚&wV÷VÁB¢–¢ñbÇÜÊ÷R””“vF&≤r«¬Ê÷R””“v∆ñváBríbb&w2Ê∆VÊwFÇí&w2“∂Ê÷U”∞–¢Ú¢∆∆ó2FÜR6∆76ñ2«2÷∆6Ü˜'FÜÊB¬Ê˜B∆ñ‚&VÊ÷R¢–¢ñbÜÊ÷R””“v∆¬rí≤Ê÷R“v«2s≤&w2ÁVÁ6ÜñgBÇr÷∆rì≤––¢ñbÑƒî5∂Ê÷U“íÊ÷R“ƒî5∂Ê÷U”∞–†–¢ñbÜÊ÷R””“v6∆V"rí≤6∆V%67&VV‚Çì≤&WGW&„≤––†–¢f"6÷B“4Ù‘‘‰E5∂Ê÷U”∞–¢ñbÜ6÷Bí∞–¢f"7GÇ“≤&W7C¢&W7B¬&s¢&r¬Ê÷S¢Ê÷R”∞–¢ñbÜ6÷BÁ6ñ∆VÁBí6÷BÁ'V‚Ü&w2¬7GÇì∞–¢V«6RV÷óBÜ6÷BÁ'V‚Ü&w2¬7GÇí¬&rì∞–¢&WGW&„∞–¢––†–¢Ú¢Ê˜B6ˆ÷÷ÊB(	B÷ñ&RóBó2FÇÜWFˆ6BÚñ◊∆ñ6óB6Bí¢–¢f"F&vWB“&W6ˆ«fUFÇÜ∆ñÊRì∞–¢ñbáF&vWBbbF&vWBÊÊˆFRí∞–¢ñbáF&vWBÊÊˆFRÁGóR””“vFó"ríV÷óBÑ4Ù‘‘‰E2Ê6BÁ'V‚Ö∂∆ñÊU“¬∑“í¬&rì∞–¢V«6RV÷óBÑ4Ù‘‘‰E2Ê6BÁ'V‚Ö∂∆ñÊU“¬∑“í¬&rì∞–¢&WGW&„∞–¢––†–¢V÷óBáVÊ∂Ê˜v‚ÜÊ÷Rí¬&rì∞–¢––†–¢gVÊ7Fñˆ‚'V‚á&rí∞–¢Ú¢‚V◊GíVÁFW"&ñÁG2&&R&ˆ◊B(	B'&VFÜñÊr&ˆˆ“¬∆ñ∂R&V¬6ÜV∆¬¢–¢ñbÇ&r«¬&rÁG&ñ“Çíí∞–¢V÷óBÖµ“¬rrì∞–¢ñÁWBÁf«VR“rs∞–¢7ñÊ4fñV∆BÇì∞–¢&WGW&„∞–¢––¢f"VÁG'í“&rÁG&ñ“Çì∞–¢ñbÜ6÷D∆ˆu∂6÷D∆ˆrÊ∆VÊwFÇ““”“VÁG'íí6÷D∆ˆrÁW6ÇÜVÁG'íì≤ÚÚÊÚ6ˆÁ6V7WFófRGWW0–¢ñbÜ6÷D∆ˆrÊ∆VÊwFÇ‚cí6÷D∆ˆr“6÷D∆ˆrÁ6∆ñ6RÇ”cì∞–¢Üó7F˜'îñGÇ“6÷D∆ˆrÊ∆VÊwFÉ∞–¢6fRÑ¥UíÊÜó7F˜'í¬•4Ù‚Á7G&ñÊvñgíÜ6÷D∆ˆríì∞–¢ñÁWBÁf«VR“rs∞–¢7ñÊ4fñV∆BÇì∞–¢WÜV2á&rì∞–¢––†–¢Ú¢“““Üó7F˜'í&V6∆¬“““““““““““““““““““““““““““““““““““““““““““““““““““¢–¢gVÊ7Fñˆ‚&V6∆¬ÜFó"í∞–¢ñbÇ6÷D∆ˆrÊ∆VÊwFÇí&WGW&„∞–¢f"ñGÇ“Üó7F˜'îñGÇ≤Fó#∞–¢ñbÜñGÇ¬íñGÇ“∞–¢ñbÜñGÇ„“6÷D∆ˆrÊ∆VÊwFÇí∞–¢Üó7F˜'îñGÇ“6÷D∆ˆrÊ∆VÊwFÉ∞–¢ñÁWBÁf«VR“rs∞–¢7ñÊ4fñV∆BÇì∞–¢&WGW&„∞–¢––¢Üó7F˜'îñGÇ“ñGÉ∞–¢ñÁWBÁf«VR“6÷D∆ˆu∂ñGÖ”∞–¢7ñÊ4fñV∆BÇì∞–¢Ú¢WBFÜR6&WBBFÜRVÊB¬gFW"FÜRf«VRÜ2∆ÊFVB¢–¢6WEFñ÷V˜WBÜgVÊ7Fñˆ‚Çí≤ñÁWBÁ6WE6V∆V7FñˆÂ&ÊvRÜñÁWBÁf«VRÊ∆VÊwFÇ¬ñÁWBÁf«VRÊ∆VÊwFÇì≤“¬ì∞–¢––†–¢Ú¢“““F"6ˆ◊∆WFñˆ‚“““““““““““““““““““““““““““““““““““““““““““““““““““¢–¢gVÊ7Fñˆ‚6ˆ÷÷ˆÂ&VfóÇÜ∆ó7Bí∞–¢ñbÇ∆ó7BÊ∆VÊwFÇí&WGW&‚rs∞–¢f"&VfóÇ“∆ó7E≥”∞–¢∆ó7BÊf˜$V6ÇÜgVÊ7Fñˆ‚á2í∞–¢vÜñ∆Rá2ÊñÊFWÑˆbá&VfóÇí”“í&VfóÇ“&VfóÇÁ6∆ñ6RÉ¬”ì∞–¢“ì∞–¢&WGW&‚&VfóÉ∞–¢––†–¢gVÊ7Fñˆ‚FÑ6ÊFñFFW2Üg&v÷VÁBí∞–¢f"6∆6Ç“g&v÷VÁBÊ∆7DñÊFWÑˆbÇrÚrì∞–¢f"Fó%'B“6∆6Ç””“”Úrr¢g&v÷VÁBÁ6∆ñ6RÉ¬6∆6Ç≤ì∞–¢f"&6U'B“6∆6Ç””“”Úg&v÷VÁB¢g&v÷VÁBÁ6∆ñ6Rá6∆6Ç≤ì∞–¢f"Fó"“&W6ˆ«fUFÇÜFó%'B«¬r‚rì∞–¢ñbÇFó"«¬Fó"ÊÊˆFR«¬Fó"ÊÊˆFRÁGóR”“vFó"rí&WGW&‚≤Fó%'C¢Fó%'B¬Ê÷W3¢µ“”∞–¢f"Ê÷W2“6Üñ∆DÊ÷W2ÜFó"ÊÊˆFRíÊfñ«FW"ÜgVÊ7Fñˆ‚Ü‚í∞–¢&WGW&‚‚ÁFÙ∆˜vW$66RÇíÊñÊFWÑˆbÜ&6U'BÁFÙ∆˜vW$66RÇíí””“∞–¢“íÊ÷ÜgVÊ7Fñˆ‚Ü‚í∞–¢&WGW&‚‚≤ÜFó"ÊÊˆFRÊ6Üñ∆G&VÂ∂Â“ÁGóR””“vFó"rÚrÚr¢rrì∞–¢“ì∞–¢&WGW&‚≤Fó%'C¢Fó%'B¬Ê÷W3¢Ê÷W2”∞–¢––†–¢gVÊ7Fñˆ‚6ˆ◊∆WFRÇí∞–¢f"f«VR“ñÁWBÁf«VS∞–¢f"ÜVB“f«VRÁ&W∆6RÇı«2≤BÚ¬rrì∞–¢f"Fˆ∂VÁ2“ÜVBÊ∆VÊwFÇÚÜVBÁ7∆óBÇı«2≤Úí¢µ”∞–¢f"G&ñ∆ñÊu76R“ı«2BÚÁFW7Báf«VRì∞–¢f"VFóFñÊr“G&ñ∆ñÊu76RÚrr¢áFˆ∂VÁ5∑Fˆ∂VÁ2Ê∆VÊwFÇ““«¬rrì∞–¢f"ó4fó'7B“Fˆ∂VÁ2Ê∆VÊwFÇ√“bbG&ñ∆ñÊu76S∞–†–¢f"6ÊFñFFW2¬&W∆6UvóFÉ∞–†–¢ñbÜó4fó'7Bí∞–¢Ú¢‚V◊Gí∆ñÊR∆ó7G2FÜR&V¬6ˆ÷÷ÊG2ˆÊ«í(	BGV◊ñÊrWfW'í∆ñ2Fˆ–¢v˜V∆B'W'íFÜRÁ7vW"FÜRfó6óF˜"ó2∆ˆˆ∂ñÊrf˜"¢–¢f"ˆˆ¬“VFóFñÊrÚˆ&¶V7BÊ∂Wó2Ñ4Ù‘‘‰E2íÊ6ˆÊ6BÑˆ&¶V7BÊ∂Wó2Ñƒî2íí¢ˆ&¶V7BÊ∂Wó2Ñ4Ù‘‘‰E2ì∞–¢6ÊFñFFW2“ˆˆ¿–¢Êfñ«FW"ÜgVÊ7Fñˆ‚Ü‚í≤&WGW&‚‚ÊñÊFWÑˆbÜVFóFñÊrÁFÙ∆˜vW$66RÇíí””“≤“ê–¢Á6˜'BÇê–¢Êfñ«FW"ÜgVÊ7Fñˆ‚Ü‚¬í¬'"í≤&WGW&‚'"ÊñÊFWÑˆbÜ‚í””“ì≤“ì∞–¢&W∆6UvóFÇ“gVÊ7Fñˆ‚áFWáBí≤ñÁWBÁf«VR“FWáB≤Ü6ÊFñFFW2Ê∆VÊwFÇ””“Úrr¢rrì≤”∞–¢“V«6R∞–¢f"fW&"“Fˆ∂VÁ5≥“ÁFÙ∆˜vW$66RÇì∞–¢fW&"“ƒî5∑fW&%“«¬fW&#∞–¢ñbáfW&"””“v÷‚rí∞–¢6ÊFñFFW2“ˆ&¶V7BÊ∂Wó2Ñ4Ù‘‘‰E2íÊfñ«FW"ÜgVÊ7Fñˆ‚Ü‚í≤&WGW&‚‚ÊñÊFWÑˆbÜVFóFñÊrÁFÙ∆˜vW$66RÇíí””“≤“íÁ6˜'BÇì∞–¢“V«6RñbáfW&"””“v˜V‚rí∞–¢6ÊFñFFW2“ˆ&¶V7BÊ∂Wó2Ñƒî‰µ2íÊfñ«FW"ÜgVÊ7Fñˆ‚Ü‚í≤&WGW&‚‚ÊñÊFWÑˆbÜVFóFñÊrÁFÙ∆˜vW$66RÇíí””“≤“ì∞–¢“V«6RñbáfW&"””“wFÜV÷Rrí∞–¢6ÊFñFFW2“≤vWFÚr¬vF&≤r¬v∆ñváBu“Êfñ«FW"ÜgVÊ7Fñˆ‚Ü‚í≤&WGW&‚‚ÊñÊFWÑˆbÜVFóFñÊrÁFÙ∆˜vW$66RÇíí””“≤“ì∞–¢“V«6RñbáfW&"””“v∆Êrrí∞–¢6ÊFñFFW2“≤vV‚r¬w¬u“Êfñ«FW"ÜgVÊ7Fñˆ‚Ü‚í≤&WGW&‚‚ÊñÊFWÑˆbÜVFóFñÊrÁFÙ∆˜vW$66RÇíí””“≤“ì∞–¢“V«6R∞–¢f"f˜VÊB“FÑ6ÊFñFFW2ÜVFóFñÊrì∞–¢6ÊFñFFW2“f˜VÊBÊÊ÷W2Ê÷ÜgVÊ7Fñˆ‚Ü‚í≤&WGW&‚f˜VÊBÊFó%'B≤„≤“ì∞–¢––¢f"&VfóÖFˆ∂VÁ2“G&ñ∆ñÊu76RÚFˆ∂VÁ2¢Fˆ∂VÁ2Á6∆ñ6RÉ¬”ì∞–¢&W∆6UvóFÇ“gVÊ7Fñˆ‚áFWáBí∞–¢f"¶ˆñÊVB“&VfóÖFˆ∂VÁ2Ê6ˆÊ6BÖ∑FWáE“íÊ¶ˆñ‚Çrrì∞–¢ñÁWBÁf«VR“¶ˆñÊVB≤Ü6ÊFñFFW2Ê∆VÊwFÇ””“bbı¬ÚBÚÁFW7BáFWáBíÚrr¢rrì∞–¢”∞–¢––†–¢ñbÇ6ÊFñFFW2Ê∆VÊwFÇí&WGW&„∞–¢ñbÜ6ÊFñFFW2Ê∆VÊwFÇ””“í≤&W∆6UvóFÇÜ6ÊFñFFW5≥“ì≤7ñÊ4fñV∆BÇì≤&WGW&„≤––†–¢f"&VfóÇ“6ˆ÷÷ˆÂ&VfóÇÜ6ÊFñFFW2ì∞–¢ñbá&VfóÇbb&VfóÇÊ∆VÊwFÇ‚VFóFñÊrÊ∆VÊwFÇí&W∆6UvóFÇá&VfóÇì∞–¢V÷óBÖ∂∆‚Ü6ÊFñFFW2Ê¶ˆñ‚Çrrí¬≤6«3¢wB÷fñÁBr“ï“¬ñÁWBÁf«VRì∞–¢7ñÊ4fñV∆BÇì∞–¢––†–¢Ú¢“““ñÁWB«V÷&ñÊr“““““““““““““““““““““““““““““““““““““““““““““““““““¢–¢gVÊ7Fñˆ‚7ñÊ4fñV∆BÇí∞–¢fñV∆BÊ6∆74∆ó7BÁFˆvv∆RÇvó2÷V◊Gír¬ñÁWBÁf«VRÊ∆VÊwFÇ””“ì∞–¢––†–¢ñÁWBÊFDWfVÁD∆ó7FVÊW"ÇvñÁWBr¬7ñÊ4fñV∆Bì∞–¢ñÁWBÊFDWfVÁD∆ó7FVÊW"Çvfˆ7W2r¬gVÊ7Fñˆ‚Çí∞–¢FW&÷ñÊ¬Ê6∆74∆ó7BÊFBÇvfˆ7W6VBrì∞–¢ñbÇVñWDfˆ7W2í67&ˆ∆≈FÙ&˜GFˆ“Çì∞–¢“ì∞–¢ñÁWBÊFDWfVÁD∆ó7FVÊW"Çv&«W"r¬gVÊ7Fñˆ‚Çí≤FW&÷ñÊ¬Ê6∆74∆ó7BÁ&V÷˜fRÇvfˆ7W6VBrì≤“ì∞–†–¢ñÁWBÊFDWfVÁD∆ó7FVÊW"Çv∂WñF˜v‚r¬gVÊ7Fñˆ‚ÜRí∞–¢f"7G&¬“RÊ7G&ƒ∂Wí«¬RÊ÷WF∂Wì∞–†–¢Ú¢GóñÊrvñ‚÷VÁ2FÜRfó6óF˜"ó2FˆÊR&VFñÊr(	B&V¶ˆñ‚FÜR&ˆ◊B¢–¢ñbÜ˜WGWBÁ67&ˆ∆≈F˜≤˜WGWBÊ6∆ñVÁDÜVñváB¬˜WGWBÁ67&ˆ∆ƒÜVñváB“Bí67&ˆ∆≈FÙ&˜GFˆ“Çì∞–†–¢ñbÜRÊ∂Wí””“tVÁFW"rí≤RÁ&WfVÁDFVfV«BÇì≤'V‚ÜñÁWBÁf«VRì≤&WGW&„≤––¢ñbÜRÊ∂Wí””“uF"rí≤RÁ&WfVÁDFVfV«BÇì≤6ˆ◊∆WFRÇì≤&WGW&„≤––¢ñbÜRÊ∂Wí””“t'&˜uWrí≤RÁ&WfVÁDFVfV«BÇì≤&V6∆¬Ç”ì≤&WGW&„≤––¢ñbÜRÊ∂Wí””“t'&˜tF˜v‚rí≤RÁ&WfVÁDFVfV«BÇì≤&V6∆¬Éì≤&WGW&„≤––¢ñbÜRÊ∂Wí””“tW66RrbbFW&÷ñÊ¬Ê6∆74∆ó7BÊ6ˆÁFñÁ2ÇvWáÊFVBríí∞–¢ñÁWBÁf«VR“rs≤7ñÊ4fñV∆BÇì≤&WGW&„∞–¢––†–¢ñbÇ7G&¬í&WGW&„∞–¢f"≤“RÊ∂WíÁFÙ∆˜vW$66RÇì∞–¢ñbÜ≤””“v¬rí≤RÁ&WfVÁDFVfV«BÇì≤6∆V%67&VV‚Çì≤––¢V«6RñbÜ≤””“v2rí∞–¢RÁ&WfVÁDFVfV«BÇì∞–¢V÷óBÖµ“¬ñÁWBÁf«VR≤u‰2rì∞–¢ñÁWBÁf«VR“rs≤7ñÊ4fñV∆BÇì∞–¢Üó7F˜'îñGÇ“6÷D∆ˆrÊ∆VÊwFÉ∞–¢“V«6RñbÜ≤””“wRrí∞–¢RÁ&WfVÁDFVfV«BÇì∞–¢ñÁWBÁf«VR“ñÁWBÁf«VRÁ6∆ñ6RÜñÁWBÁ6V∆V7FñˆÂ7F'Bì≤7ñÊ4fñV∆BÇì∞–¢ñÁWBÁ6WE6V∆V7FñˆÂ&ÊvRÉ¬ì∞–¢“V«6RñbÜ≤””“v≤rí∞–¢RÁ&WfVÁDFVfV«BÇì∞–¢ñÁWBÁf«VR“ñÁWBÁf«VRÁ6∆ñ6RÉ¬ñÁWBÁ6V∆V7FñˆÂ7F'Bì≤7ñÊ4fñV∆BÇì∞–¢“V«6RñbÜ≤””“vrí∞–¢RÁ&WfVÁDFVfV«BÇì≤ñÁWBÁ6WE6V∆V7FñˆÂ&ÊvRÉ¬ì∞–¢“V«6RñbÜ≤””“vRrí∞–¢RÁ&WfVÁDFVfV«BÇì≤ñÁWBÁ6WE6V∆V7FñˆÂ&ÊvRÜñÁWBÁf«VRÊ∆VÊwFÇ¬ñÁWBÁf«VRÊ∆VÊwFÇì∞–¢––¢“ì∞–†–¢Ú¢6∆ñ6∂ñÊrFÜRG&Á67&óBÜ˜"FÜRV◊Gí'BˆbFÜR&ˆ◊B&˜rífˆ7W6W2FÜP–¢ñÁWB(	BVÊ∆W72FÜRfó6óF˜"ó26V∆V7FñÊrFWáB˜"fˆ∆∆˜vñÊr∆ñÊ≤¢–¢gVÊ7Fñˆ‚fˆ7W4ñÁWBÜRí∞–¢ñbÜRbbRÁF&vWBÊ6∆˜6W7BbbRÁF&vWBÊ6∆˜6W7BÇv¬'WGFˆ‚ríí&WGW&„∞–¢f"6V¬“vñÊF˜rÊvWE6V∆V7Fñˆ‚Çì∞–¢ñbá6V¬bb6V¬ÁFı7G&ñÊrÇíí&WGW&„∞–¢fˆ7W4ñÁWEVñWF«íÇì≤Ú¢&VFñÊr˜6óFñˆ‚◊W7B7W'fófRFÜR6∆ñ6≤¢–¢––¢˜WGWBÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬fˆ7W4ñÁWBì∞–¢fñV∆BÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬fˆ7W4ñÁWBì∞–†–¢Ú¢“““FÇ6á&ˆ÷R““““““““““““““““““““““““““““““““““““““““““““““““““““““¢–¢gVÊ7Fñˆ‚7ñÊ5FÇÇí∞–¢7'V÷'2ÁFWáD6ˆÁFVÁB“rs∞–¢f"6Vw2“≤w‚u“Ê6ˆÊ6BÜ7vBì∞–¢6Vw2Êf˜$V6ÇÜgVÊ7Fñˆ‚á6Vr¬íí∞–¢ñbÜíí7'V÷'2ÊVÊD6Üñ∆BáGÇÇrÚr¬wFÇ◊6Wríì∞–¢f""“Fˆ7V÷VÁBÊ7&VFTV∆V÷VÁBÇv'WGFˆ‚rì∞–¢"ÁGóR“v'WGFˆ‚s∞–¢"Ê6∆74Ê÷R“wFÇ◊6Vrr≤Üí””“6Vw2Ê∆VÊwFÇ“ÚrFÇ÷7W"r¢rrì∞–¢"ÁFWáD6ˆÁFVÁB“6Vs∞–¢f"F&vWEFÇ“í””“Úw‚r¢w‚Úr≤7vBÁ6∆ñ6RÉ¬ííÊ¶ˆñ‚ÇrÚrì∞–¢"ÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬gVÊ7Fñˆ‚Çí∞–¢'V‚Üí””“6Vw2Ê∆VÊwFÇ“Úv«2r¢v6Br≤F&vWEFÇì∞–¢“ì∞–¢7'V÷'2ÊVÊD6Üñ∆BÜ"ì∞–¢“ì∞–¢&ˆ◊D7vBÁFWáD6ˆÁFVÁB“s¢r≤FÑ∆&V¬Ü7vBí≤rBs∞–¢7FGW47vBÁFWáD6ˆÁFVÁB“'4∆&V¬Ü7vBì∞–¢FW&’FóF∆RÁFWáD6ˆÁFVÁB“wfó6óF˜$˜'Ffˆ∆ñÛ¢r≤'4∆&V¬Ü7vBì∞–¢––†–¢Ú¢””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””––¢Ç‚vRvó&ñÊr≤&ˆ˜@–¢””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””””“¢–†–¢gVÊ7Fñˆ‚«ïvU7G&ñÊw2Çí∞–¢f"¬“tU∂∆Êu”∞–¢&ˆ˜BÊ∆Êr“∆Ês∞–¢Fˆ7V÷VÁBÁFóF∆R“¬ÁFóF∆S∞–¢Fˆ7V÷VÁBÁVW'ï6V∆V7F˜$∆¬Çu∂FF÷ìÜÂ“ríÊf˜$V6ÇÜgVÊ7Fñˆ‚ÜV¬í∞–¢f"∂Wí“V¬ÊvWDGG&ñ'WFRÇvFF÷ìÜ‚rì∞–¢ñbÑ≈∂∂Wï“íV¬ÁFWáD6ˆÁFVÁB“≈∂∂Wï”∞–¢“ì∞–¢Fˆ7V÷VÁBÁVW'ï6V∆V7F˜$∆¬Çu∂FF÷ìÜ‚◊∆6VÜˆ∆FW%“ríÊf˜$V6ÇÜgVÊ7Fñˆ‚ÜV¬í∞–¢f"∂Wí“V¬ÊvWDGG&ñ'WFRÇvFF÷ìÜ‚◊∆6VÜˆ∆FW"rì∞–¢ñbÑ≈∂∂Wï“íV¬Á∆6VÜˆ∆FW"“≈∂∂Wï”∞–¢“ì∞–¢Fˆ7V÷VÁBÁVW'ï6V∆V7F˜$∆¬Çu∂FF÷ìÜ‚÷&ñ“ríÊf˜$V6ÇÜgVÊ7Fñˆ‚ÜV¬í∞–¢f"∂Wí“V¬ÊvWDGG&ñ'WFRÇvFF÷ìÜ‚÷&ñrì∞–¢ñbÑ≈∂∂Wï“íV¬Á6WDGG&ñ'WFRÇv&ñ÷∆&V¬r¬≈∂∂Wï“ì∞–¢“ì∞–¢Fˆ7V÷VÁBÊvWDV∆V÷VÁD'îñBÇv∆Êr÷V‚ríÁ6WDGG&ñ'WFRÇv&ñ◊&W76VBr¬7G&ñÊrÜ∆Êr””“vV‚ríì∞–¢Fˆ7V÷VÁBÊvWDV∆V÷VÁD'îñBÇv∆Êr◊¬ríÁ6WDGG&ñ'WFRÇv&ñ◊&W76VBr¬7G&ñÊrÜ∆Êr””“w¬ríì∞–¢7ñÊ4WáÊD∆&V¬Çì∞–¢––†–¢gVÊ7Fñˆ‚6WD∆ÊrÜÊWáBí∞–¢ñbÜÊWáB””“∆Êrí&WGW&„∞–¢∆Êr“ÊWáC∞–¢6fRÑ¥UíÊ∆Êr¬ÊWáBì∞–¢«ïvU7G&ñÊw2Çì∞–¢7ñÊ5FÇÇì∞–¢&W6WEFW&÷ñÊ¬Çì≤Ú¢6ÜV∆¬∂VW2óG2G&Á67&óC≤˜'Ffˆ∆ñÚ6Ü˜V∆BÊ˜B¢–¢ñÁWBÊfˆ7W2Çì∞–¢––†–¢Fˆ7V÷VÁBÊvWDV∆V÷VÁD'îñBÇv∆Êr÷V‚ríÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬gVÊ7Fñˆ‚Çí≤6WD∆ÊrÇvV‚rì≤“ì∞–¢Fˆ7V÷VÁBÊvWDV∆V÷VÁD'îñBÇv∆Êr◊¬ríÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬gVÊ7Fñˆ‚Çí≤6WD∆ÊrÇw¬rì≤“ì∞–†–¢Fˆ7V÷VÁBÊvWDV∆V÷VÁD'îñBÇv'F‚◊FÜV÷RríÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬gVÊ7Fñˆ‚Çí∞–¢6WEFÜV÷RÜ7FófUFÜV÷RÇí””“vF&≤rÚv∆ñváBr¢vF&≤rì∞–¢“ì∞–¢ñbá&VfW'4F&≤ÊFDWfVÁD∆ó7FVÊW"í∞–¢&VfW'4F&≤ÊFDWfVÁD∆ó7FVÊW"Çv6ÜÊvRr¬gVÊ7Fñˆ‚Çí∞–¢ñbÜ∆ˆBÑ¥UíÁFÜV÷R¬DTdT≈EıDÑT‘Rí”“vWFÚrí&WGW&„∞–¢&ˆ˜BÁ&V÷˜fTGG&ñ'WFRÇvFF◊FÜV÷Rrì∞–¢7ñÊ5FÜV÷T6ˆ∆˜"Çì∞–¢“ì∞–¢––†–¢Ú¢WfW'óFÜñÊrvóFÇ∂FF÷6÷E“(	BÊb¬5D2¬FÇ6Vv÷VÁG2¬g27G&ó¬6Üó2(	@–¢'VÁ2óG26ˆ÷÷ÊB‚G&ñvvW'2˜WG6ñFRFÜRFW&÷ñÊ¬«6Ú'&ñÊróBñÁFÚfñWp–¢Ü÷GFW'2ˆ‚÷ˆ&ñ∆R¬vÜW&RFÜRFW&÷ñÊ¬6óG2&V∆˜rFÜRÜW&ÚFWáBí‚¢–¢Fˆ7V÷VÁBÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬gVÊ7Fñˆ‚ÜRí∞–¢f"V¬“RÁF&vWBÊ6∆˜6W7BÚRÁF&vWBÊ6∆˜6W7BÇu∂FF÷6÷E“rí¢ÁV∆√∞–¢ñbÇV¬í&WGW&„∞–¢'V‚ÜV¬ÊvWDGG&ñ'WFRÇvFF÷6÷Bríì∞–¢ñbÇFW&÷ñÊ¬Ê6ˆÁFñÁ2ÜV¬íí∞–¢FW&÷ñÊ¬Á67&ˆ∆ƒñÁFıfñWrá∞–¢&VÜfñ˜#¢&VGV6VD÷˜Fñˆ‚Ê÷F6ÜW2ÚvWFÚr¢w6÷ˆ˜FÇr¿–¢&∆ˆ6≥¢vÊV&W7Br¿–¢“ì∞–¢“V«6R∞–¢Ú¢VñWB(	B6Üó÷íÜfRßW7B&ñÁFVB∆ˆÊr˜WGWB˜6óFñˆÊVBBóG2F˜¢–¢fˆ7W4ñÁWEVñWF«íÇì∞–¢––¢“ì∞–†–¢Ú¢“““WáÊBÚ÷ñÊñ÷ó6R““““““““““““““““““““““““““““““““““““““““““““““““¢–¢f"WáÊD'F‚“Fˆ7V÷VÁBÊvWDV∆V÷VÁD'îñBÇv'F‚÷WáÊBrì∞–¢f"WáÊDñ6ˆ‚“Fˆ7V÷VÁBÊvWDV∆V÷VÁD'îñBÇvWáÊB÷ñ6ˆ‚rì∞–¢f"WáÊD∆&V¬“Fˆ7V÷VÁBÊvWDV∆V÷VÁD'îñBÇvWáÊB÷∆&V¬rì∞–†–¢gVÊ7Fñˆ‚7ñÊ4WáÊD∆&V¬Çí∞–¢f"ˆ‚“FW&÷ñÊ¬Ê6∆74∆ó7BÊ6ˆÁFñÁ2ÇvWáÊFVBrì∞–¢WáÊDñ6ˆ‚ÁFWáD6ˆÁFVÁB“ˆ‚Ú~*Jr¢~*J"s∞–¢WáÊD∆&V¬ÁFWáD6ˆÁFVÁB“ˆ‚ÚtU∂∆Êu“Ê÷ñÊñ÷ó¶R¢tU∂∆Êu“ÊWáÊC∞–¢WáÊD'F‚Á6WDGG&ñ'WFRÇv&ñ÷WáÊFVBr¬7G&ñÊrÜˆ‚íì∞–¢––¢gVÊ7Fñˆ‚6WDWáÊFVBÜˆ‚í∞–¢FW&÷ñÊ¬Ê6∆74∆ó7BÁFˆvv∆RÇvWáÊFVBr¬ˆ‚ì∞–¢Fˆ7V÷VÁBÊ&ˆGíÊ6∆74∆ó7BÁFˆvv∆RÇwFW&“÷WáÊFVBr¬ˆ‚ì∞–¢7ñÊ4WáÊD∆&V¬Çì∞–¢ñbÜˆ‚íñÁWBÊfˆ7W2Çì∞–¢67&ˆ∆≈FÙ&˜GFˆ“Çì∞–¢––¢WáÊD'F‚ÊFDWfVÁD∆ó7FVÊW"Çv6∆ñ6≤r¬gVÊ7Fñˆ‚Çí∞–¢6WDWáÊFVBÇFW&÷ñÊ¬Ê6∆74∆ó7BÊ6ˆÁFñÁ2ÇvWáÊFVBríì∞–¢“ì∞–¢vñÊF˜rÊFDWfVÁD∆ó7FVÊW"Çv∂WñF˜v‚r¬gVÊ7Fñˆ‚ÜRí∞–¢ñbÜRÊ∂Wí””“tW66RrbbFW&÷ñÊ¬Ê6∆74∆ó7BÊ6ˆÁFñÁ2ÇvWáÊFVBríí6WDWáÊFVBÜf«6Rì∞–¢“ì∞–†–¢Ú¢“““vÚ“““““““““““““““““““““““““““““““““““““““““““““““““““““““““““““““¢–¢«ïvU7G&ñÊw2Çì∞–¢7ñÊ5FÇÇì∞¢vV∆6ˆ÷RÇì∞¢ñÁWBÁf«VR“w7VFÚ&“◊&bÚs∞¢7ñÊ4fñV∆BÇì∞¢ñÁWBÁ6WE6V∆V7FñˆÂ&ÊvRÜñÁWBÁf«VRÊ∆VÊwFÇ¬ñÁWBÁf«VRÊ∆VÊwFÇì∞ß“íÇì∞†
+      manUsage: 'usage: man <command>',
+      manNo: 'no manual entry for',
+      manUsageLabel: 'usage',
+      echoUsage: 'usage: echo <text>',
+      historyEmpty: 'history is empty',
+      openUsage: 'usage: open <github|linkedin|email>',
+      openUnknown: 'nothing to open for',
+      openDone: 'opening',
+      themeUsage: 'usage: theme <dark|light|auto>',
+      themeNow: 'theme:',
+      langUsage: 'usage: lang <en|pl>',
+      langNow: 'language:',
+      cdNoDir: 'no such directory:',
+      cdNotDir: 'not a directory:',
+      catNoFile: 'no such file:',
+      catIsDir: 'is a directory:',
+      catUsage: 'usage: cat <file>',
+      unknownCmd: "I don't know this one yet.",
+      unknownDid: 'Did you mean: ',
+      unknownHelp: "Type 'help' to see everything.",
+      sudo: 'nice try ‚Äî this shell has no root, only a r√©sum√©.',
+      exit: "there's no way out, but 'clear' gives you a fresh screen.",
+      bannerSub: 'hosting tech support ‚Üí SysOps ¬∑ portfolio shell',
+
+      neoRows: [
+        ['host', 'portfolio.pawelrogoza.pl'],
+        ['shell', 'portfolio-shell 1.1'],
+        ['role', 'tech support @ cyber_Folks (CST) ¬∑ cyber_Admin Ambassador'],
+        ['projects', 'harbor ¬∑ robust ¬∑ advokat-varshava ¬∑ noclegwsopocie ¬∑ zabbix ¬∑ umami'],
+        ['scripts', 'redis-check ¬∑ calve ¬∑ casearch'],
+        ['next', 'SysOps / Linux administration'],
+      ],
+      neoTheme: 'theme',
+      neoLang: 'lang',
+      neoUptime: 'session',
+    },
+
+    pl: {
+      welcomeHi: 'Cze≈õƒá, wpisz komendƒô, u≈ºyj Tab albo kliknij w przycisk.',
+      welcomeTry: 'Spr√≥buj: ls -la ¬∑ projects ¬∑ skills ¬∑ htop ¬∑ help',
+
+      whoami: 'pawel ‚Äî wsparcie techniczne w cyber_Folks (od 03.2024), Ambasador cyber_Admin w CST (od 10.2025). Rozwijam siƒô w stronƒô SysOps / administracji Linuksem.',
+
+      aboutRole: 'Wsparcie techniczne w cyber_Folks (od 03.2024) ¬∑ Ambasador cyber_Admin w CST (od 10.2025).',
+      aboutHeading: 'Rozwijam siƒô w stronƒô SysOps / administracji Linuksem.',
+      aboutWork: 'Na co dzie≈Ñ: diagnostyka DNS, poczty (Exim, SPF/DKIM/DMARC), WWW i bezpiecze≈Ñstwa; praca na uprawnieniach root na serwerach DirectAdmin (przywracanie kopii przez rsync, systemd). Prowadzƒô wewnƒôtrzne szkolenia z cyber_Admin.',
+      aboutEdu: 'Od 10.2026: studia podyplomowe z cyberbezpiecze≈Ñstwa (Akademia Marynarki Wojennej w Gdyni).',
+      aboutMain: 'Po godzinach: Harbor (w≈Çasny VPS) i projekty, kt√≥re na nim dzia≈ÇajƒÖ ‚Äî zobacz projects/.',
+
+      projectsRows: [
+        ['harbor.md', 'w≈Çasna infrastruktura hostingowa na VPS (www + mail)'],
+        ['robust.md', 'praca ¬∑ analiza log√≥w Exima, wykrywanie spamu (cyber_Folks)'],
+        ['advokat-varshava.md', 'aplikacja webowa + PWA dla kancelarii, na Harborze'],
+        ['noclegwsopocie.md', 'strona w Pythonie/FastAPI, na Harborze'],
+        ['zabbix.md', 'monitoring moich serwer√≥w'],
+        ['umami.md', 'w≈Çasna analityka www'],
+      ],
+      projectsHint: "‚Üí 'cat projects/<plik>' otwiera opis ¬∑ skrypty z pracy: 'ls ~/scripts'",
+
+      harborLead: 'W≈Çasna infrastruktura hostingowa (www + mail), budowana od zera na VPS-ie.',
+      harborGoal: 'Trochƒô nauka, trochƒô komercja: uczƒô siƒô administracji na prawdziwych us≈Çugach, przy okazji hostujƒô kilka ma≈Çych projekt√≥w WWW, a ka≈ºdƒÖ decyzjƒô spisujƒô jako open knowledge.',
+      harborStackHead: 'stack:',
+      harborStack: [
+        ['os', 'AlmaLinux 10 ¬∑ Hetzner Cloud (Falkenstein)'],
+        ['web', 'nginx 1.26.3 ze ≈∫r√≥de≈Ç + Apache jako backend + PHP-FPM'],
+        ['app', 'Python / FastAPI + Uvicorn po socketach unix (multi-tenant)'],
+        ['db', 'MariaDB + SQLite'],
+        ['cache', 'Redis + nginx FastCGI cache'],
+        ['security', 'firewalld ¬∑ fail2ban ¬∑ ModSecurity v3 + OWASP CRS v4'],
+        ['monitoring', 'Zabbix ¬∑ Netdata'],
+        ['analytics', 'Umami'],
+        ['backup', 'restic ‚Üí Hetzner'],
+        ['mail', 'Postfix + Dovecot + Rspamd (planowane)'],
+        ['iac', 'Ansible (planowane)'],
+      ],
+      harborStagesHead: 'etapy:',
+      harborStages: [
+        ['gotowe', 'hardening i setup ¬∑ web stack ¬∑ SSL + WordPress ¬∑ izolacja FastAPI ¬∑ bezpiecze≈Ñstwo L7 ¬∑ monitoring'],
+        ['w toku', 'separacja klient√≥w (PHP / MariaDB)'],
+        ['dalej', 'backupy ¬∑ serwer pocztowy ¬∑ Ansible'],
+      ],
+      harborWhy: 'Po co: prawdziwe us≈Çugi, prawdziwe awarie, prawdziwe naprawy ‚Äî to, co tutorial pomija.',
+      harborStatus: 'status: w aktywnym rozwoju ¬∑ licencja MIT (notatki i przyk≈Çadowe configi do wziƒôcia)',
+
+      robustLead: 'Analizuje logi Exima i wskazuje konta z prawdopodobnƒÖ wysy≈ÇkƒÖ spamu.',
+      robustNoBlock: 'Tworzy raport do rƒôcznej weryfikacji ‚Äî niczego nie blokuje i nie zmienia konfiguracji serwera.',
+      robustPipe: 'pipeline: pobranie log√≥w (SSH) ‚Üí parser Exim ‚Üí JSONL ‚Üí agregacja po queue_id ‚Üí scoring SMTP i PHP ‚Üí werdykty ‚Üí raport Top N',
+      robustSignals: 'sygna≈Çy: wolumen i piki tempa ¬∑ wzorce odbiorc√≥w ¬∑ spamerskie tematy ¬∑ blokady reputacyjne i bounce ¬∑ rozrzut prefiks√≥w IP (/24, /64) ¬∑ GeoIP',
+      robustReport: 'raport: priorytety HIGH / MID / LOW, karty z dowodami, wynik tekstowy + JSON',
+      robustRule: 'pojedynczy s≈Çaby sygna≈Ç nie daje HIGH ‚Äî werdykt ≈ÇƒÖczy niezale≈ºne dowody.',
+      robustStack: 'stack: Bash + Python 3, uruchamiany z gatewaya przez SSH',
+      robustSample: [
+        '$ ./spamhunt.sh s26',
+        'ROBUST | s26 | ostatnie 72h',
+        'HIGH: 3 | MID: 11 | LOW: 176',
+        '1. [HIGH] konto@domena.pl ¬∑ SMTP',
+        '   DOW√ìD: 410/11912 blokad jako spam (3%)',
+        '   WZORZEC: 11912 wysy≈Çek ¬∑ 3680 prefiks√≥w IP ¬∑ generowana lista ¬∑ slow-drip',
+      ],
+      robustStatus: 'status: napisany dla mojego zespo≈Çu w cyber_Folks ¬∑ rozwijany wsp√≥lnie z Dzia≈Çem Rozwoju',
+
+      advokatLead: 'Aplikacja webowa + PWA dla kancelarii adwokackiej.',
+      advokatBody: 'Leady, dokumenty, klienci i finanse w jednym miejscu ‚Äî ok. 50‚Äì60 u≈ºytkownik√≥w dziennie. Hostowana na Harborze.',
+      advokatCrmHead: 'aplikacja:',
+      advokatCrm: [
+        'zbiera leady ze strony na bie≈ºƒÖco',
+        'wbudowana edycja dokument√≥w',
+        'kartoteka klient√≥w i spraw',
+        'modu≈Ç finans√≥w',
+        'instaluje siƒô na telefonie jako PWA',
+      ],
+
+      zabbixLead: 'Monitoring moich serwer√≥w.',
+      zabbixBody: 'Hosty, us≈Çugi, wyzwalacze i alerty ‚Äî Zabbix pilnuje Harbora i reszty mojej infrastruktury.',
+
+      umamiLead: 'Samodzielnie hostowana analityka www, przyjazna prywatno≈õci.',
+      umamiBody: 'Statystyki ruchu moich stron bez oddawania danych odwiedzajƒÖcych firmom trzecim.',
+
+      noclegLead: 'noclegwsopocie.pl ‚Äî strona napisana w Pythonie / FastAPI.',
+      noclegBody: 'Dzia≈Ça na Harborze ‚Äî moim w≈Çasnym VPS-ie.',
+
+      redisLead: 'redis-check.sh ‚Äî pomocnik diagnostyki Redisa, u≈ºywany przez zesp√≥≈Ç CST.',
+      redisSteps: [
+        'sprawdza, czy u≈ºytkownik istnieje na serwerze',
+        'weryfikuje, czy procesy Redis u≈ºytkownika ≈ºyjƒÖ',
+        'je≈õli nie: sudo lx_redis_manage reset_redis <user> ‚Äî najczƒôstszy fix',
+      ],
+      redisUsage: 'u≈ºycie: redis-check.sh <u≈ºytkownik-directadmin>',
+
+      calveLead: 'calve.sh ‚Äî analiza wykorzystania limit√≥w CloudLinux, u≈ºywany przez zesp√≥≈Ç CST.',
+      calveBody: 'Snapshoty zu≈ºycia LVE u≈ºytkownika na serwerze www-cl-X ‚Äî CPU, RAM, procesy (EP) i IOPS ‚Äî w ciƒÖgu dnia, w zadanym interwale.',
+      calveWhen: 'zastosowanie: klient zg≈Çasza wolnƒÖ stronƒô ‚Üí widaƒá, czy i kiedy limity siƒô wysycajƒÖ, a potem czyta siƒô logi z tego okna.',
+      calveUsage: 'u≈ºycie: calve <serwer-www> <user> [data] [interwa≈Ç-min]',
+      calveSample: [
+        '$ calve www-cl-1 zielonapaczka 2026-07-30 10',
+        '09:00  CPU  38%   RAM 512M/1024M   EP  7/20   IOPS 122',
+        '09:10  CPU  97%   RAM 940M/1024M   EP 19/20   IOPS 610',
+        '09:20  CPU 100%   RAM 989M/1024M   EP 20/20   IOPS 655   <- wysycenie',
+      ],
+
+      casearchLead: 'casearch.sh ‚Äî wyszukuje klienta hostingu po domenie, loginie albo id hostingu.',
+      casearchUsage: 'u≈ºycie: casearch <domena|login|id-hostingu>',
+
+      exampleHead: 'przyk≈Çad:',
+
+      skillsRows: [
+        ['Linux', 'AlmaLinux ¬∑ CloudLinux ¬∑ bash ¬∑ systemd ¬∑ rsync'],
+        ['WWW', 'nginx ¬∑ Apache ¬∑ PHP-FPM'],
+        ['Dane', 'MariaDB/MySQL ¬∑ Redis'],
+        ['Poczta i DNS', 'Exim ¬∑ DNS ¬∑ SPF/DKIM/DMARC'],
+        ['Security', 'firewalld ¬∑ fail2ban ¬∑ ModSecurity'],
+        ['Ops', 'Zabbix ¬∑ restic'],
+        ['Skrypty', 'Python (FastAPI) ¬∑ bash ¬∑ Git'],
+        ['Panele', 'DirectAdmin ¬∑ cyber_Admin'],
+        ['Dalej', 'SysOps / administracja Linuksem'],
+      ],
+      skillsHint: "‚Üí wpisz 'htop', ≈ºeby zobaczyƒá to samo jako procesy.",
+
+      htopHead: ['PID', 'OBSZAR', 'OBCIƒÑ≈ª.', 'STATUS'],
+      htopRows: [
+        [101, 'wsparcie-tech', 'etat', 't-green', 88],
+        [102, 'linux', 'uczƒô siƒô na bie≈ºƒÖco', 't-green', 78],
+        [103, 'harbor', 'aktywny projekt', 't-green', 84],
+        [104, 'robust', 'projekt z pracy', 't-amber', 70],
+        [105, 'monitoring', 'zabbix ¬∑ umami', 't-amber', 52],
+        [106, 'automatyzacja', 'bash ¬∑ python', 't-amber', 46],
+        [107, 'sysops', 'nastƒôpny krok', 't-blue', 35],
+      ],
+      htopFoot: 'ObciƒÖ≈ºenie to metafora, nie metryka ‚Äî pokazuje, gdzie idzie moja uwaga.',
+
+      eduDegree: 'Licencjat',
+      eduField: 'Informatyka i Ekonometria',
+      eduSpec: 'specjalno≈õƒá: Aplikacje Informatyczne w Biznesie',
+      eduSchool: 'Uniwersytet Gda≈Ñski ¬∑ 2019‚Äì2022',
+      eduNext: 'Od 10.2026: studia podyplomowe ‚Äî Cyberbezpiecze≈Ñstwo',
+      eduNextSchool: 'Akademia Marynarki Wojennej w Gdyni',
+
+      booksRows: [
+        ['przeczytane', '‚ÄûJak dzia≈Ça Linux‚Äù ‚Äî Brian Ward'],
+        ['w trakcie', '‚ÄûUnix i Linux. Przewodnik administratora system√≥w‚Äù ‚Äî Nemeth i in.'],
+        ['w planach', '‚ÄûSystems Performance: Enterprise and the Cloud‚Äù ‚Äî Brendan Gregg'],
+      ],
+
+      goalsNow: 'teraz  ‚Üí  wsparcie techniczne (hosting, cyber_Folks)',
+      goalsNext: 'dalej  ‚Üí  SysOps / administracja Linuksem',
+      goalsLater: 'potem  ‚Üí  automatyzacja, monitoring, infrastruktura na wiƒôkszƒÖ skalƒô',
+      goalsNote: 'Uczciwie, krok po kroku, w praktyce.',
+
+      contactLead: 'Najszybciej z≈Çapiesz mnie mailem.',
+      contactHint: "‚Üí 'open github' otwiera link w nowej karcie.",
+
+      uptime: '27 lat online ‚Äî za dnia wsparcie techniczne, w budowie SysOps.',
+
+      helpTitle: 'Komendy',
+      helpTip: 'Tab uzupe≈Çnia ¬∑ ‚Üë / ‚Üì historia ¬∑ Ctrl+L czy≈õci ¬∑ Esc wychodzi z pe≈Çnego ekranu.',
+      helpMore: "‚Üí 'man <komenda>' opisuje pojedynczƒÖ komendƒô.",
+      helpSecContent: 'tre≈õƒá', helpSecFiles: 'pliki',
+      helpSecSystem: 'system', helpSecShell: 'pow≈Çoka',
+
+      lsEmpty: 'katalog jest pusty',
+      headUsage: 'u≈ºycie: head [-n N] <plik>',
+      tailUsage: 'u≈ºycie: tail [-n N] <plik>',
+      idNote: "poza grupƒÖ sudo ‚Äî sprawd≈∫ 'sudo'.",
+      wWhat: 'przeglƒÖda portfolio',
+      sysctlRows: [
+        ['nginx.service', 'serwuje to portfolio'],
+        ['postfix.service', 'poczta ‚Äî harbor'],
+        ['mariadb.service', 'bazy danych ‚Äî harbor'],
+        ['zabbix-agent.service', 'monitoring ‚Äî zabbix'],
+        ['umami.service', 'analityka www ‚Äî umami'],
+        ['redis-watch.timer', 'redis-check.sh dla u≈ºytkownik√≥w DirectAdmin'],
+      ],
+      sysctlFoot: 'wszystkie us≈Çugi zielone ‚Äî tak ma byƒá.',
+      rofs: 'system plik√≥w tylko do odczytu ‚Äî nic tu nie zmienisz.',
+      editor: "w tej pow≈Çoce nie ma $EDITOR ‚Äî pliki sƒÖ tylko do odczytu. spr√≥buj 'cat <plik>'.",
+      net: "ruch wychodzƒÖcy jest tu wy≈ÇƒÖczony ‚Äî ale 'open github' dzia≈Ça.",
+      pkg: 'mened≈ºer pakiet√≥w niepotrzebny ‚Äî ta strona nie ma ≈ºadnych zale≈ºno≈õci.',
+      ssh: 'visitor@harbor: Permission denied (publickey) ‚Äî harbor rozmawia tylko ze mnƒÖ.',
+      grepUsage: 'u≈ºycie: grep <wzorzec> [≈õcie≈ºka]',
+      grepNone: 'brak dopasowa≈Ñ',
+      grepIn: 'przeszukano',
+      findUsage: 'u≈ºycie: find <nazwa>',
+      findNone: 'nic nie znaleziono',
+      manUsage: 'u≈ºycie: man <komenda>',
+      manNo: 'brak opisu dla',
+      manUsageLabel: 'u≈ºycie',
+      echoUsage: 'u≈ºycie: echo <tekst>',
+      historyEmpty: 'historia jest pusta',
+      openUsage: 'u≈ºycie: open <github|linkedin|email>',
+      openUnknown: 'nie wiem, co otworzyƒá dla',
+      openDone: 'otwieram',
+      themeUsage: 'u≈ºycie: theme <dark|light|auto>',
+      themeNow: 'motyw:',
+      langUsage: 'u≈ºycie: lang <en|pl>',
+      langNow: 'jƒôzyk:',
+      cdNoDir: 'nie ma takiego katalogu:',
+      cdNotDir: 'to nie jest katalog:',
+      catNoFile: 'nie ma takiego pliku:',
+      catIsDir: 'to katalog:',
+      catUsage: 'u≈ºycie: cat <plik>',
+      unknownCmd: 'Tej jeszcze nie znam.',
+      unknownDid: 'Czy chodzi≈Ço o: ',
+      unknownHelp: "Wpisz 'help', ≈ºeby zobaczyƒá wszystko.",
+      sudo: 'dobra pr√≥ba ‚Äî ta pow≈Çoka nie ma roota, tylko CV.',
+      exit: "stƒÖd nie ma wyj≈õcia, ale 'clear' daje czysty ekran.",
+      bannerSub: 'wsparcie techniczne hostingu ‚Üí SysOps ¬∑ pow≈Çoka portfolio',
+
+      neoRows: [
+        ['host', 'portfolio.pawelrogoza.pl'],
+        ['pow≈Çoka', 'portfolio-shell 1.1'],
+        ['rola', 'wsparcie techniczne @ cyber_Folks (CST) ¬∑ Ambasador cyber_Admin'],
+        ['projekty', 'harbor ¬∑ robust ¬∑ advokat-varshava ¬∑ noclegwsopocie ¬∑ zabbix ¬∑ umami'],
+        ['skrypty', 'redis-check ¬∑ calve ¬∑ casearch'],
+        ['dalej', 'SysOps / administracja Linuksem'],
+      ],
+      neoTheme: 'motyw',
+      neoLang: 'jƒôzyk',
+      neoUptime: 'sesja',
+    },
+  };
+
+  /* one-line description per command, used by both `help` and `man` */
+  var DESC = {
+    en: {
+      whoami: 'short intro', about: 'about me', projects: 'list projects',
+      harbor: 'open Harbor', robust: 'spam detection (work)', advokat: 'law-firm app + PWA',
+      nocleg: 'FastAPI website', zabbix: 'monitoring project', umami: 'web analytics project',
+      skills: 'tech skill map', htop: 'skills as processes',
+      education: 'background', books: 'reading list', goals: 'career direction', contact: 'links & email',
+      ls: 'list files (-l, -a)', cd: 'change directory', pwd: 'print working directory',
+      tree: 'show the file tree', cat: 'print a file',
+      head: 'first lines of a file', tail: 'last lines of a file',
+      grep: 'search inside files', find: 'find a file by name', open: 'open an external link',
+      uname: 'kernel info', hostname: 'host name', id: 'who you are',
+      df: 'disk usage', free: 'memory usage', w: 'who is logged in',
+      systemctl: 'service status', ping: 'reach a host',
+      neofetch: 'system card', banner: 'ascii banner', uptime: 'a small note',
+      date: 'current date and time', echo: 'print text back', history: 'commands you ran',
+      man: 'explain a command', theme: 'dark / light / auto', lang: 'switch EN / PL',
+      clear: 'clear the screen', help: 'this list',
+    },
+    pl: {
+      whoami: 'kr√≥tkie intro', about: 'o mnie', projects: 'lista projekt√≥w',
+      harbor: 'otw√≥rz Harbor', robust: 'wykrywanie spamu (praca)', advokat: 'aplikacja kancelarii + PWA',
+      nocleg: 'strona w FastAPI', zabbix: 'projekt: monitoring', umami: 'projekt: analityka www',
+      skills: 'mapa umiejƒôtno≈õci', htop: 'umiejƒôtno≈õci jako procesy',
+      education: 'wykszta≈Çcenie', books: 'lista lektur', goals: 'kierunek rozwoju', contact: 'linki i e-mail',
+      ls: 'lista plik√≥w (-l, -a)', cd: 'zmie≈Ñ katalog', pwd: 'poka≈º bie≈ºƒÖcy katalog',
+      tree: 'drzewo plik√≥w', cat: 'wypisz plik',
+      head: 'pierwsze linie pliku', tail: 'ostatnie linie pliku',
+      grep: 'szukaj w plikach', find: 'znajd≈∫ plik po nazwie', open: 'otw√≥rz link zewnƒôtrzny',
+      uname: 'informacje o jƒÖdrze', hostname: 'nazwa hosta', id: 'kim jeste≈õ',
+      df: 'zajƒôto≈õƒá dysku', free: 'zu≈ºycie pamiƒôci', w: 'kto jest zalogowany',
+      systemctl: 'status us≈Çug', ping: 'sprawd≈∫ host',
+      neofetch: 'wizyt√≥wka systemu', banner: 'baner ascii', uptime: 'drobna notka',
+      date: 'aktualna data i godzina', echo: 'powt√≥rz tekst', history: 'wpisane komendy',
+      man: 'opis komendy', theme: 'ciemny / jasny / auto', lang: 'prze≈ÇƒÖcz EN / PL',
+      clear: 'wyczy≈õƒá ekran', help: 'ta lista',
+    },
+  };
+
+  var lang = load(KEY.lang, 'en');
+  if (lang !== 'en' && lang !== 'pl') lang = 'en';
+
+  function t(key) {
+    var v = TERM[lang][key];
+    return v === undefined ? TERM.en[key] : v;
+  }
+  function desc(name) {
+    return (DESC[lang] && DESC[lang][name]) || DESC.en[name] || '';
+  }
+
+  /* =====================================================================
+     3. theme
+     ===================================================================== */
+
+  var root = document.documentElement;
+  var prefersDark = window.matchMedia
+    ? window.matchMedia('(prefers-color-scheme: dark)')
+    : { matches: false, addEventListener: function () {} };
+
+  /* Dark is the default ‚Äî see js/theme.js, which applies it before first paint.
+     'auto' is opt-in and is the only value that defers to the system. */
+  var DEFAULT_THEME = 'dark';
+  var THEME_COLOR = { light: '#f3f1ec', dark: '#1b1e28' };
+  var themeColorMeta = document.getElementById('theme-color');
+
+  function activeTheme() {
+    var attr = root.getAttribute('data-theme');
+    if (attr === 'light' || attr === 'dark') return attr;
+    return prefersDark.matches ? 'dark' : 'light';   // only reached in 'auto'
+  }
+  function syncThemeColor() {
+    if (themeColorMeta) themeColorMeta.setAttribute('content', THEME_COLOR[activeTheme()]);
+  }
+  function setTheme(mode) {
+    if (mode === 'auto') root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', mode);
+    save(KEY.theme, mode);
+    syncThemeColor();
+  }
+  /* theme.js already set the attribute; only an explicit 'auto' clears it */
+  if (load(KEY.theme, DEFAULT_THEME) === 'auto') root.removeAttribute('data-theme');
+  syncThemeColor();
+
+  /* =====================================================================
+     4. virtual filesystem
+     ===================================================================== */
+
+  var HOME = '/home/pawel';
+
+  /* Files carry the name of the renderer that prints them, so `cat about.md`
+     and the `about` command cannot drift apart. `size` feeds `ls -l`; names
+     starting with a dot stay hidden until `ls -a`. */
+  var TREE = {
+    type: 'dir',
+    children: {
+      'about.md': { type: 'file', render: 'about', size: 512 },
+      'skills.txt': { type: 'file', render: 'skills', size: 486 },
+      'education.txt': { type: 'file', render: 'education', size: 208 },
+      'books.txt': { type: 'file', render: 'books', size: 264 },
+      'goals.txt': { type: 'file', render: 'goals', size: 214 },
+      'contact.txt': { type: 'file', render: 'contact', size: 342 },
+      'projects': {
+        type: 'dir',
+        children: {
+          'harbor.md': { type: 'file', render: 'harbor', size: 2048 },
+          'robust.md': { type: 'file', render: 'robust', size: 2048 },
+          'advokat-varshava.md': { type: 'file', render: 'advokat', size: 1024 },
+          'noclegwsopocie.md': { type: 'file', render: 'nocleg', size: 384 },
+          'zabbix.md': { type: 'file', render: 'zabbix', size: 420 },
+          'umami.md': { type: 'file', render: 'umami', size: 386 },
+        },
+      },
+      'scripts': {
+        type: 'dir',
+        children: {
+          'redis-check.sh': { type: 'file', render: 'redisCheck', size: 1337 },
+          'calve.sh': { type: 'file', render: 'calve', size: 2048 },
+          'casearch.sh': { type: 'file', render: 'casearch', size: 512 },
+        },
+      },
+    },
+  };
+
+  var cwd = [];   // segments below HOME; [] === ~
+
+  function nodeAt(segments) {
+    var node = TREE;
+    for (var i = 0; i < segments.length; i++) {
+      if (node.type !== 'dir' || !node.children[segments[i]]) return null;
+      node = node.children[segments[i]];
+    }
+    return node;
+  }
+
+  /* Resolves a user-typed path to { segments, node } or null when it escapes
+     the tree. `node` is null when the path simply does not exist. */
+  function resolvePath(raw) {
+    var p = String(raw || '').trim();
+    var segs;
+    if (p === '' || p === '~' || p === HOME) return { segments: [], node: TREE };
+
+    if (p.charAt(0) === '/' || p.indexOf('~/') === 0) {
+      var abs = p.indexOf('~/') === 0 ? p.slice(2) : p;
+      if (p.charAt(0) === '/') {
+        if (abs.indexOf(HOME) !== 0) return null;          // outside the sandbox
+        abs = abs.slice(HOME.length);
+      }
+      segs = [];
+      abs.split('/').forEach(function (s) { if (s && s !== '.') segs.push(s); });
+    } else {
+      segs = cwd.slice();
+      p.split('/').forEach(function (s) {
+        if (!s || s === '.') return;
+        if (s === '..') segs.pop();
+        else segs.push(s);
+      });
+    }
+    return { segments: segs, node: nodeAt(segs) };
+  }
+
+  function pathLabel(segments) {
+    return segments.length ? '~/' + segments.join('/') : '~';
+  }
+  function absLabel(segments) {
+    return segments.length ? HOME + '/' + segments.join('/') : HOME;
+  }
+  function childNames(node, withHidden) {
+    if (!node || node.type !== 'dir') return [];
+    return Object.keys(node.children).filter(function (name) {
+      return withHidden || name.charAt(0) !== '.';         // dotfiles need -a
+    }).sort(function (a, b) {
+      var ad = node.children[a].type === 'dir', bd = node.children[b].type === 'dir';
+      if (ad !== bd) return ad ? -1 : 1;                   // directories first
+      return a.localeCompare(b);
+    });
+  }
+  function walk(node, segments, visit) {
+    childNames(node).forEach(function (name) {
+      var child = node.children[name];
+      var path = segments.concat([name]);
+      visit(child, path);
+      if (child.type === 'dir') walk(child, path, visit);
+    });
+  }
+
+  /* =====================================================================
+     5. output DSL
+     ===================================================================== */
+
+  /* opts.mt maps onto a .mt-<n> utility class rather than an inline style, so
+     the deployed CSP can stay free of style-src 'unsafe-inline'.
+     Allowed values live in style.css: 2, 4, 6, 8, 12. */
+  function spacing(cls, mt) {
+    return cls + (mt ? ' mt-' + mt : '');
+  }
+  function ln(text, opts) {
+    opts = opts || {};
+    var d = document.createElement('div');
+    d.className = spacing('term-line' + (opts.cls ? ' ' + opts.cls : ''), opts.mt);
+    if (text !== null && text !== undefined) d.textContent = text;
+    return d;
+  }
+  function parts(nodes, opts) {
+    var d = ln(null, opts);
+    nodes.forEach(function (n) { d.appendChild(n); });
+    return d;
+  }
+  function tx(text, cls) {
+    var s = document.createElement('span');
+    if (cls) s.className = cls;
+    s.textContent = text;
+    return s;
+  }
+  function link(text, href) {
+    var a = document.createElement('a');
+    a.className = 'term-link';
+    a.href = href;
+    a.textContent = text;
+    if (/^https?:/i.test(href)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    return a;
+  }
+  function grid(rows, opts) {
+    opts = opts || {};
+    var g = document.createElement('div');
+    g.className = spacing('term-grid' + (opts.cls ? ' ' + opts.cls : ''), opts.mt);
+    rows.forEach(function (row) {
+      var k = document.createElement('span');
+      k.className = 'grid-k' + (opts.keyCls ? ' ' + opts.keyCls : '');
+      k.textContent = row[0];
+      var v = document.createElement('span');
+      v.className = 'grid-v' + (opts.valCls ? ' ' + opts.valCls : '');
+      if (row[1] instanceof Node) v.appendChild(row[1]);
+      else v.textContent = row[1];
+      g.appendChild(k); g.appendChild(v);
+    });
+    return g;
+  }
+
+  /* =====================================================================
+     6. commands
+     ===================================================================== */
+
+  var ALIAS = {
+    'cls': 'clear', 'top': 'htop', 'ps': 'htop', 'dir': 'ls', 'll': 'ls',
+    'commands': 'help', '?': 'help', 'h': 'help', 'info': 'about', 'me': 'about',
+    'project': 'projects', 'work': 'projects', 'edu': 'education', 'cv': 'about',
+    'mail': 'contact', 'email': 'contact', 'links': 'contact', 'hire': 'contact',
+    'motd': 'banner', 'logo': 'banner', 'fetch': 'neofetch', 'who': 'w',
+    'language': 'lang', 'colour': 'theme', 'color': 'theme', 'dark': 'theme', 'light': 'theme',
+    'quit': 'exit', 'logout': 'exit', 'q': 'exit', 'man': 'man', 'search': 'grep',
+    'noclegwsopocie': 'nocleg', 'reading': 'books',
+  };
+
+  var ART = [
+    '‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ïó ‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ïó ',
+    '‚ñà‚ñà‚ïî‚ïê‚ïê‚ñà‚ñà‚ïó‚ñà‚ñà‚ïî‚ïê‚ïê‚ñà‚ñà‚ïó',
+    '‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ïî‚ïù‚ñà‚ñà‚ñà‚ñà‚ñà‚ñà‚ïî‚ïù',
+    '‚ñà‚ñà‚ïî‚ïê‚ïê‚ïê‚ïù ‚ñà‚ñà‚ïî‚ïê‚ïê‚ñà‚ñà‚ïó',
+    '‚ñà‚ñà‚ïë     ‚ñà‚ñà‚ïë  ‚ñà‚ñà‚ïë',
+    '‚ïö‚ïê‚ïù     ‚ïö‚ïê‚ïù  ‚ïö‚ïê‚ïù',
+  ];
+
+  function art(cls) {
+    var pre = document.createElement('div');
+    pre.className = 'term-art' + (cls ? ' ' + cls : '');
+    pre.textContent = ART.join('\n');
+    return pre;
+  }
+
+  /* file renderers ‚Äî also reachable as bare commands */
+  var RENDER = {
+    about: function () {
+      return [
+        ln('Pawe≈Ç Rogo≈ºa', { cls: 't-bold' }),
+        ln(t('aboutRole'), { cls: 't-dim', mt: 2 }),
+        ln(t('aboutHeading'), { cls: 't-dim' }),
+        ln(t('aboutWork'), { mt: 8 }),
+        ln(t('aboutEdu'), { cls: 't-dim', mt: 4 }),
+        ln(t('aboutMain'), { mt: 8 }),
+      ];
+    },
+    projects: function () {
+      return [
+        ln('projects/', { cls: 't-blue t-bold' }),
+        grid(t('projectsRows'), { mt: 4, keyCls: 't-green' }),
+        ln(t('projectsHint'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    harbor: function () {
+      return [
+        ln('# Harbor', { cls: 't-green t-bold' }),
+        ln(t('harborLead'), { mt: 4 }),
+        ln(t('harborGoal'), { cls: 't-dim' }),
+        ln(t('harborStackHead'), { cls: 't-blue t-bold', mt: 8 }),
+        grid(t('harborStack'), { mt: 2, keyCls: 't-green' }),
+        ln(t('harborStagesHead'), { cls: 't-blue t-bold', mt: 8 }),
+        grid(t('harborStages'), { mt: 2, keyCls: 't-amber' }),
+        ln(t('harborWhy'), { cls: 't-dim', mt: 8 }),
+        ln(t('harborStatus'), { cls: 't-amber', mt: 8 }),
+      ];
+    },
+    robust: function () {
+      var out = [
+        ln('# Robust', { cls: 't-green t-bold' }),
+        ln(t('robustLead'), { mt: 4 }),
+        ln(t('robustNoBlock'), { cls: 't-dim' }),
+        ln(t('robustPipe'), { mt: 8 }),
+        ln(t('robustSignals'), { cls: 't-dim', mt: 4 }),
+        ln(t('robustReport'), { cls: 't-dim' }),
+        ln(t('robustRule'), { cls: 't-dim' }),
+        ln(t('robustStack'), { cls: 't-dim' }),
+        ln(t('exampleHead'), { cls: 't-dim', mt: 8 }),
+      ];
+      t('robustSample').forEach(function (l, i) {
+        out.push(ln(l, { cls: 't-faint', mt: i === 0 ? 4 : 0 }));
+      });
+      out.push(ln(t('robustStatus'), { cls: 't-amber', mt: 8 }));
+      return out;
+    },
+    advokat: function () {
+      var out = [
+        ln('# advokat-varshava.pl', { cls: 't-green t-bold' }),
+        ln(t('advokatLead'), { mt: 4 }),
+        ln(t('advokatBody'), { cls: 't-dim', mt: 8 }),
+        ln(t('advokatCrmHead'), { mt: 8 }),
+      ];
+      t('advokatCrm').forEach(function (l, i) {
+        out.push(ln('‚Ä¢ ' + l, { cls: 't-dim', mt: i === 0 ? 4 : 0 }));
+      });
+      out.push(parts([tx('‚Üí ', 't-dim'), link('advokat-varshava.pl', 'https://advokat-varshava.pl')], { mt: 8 }));
+      return out;
+    },
+    zabbix: function () {
+      return [
+        ln('# Zabbix', { cls: 't-green t-bold' }),
+        ln(t('zabbixLead'), { mt: 4 }),
+        ln(t('zabbixBody'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    umami: function () {
+      return [
+        ln('# Umami', { cls: 't-green t-bold' }),
+        ln(t('umamiLead'), { mt: 4 }),
+        ln(t('umamiBody'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    nocleg: function () {
+      return [
+        ln('# noclegwsopocie.pl', { cls: 't-green t-bold' }),
+        ln(t('noclegLead'), { mt: 4 }),
+        ln(t('noclegBody'), { cls: 't-dim', mt: 8 }),
+        parts([tx('‚Üí ', 't-dim'), link('noclegwsopocie.pl', 'https://noclegwsopocie.pl')], { mt: 8 }),
+      ];
+    },
+    redisCheck: function () {
+      var out = [
+        ln('#!/usr/bin/env bash', { cls: 't-faint' }),
+        ln(t('redisLead'), { cls: 't-green t-bold', mt: 4 }),
+      ];
+      t('redisSteps').forEach(function (l, i) {
+        out.push(ln((i + 1) + '. ' + l, { cls: 't-dim', mt: i === 0 ? 4 : 0 }));
+      });
+      out.push(ln(t('redisUsage'), { cls: 't-dim', mt: 8 }));
+      return out;
+    },
+    calve: function () {
+      var out = [
+        ln('#!/usr/bin/env bash', { cls: 't-faint' }),
+        ln(t('calveLead'), { cls: 't-green t-bold', mt: 4 }),
+        ln(t('calveBody'), { mt: 4 }),
+        ln(t('calveWhen'), { cls: 't-dim', mt: 4 }),
+        ln(t('calveUsage'), { cls: 't-dim', mt: 8 }),
+        ln(t('exampleHead'), { cls: 't-dim', mt: 8 }),
+      ];
+      t('calveSample').forEach(function (l, i) {
+        out.push(ln(l, { cls: 't-faint', mt: i === 0 ? 4 : 0 }));
+      });
+      return out;
+    },
+    casearch: function () {
+      return [
+        ln('#!/usr/bin/env bash', { cls: 't-faint' }),
+        ln(t('casearchLead'), { cls: 't-green t-bold', mt: 4 }),
+        ln(t('casearchUsage'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    skills: function () {
+      var g = grid(t('skillsRows'), { mt: 4, keyCls: 't-green' });
+      /* the last row is the forward-looking one ‚Äî mark it amber */
+      var vals = g.querySelectorAll('.grid-v');
+      if (vals.length) vals[vals.length - 1].classList.add('t-amber');
+      return [
+        ln('skills.txt', { cls: 't-blue t-bold' }),
+        g,
+        ln(t('skillsHint'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    education: function () {
+      return [
+        ln('education.txt', { cls: 't-blue t-bold' }),
+        ln(t('eduDegree'), { mt: 4 }),
+        ln(t('eduField')),
+        ln(t('eduSpec'), { cls: 't-dim' }),
+        ln(t('eduSchool'), { cls: 't-dim' }),
+        ln(t('eduNext'), { cls: 't-amber', mt: 8 }),
+        ln(t('eduNextSchool'), { cls: 't-dim' }),
+      ];
+    },
+    books: function () {
+      return [
+        ln('books.txt', { cls: 't-blue t-bold' }),
+        grid(t('booksRows'), { mt: 4, keyCls: 't-green' }),
+      ];
+    },
+    goals: function () {
+      return [
+        ln('goals.txt', { cls: 't-blue t-bold' }),
+        ln(t('goalsNow'), { cls: 't-green', mt: 4 }),
+        ln(t('goalsNext'), { cls: 't-amber' }),
+        ln(t('goalsLater'), { cls: 't-blue' }),
+        ln(t('goalsNote'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+    contact: function () {
+      return [
+        ln('contact.txt', { cls: 't-blue t-bold' }),
+        ln(t('contactLead'), { cls: 't-dim', mt: 2 }),
+        grid([
+          ['Email', link(EMAIL, LINKS.email)],
+          ['GitHub', link('github.com/pawel-rogoza', LINKS.github)],
+          ['LinkedIn', link('linkedin.com/in/pawel-rogoza', LINKS.linkedin)],
+        ], { mt: 6, keyCls: 't-dim' }),
+        ln(t('contactHint'), { cls: 't-dim', mt: 8 }),
+      ];
+    },
+  };
+
+  /* Plain text of a rendered file, one entry per visible line ‚Äî grep matches
+     against this. Key/value grids are one element holding many rows, so they
+     are unpacked in pairs instead of collapsing into a single run-on line. */
+  function fileText(renderName) {
+    var lines = [];
+    (RENDER[renderName] ? RENDER[renderName]() : []).forEach(function (node) {
+      if (node.classList && node.classList.contains('term-grid')) {
+        var cells = node.children;
+        for (var i = 0; i + 1 < cells.length; i += 2) {
+          lines.push(cells[i].textContent + '  ' + cells[i + 1].textContent);
+        }
+      } else {
+        lines.push(node.textContent);
+      }
+    });
+    return lines;
+  }
+
+  function treeLines(node, segments, prefix, out) {
+    var names = childNames(node);
+    names.forEach(function (name, i) {
+      var last = i === names.length - 1;
+      var child = node.children[name];
+      var isDir = child.type === 'dir';
+      out.push(ln(prefix + (last ? '‚îî‚îÄ‚îÄ ' : '‚îú‚îÄ‚îÄ ') + name + (isDir ? '/' : ''), {
+        cls: isDir ? 't-blue' : 't-dim',
+      }));
+      if (isDir) treeLines(child, segments.concat([name]), prefix + (last ? '    ' : '‚îÇ   '), out);
+    });
+    return out;
+  }
+
+  /* --- small command plumbing ------------------------------------------ */
+
+  /* "-la" and "-l -a" both land in { flags: { l, a }, rest: [paths‚Ä¶] };
+     unknown letters are accepted and ignored, like a forgiving shell. */
+  function splitFlags(args) {
+    var flags = {}, rest = [];
+    args.forEach(function (a) {
+      if (/^-[A-Za-z]+$/.test(a)) a.slice(1).split('').forEach(function (c) { flags[c] = true; });
+      else rest.push(a);
+    });
+    return { flags: flags, rest: rest };
+  }
+
+  var LS_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function lsStamp() {
+    var d = new Date();
+    return LS_MONTHS[d.getMonth()] + ' ' + String(d.getDate()).padStart(2, ' ') + ' 09:41';
+  }
+
+  function lsCls(name, isDir) {
+    return isDir ? 't-blue' : /\.sh$/.test(name) ? 't-green' : '';
+  }
+
+  /* one row of `ls -l`; node is null for the '.' / '..' pseudo entries */
+  function longLine(node, name) {
+    var isDir = !node || node.type === 'dir';
+    var perms = isDir ? 'drwxr-xr-x' : /\.sh$/.test(name) ? '-rwxr-xr-x' : '-rw-r--r--';
+    var size = isDir ? 4096 : node.size || 640;
+    var meta = perms + '  pawel pawel ' + String(size).padStart(5, ' ') + ' ' + lsStamp() + ' ';
+    return parts([tx(meta, 't-dim'), tx(name + (isDir && name.charAt(0) !== '.' ? '/' : ''), lsCls(name, isDir))]);
+  }
+
+  function headTail(args, fromEnd) {
+    var n = 10, path = null, label = fromEnd ? 'tail' : 'head';
+    for (var i = 0; i < args.length; i++) {
+      var a = args[i], m;
+      if (a === '-n' && args[i + 1]) n = parseInt(args[++i], 10) || n;
+      else if ((m = a.match(/^-n?(\d+)$/))) n = parseInt(m[1], 10) || n;
+      else if (a.charAt(0) === '-') { /* ignore other flags */ }
+      else if (!path) path = a;
+    }
+    if (!path) return [ln(t(fromEnd ? 'tailUsage' : 'headUsage'), { cls: 't-dim' })];
+    var target = resolvePath(path);
+    if (!target || !target.node) return [ln(label + ': ' + path + ': ' + t('catNoFile'), { cls: 't-amber' })];
+    if (target.node.type === 'dir') return [ln(label + ': ' + path + ': ' + t('catIsDir'), { cls: 't-amber' })];
+    var lines = fileText(target.node.render);
+    return (fromEnd ? lines.slice(-n) : lines.slice(0, n)).map(function (text) { return ln(text); });
+  }
+
+  /* easter eggs share one shape: a single translated line */
+  function saysT(key, cls) {
+    return { run: function () { return [ln(t(key), { cls: cls || 't-dim' })]; } };
+  }
+
+  var COMMANDS = {
+    /* --- content ---------------------------------------------------- */
+    whoami: { run: function () { return [ln(t('whoami'))]; } },
+    about: { run: RENDER.about },
+    projects: { run: RENDER.projects },
+    harbor: { run: RENDER.harbor },
+    robust: { run: RENDER.robust },
+    advokat: { run: RENDER.advokat },
+    nocleg: { run: RENDER.nocleg },
+    zabbix: { run: RENDER.zabbix },
+    umami: { run: RENDER.umami },
+    skills: { run: RENDER.skills },
+    education: { run: RENDER.education },
+    books: { run: RENDER.books },
+    goals: { run: RENDER.goals },
+    contact: { run: RENDER.contact },
+
+    htop: {
+      run: function () {
+        var head = t('htopHead');
+        var wrap = document.createElement('div');
+        wrap.className = 'htop';
+
+        /* header uses the same three-slot .meter layout so the columns line up */
+        var header = document.createElement('div');
+        header.className = 'meter meter-head';
+        header.appendChild(tx(head[0].padEnd(5) + head[1].padEnd(15), 'meter-label'));
+        header.appendChild(tx(head[2], 'meter-track'));
+        header.appendChild(tx(head[3], 'meter-value t-dim'));
+        wrap.appendChild(header);
+
+        var bars = [];
+        t('htopRows').forEach(function (r) {
+          var row = document.createElement('div');
+          row.className = 'meter';
+
+          var label = tx(String(r[0]).padEnd(5) + r[1].padEnd(15), 'meter-label');
+          var track = document.createElement('span');
+          track.className = 'meter-track';
+          var fill = document.createElement('span');
+          fill.className = 'meter-fill' + (r[3] === 't-amber' ? ' is-amber' : r[3] === 't-blue' ? ' is-blue' : r[3] === 't-dim' ? ' is-dim' : '');
+          fill.style.width = r[4] + '%';
+          track.appendChild(fill);
+          var status = tx(r[2], 'meter-value ' + r[3]);
+
+          row.appendChild(label); row.appendChild(track); row.appendChild(status);
+          wrap.appendChild(row);
+          bars.push({ fill: fill, base: r[4] });
+        });
+
+        if (!reducedMotion.matches) animateMeters(wrap, bars);
+        return [wrap, ln(t('htopFoot'), { cls: 't-dim', mt: 6 })];
+      },
+    },
+
+    uptime: { run: function () { return [ln(t('uptime'))]; } },
+
+    date: {
+      run: function () {
+        var now = new Date();
+        var locale = lang === 'pl' ? 'pl-PL' : 'en-GB';
+        return [ln(now.toLocaleString(locale, {
+          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+          hour: '2-digit', minute: '2-digit',
+        }))];
+      },
+    },
+
+    /* --- system --------------------------------------------------------
+       Real terminal output is English; only the human-facing bits translate. */
+    uname: {
+      usage: 'uname [-a]',
+      run: function (args) {
+        return [ln(splitFlags(args).flags.a
+          ? 'Linux portfolio 6.1.0-portfolio #1 SMP PREEMPT_DYNAMIC x86_64 GNU/Linux'
+          : 'Linux')];
+      },
+    },
+
+    hostname: { run: function () { return [ln('portfolio.pawelrogoza.pl')]; } },
+
+    id: {
+      run: function () {
+        return [
+          ln('uid=1000(visitor) gid=1000(visitor) groups=1000(visitor)'),
+          ln(t('idNote'), { cls: 't-dim', mt: 2 }),
+        ];
+      },
+    },
+
+    df: {
+      usage: 'df [-h]',
+      run: function () {
+        return [
+          ln('Filesystem      Size  Used Avail Use% Mounted on', { cls: 't-dim' }),
+          ln('/dev/vda1        25G  8.1G   17G  33% /'),
+          ln('/dev/vdb1        50G   19G   31G  38% /backup'),
+          ln('tmpfs           2.0G     0  2.0G   0% /dev/shm'),
+        ];
+      },
+    },
+
+    free: {
+      usage: 'free [-h]',
+      run: function () {
+        return [
+          ln('               total        used        free   available', { cls: 't-dim' }),
+          ln('Mem:            4096        1742        2354        2354'),
+          ln('Swap:           1024           0        1024        1024'),
+        ];
+      },
+    },
+
+    w: {
+      run: function () {
+        var now = new Date().toTimeString().slice(0, 8);
+        return [
+          ln(' ' + now + ' up 27 years,  1 user,  load average: 0.42, 0.35, 0.30', { cls: 't-dim' }),
+          ln('USER     TTY      FROM     LOGIN@   WHAT', { cls: 't-dim' }),
+          ln('visitor  pts/0    web      now      ' + t('wWhat')),
+        ];
+      },
+    },
+
+    systemctl: {
+      usage: 'systemctl [status]',
+      run: function () {
+        var out = [ln('UNIT'.padEnd(22, ' ') + 'ACTIVE  DESCRIPTION', { cls: 't-dim' })];
+        t('sysctlRows').forEach(function (r) {
+          out.push(parts([tx(r[0].padEnd(22, ' ')), tx('active  ', 't-green'), tx(r[1], 't-dim')]));
+        });
+        out.push(ln(t('sysctlFoot'), { cls: 't-faint', mt: 4 }));
+        return out;
+      },
+    },
+
+    ping: {
+      usage: 'ping <host>',
+      run: function (args) {
+        var host = (splitFlags(args).rest[0] || 'harbor').replace(/^https?:\/\//, '');
+        return [
+          ln('PING ' + host + ' (10.13.37.7) 56(84) bytes of data.'),
+          ln('64 bytes from ' + host + ': icmp_seq=1 ttl=64 time=0.42 ms'),
+          ln('64 bytes from ' + host + ': icmp_seq=2 ttl=64 time=0.38 ms'),
+          ln('64 bytes from ' + host + ': icmp_seq=3 ttl=64 time=0.45 ms'),
+          ln('--- ' + host + ' ping statistics ---', { mt: 4 }),
+          ln('3 packets transmitted, 3 received, 0% packet loss', { cls: 't-dim' }),
+        ];
+      },
+    },
+
+    banner: {
+      run: function () {
+        return [art(), ln(t('bannerSub'), { cls: 't-dim', mt: 4 })];
+      },
+    },
+
+    neofetch: {
+      run: function () {
+        var box = document.createElement('div');
+        box.className = 'neofetch';
+
+        var left = document.createElement('div');
+        left.className = 'neofetch-art';
+        left.textContent = ART.join('\n');
+
+        var right = document.createElement('div');
+        right.className = 'neofetch-info';
+        right.appendChild(parts([tx('visitor', 't-green'), tx('@', 't-dim'), tx('portfolio', 't-green')], { cls: 't-bold' }));
+        right.appendChild(ln('‚îÄ'.repeat(22), { cls: 't-faint' }));
+
+        var rows = t('neoRows').slice();
+        rows.push([t('neoTheme'), activeTheme()]);
+        rows.push([t('neoLang'), lang.toUpperCase()]);
+        rows.push([t('neoUptime'), sessionUptime()]);
+        right.appendChild(grid(rows, { keyCls: 't-green' }));
+
+        box.appendChild(left); box.appendChild(right);
+        return [box];
+      },
+    },
+
+    /* --- filesystem ------------------------------------------------- */
+    pwd: { run: function () { return [ln(absLabel(cwd))]; } },
+
+    ls: {
+      usage: 'ls [-l] [-a] [path]',
+      run: function (args) {
+        var parsed = splitFlags(args);
+        var arg0 = parsed.rest[0] || '.';
+        var target = resolvePath(arg0);
+        if (!target || !target.node) return [ln(t('cdNoDir') + ' ' + arg0, { cls: 't-amber' })];
+
+        if (target.node.type !== 'dir') {
+          var base = target.segments[target.segments.length - 1];
+          return [parsed.flags.l ? longLine(target.node, base) : ln(base)];
+        }
+
+        var names = childNames(target.node, parsed.flags.a);
+        var all = parsed.flags.a ? ['.', '..'].concat(names) : names;
+
+        if (parsed.flags.l) {
+          var out = [ln('total ' + all.length * 4, { cls: 't-faint' })];
+          all.forEach(function (name) {
+            out.push(longLine(name === '.' || name === '..' ? null : target.node.children[name], name));
+          });
+          return out;
+        }
+
+        if (!all.length) return [ln(t('lsEmpty'), { cls: 't-dim' })];
+        var row = ln(null);
+        all.forEach(function (name, i) {
+          var child = target.node.children[name];
+          var isDir = !child || child.type === 'dir';       // '.' / '..' count as dirs
+          if (i) row.appendChild(tx('   '));
+          row.appendChild(tx(name + (isDir && child ? '/' : ''), lsCls(name, isDir)));
+        });
+        return [row];
+      },
+    },
+
+    head: { usage: 'head [-n N] <file>', run: function (args) { return headTail(args, false); } },
+    tail: { usage: 'tail [-n N] <file>', run: function (args) { return headTail(args, true); } },
+
+    cd: {
+      usage: 'cd <dir>',
+      run: function (args) {
+        var target = resolvePath(args[0] || '~');
+        if (!target || !target.node) return [ln(t('cdNoDir') + ' ' + (args[0] || '~'), { cls: 't-amber' })];
+        if (target.node.type !== 'dir') return [ln(t('cdNotDir') + ' ' + args[0], { cls: 't-amber' })];
+        cwd = target.segments;
+        syncPath();
+        return [ln(absLabel(cwd), { cls: 't-dim' })];
+      },
+    },
+
+    tree: {
+      run: function () {
+        return [ln(HOME, { cls: 't-green' })].concat(treeLines(TREE, [], '', []));
+      },
+    },
+
+    cat: {
+      usage: 'cat <file>',
+      run: function (args) {
+        if (!args.length) return [ln(t('catUsage'), { cls: 't-dim' })];
+        var target = resolvePath(args[0]);
+        if (!target || !target.node) {
+          return [
+            ln('cat: ' + args[0] + ': ' + t('catNoFile'), { cls: 't-amber' }),
+            ln("‚Üí 'tree' ¬∑ 'ls' ¬∑ 'help'", { cls: 't-dim', mt: 4 }),
+          ];
+        }
+        if (target.node.type === 'dir') return [ln('cat: ' + args[0] + ': ' + t('catIsDir'), { cls: 't-amber' })];
+        return RENDER[target.node.render]();
+      },
+    },
+
+    grep: {
+      usage: 'grep <pattern> [path]',
+      run: function (args) {
+        if (!args.length) return [ln(t('grepUsage'), { cls: 't-dim' })];
+        var needle = args[0].toLowerCase();
+        var scope = resolvePath(args[1] || '.');
+        if (!scope || !scope.node) return [ln(t('cdNoDir') + ' ' + args[1], { cls: 't-amber' })];
+
+        var out = [], files = 0;
+        var visit = function (node, path) {
+          if (node.type !== 'file') return;
+          files++;
+          fileText(node.render).forEach(function (text) {
+            if (text.toLowerCase().indexOf(needle) === -1) return;
+            out.push(parts([
+              tx(pathLabel(path) + ':', 't-blue'),
+              tx(' ' + text.trim()),
+            ]));
+          });
+        };
+        if (scope.node.type === 'file') visit(scope.node, scope.segments);
+        else walk(scope.node, scope.segments, visit);
+
+        if (!out.length) out.push(ln(t('grepNone'), { cls: 't-dim' }));
+        out.push(ln(t('grepIn') + ' ' + files + ' √ó ' + pathLabel(scope.segments), { cls: 't-faint', mt: 4 }));
+        return out;
+      },
+    },
+
+    find: {
+      usage: 'find <name>',
+      run: function (args) {
+        if (!args.length) return [ln(t('findUsage'), { cls: 't-dim' })];
+        var needle = args[0].toLowerCase().replace(/\*/g, '');
+        var out = [];
+        walk(TREE, [], function (node, path) {
+          var name = path[path.length - 1];
+          if (name.toLowerCase().indexOf(needle) === -1) return;
+          out.push(ln(pathLabel(path) + (node.type === 'dir' ? '/' : ''), {
+            cls: node.type === 'dir' ? 't-blue' : '',
+          }));
+        });
+        return out.length ? out : [ln(t('findNone'), { cls: 't-dim' })];
+      },
+    },
+
+    /* --- shell ------------------------------------------------------ */
+    help: {
+      run: function () {
+        var groups = [
+          ['helpSecContent', ['whoami', 'about', 'projects', 'skills', 'htop', 'education', 'books', 'goals', 'contact']],
+          ['helpSecFiles', ['ls', 'cd', 'pwd', 'tree', 'cat', 'head', 'tail', 'grep', 'find']],
+          ['helpSecSystem', ['uname', 'hostname', 'id', 'uptime', 'date', 'df', 'free', 'w', 'systemctl', 'neofetch', 'banner']],
+          ['helpSecShell', ['echo', 'history', 'man', 'open', 'theme', 'lang', 'clear', 'help']],
+        ];
+        var out = [ln(t('helpTitle'), { cls: 't-bold' })];
+        groups.forEach(function (g) {
+          out.push(ln(t(g[0]), { cls: 't-blue t-bold', mt: 8 }));
+          out.push(grid(g[1].map(function (name) { return [name, desc(name)]; }), { mt: 2, keyCls: 't-green', valCls: 't-dim' }));
+        });
+        out.push(ln(t('helpMore'), { cls: 't-dim', mt: 8 }));
+        out.push(ln(t('helpTip'), { cls: 't-green', mt: 2 }));
+        return out;
+      },
+    },
+
+    man: {
+      usage: 'man <command>',
+      run: function (args) {
+        if (!args.length) return [ln(t('manUsage'), { cls: 't-dim' })];
+        var name = (ALIAS[args[0].toLowerCase()] || args[0].toLowerCase());
+        var cmd = COMMANDS[name];
+        if (!cmd) return [ln(t('manNo') + " '" + args[0] + "'", { cls: 't-amber' })];
+        var rows = [[t('manUsageLabel'), cmd.usage || name]];
+        var aliases = Object.keys(ALIAS).filter(function (a) { return ALIAS[a] === name; });
+        if (aliases.length) rows.push(['alias', aliases.join(', ')]);
+        return [
+          ln(name.toUpperCase(), { cls: 't-green t-bold' }),
+          ln(desc(name), { mt: 2 }),
+          grid(rows, { mt: 6, keyCls: 't-dim' }),
+        ];
+      },
+    },
+
+    echo: {
+      usage: 'echo <text>',
+      run: function (args, ctx) {
+        if (!args.length) return [ln(t('echoUsage'), { cls: 't-dim' })];
+        return [ln(ctx.rest)];
+      },
+    },
+
+    history: {
+      run: function () {
+        if (!cmdLog.length) return [ln(t('historyEmpty'), { cls: 't-dim' })];
+        var shown = cmdLog.slice(-20);
+        var offset = cmdLog.length - shown.length;
+        return shown.map(function (entry, i) {
+          return parts([tx(String(offset + i + 1).padStart(4) + '  ', 't-faint'), tx(entry)]);
+        });
+      },
+    },
+
+    open: {
+      usage: 'open <github|linkedin|email>',
+      run: function (args) {
+        if (!args.length) return [ln(t('openUsage'), { cls: 't-dim' })];
+        var key = args[0].toLowerCase().replace(/[^a-z]/g, '');
+        if (key === 'mail') key = 'email';
+        if (key === 'gh') key = 'github';
+        if (key === 'li' || key === 'in') key = 'linkedin';
+        var url = LINKS[key];
+        if (!url) return [ln(t('openUnknown') + " '" + args[0] + "'", { cls: 't-amber' })];
+        try { window.open(url, '_blank', 'noopener'); } catch (e) { /* blocked ‚Äî the link below still works */ }
+        return [parts([tx(t('openDone') + ' ', 't-dim'), link(url, url)])];
+      },
+    },
+
+    theme: {
+      usage: 'theme <dark|light|auto>',
+      run: function (args) {
+        var mode = (args[0] || '').toLowerCase();
+        if (!mode) mode = activeTheme() === 'dark' ? 'light' : 'dark';
+        if (mode !== 'dark' && mode !== 'light' && mode !== 'auto') {
+          return [ln(t('themeUsage'), { cls: 't-dim' })];
+        }
+        setTheme(mode);
+        return [ln(t('themeNow') + ' ' + mode + (mode === 'auto' ? ' (' + activeTheme() + ')' : ''), { cls: 't-green' })];
+      },
+    },
+
+    lang: {
+      usage: 'lang <en|pl>',
+      /* silent: setLang() wipes the screen and reprints the welcome itself, so
+         exec() must not append an echo line on top of the fresh screen */
+      silent: true,
+      run: function (args) {
+        var next = (args[0] || '').toLowerCase();
+        if (!next) next = lang === 'en' ? 'pl' : 'en';
+        if (next !== 'en' && next !== 'pl') { emit([ln(t('langUsage'), { cls: 't-dim' })]); return; }
+        setLang(next);
+      },
+    },
+
+    sudo: { run: function () { return [ln(t('sudo'), { cls: 't-amber' })]; } },
+    ssh: { run: function () { return [ln(t('ssh'), { cls: 't-amber' })]; } },
+    exit: { run: function () { return [ln(t('exit'), { cls: 't-dim' })]; } },
+    clear: { run: function () { return null; } },   // handled in exec()
+  };
+
+  /* easter eggs ‚Äî the muscle-memory commands every admin types anyway */
+  ['vim', 'vi', 'nano', 'emacs'].forEach(function (n) { COMMANDS[n] = saysT('editor'); });
+  ['touch', 'mkdir', 'rm', 'rmdir', 'mv', 'cp', 'chmod', 'chown'].forEach(function (n) { COMMANDS[n] = saysT('rofs', 't-amber'); });
+  ['wget', 'curl'].forEach(function (n) { COMMANDS[n] = saysT('net'); });
+  ['apt', 'apt-get', 'dnf', 'yum'].forEach(function (n) { COMMANDS[n] = saysT('pkg'); });
+
+  /* --- live htop meters ------------------------------------------------ */
+  function animateMeters(wrap, bars) {
+    var ticks = 0;
+    var id = setInterval(function () {
+      /* stop once the block scrolls out of the DOM (clear, lang switch) or
+         after a minute ‚Äî no runaway timers left behind */
+      if (!wrap.isConnected || ++ticks > 45) { clearInterval(id); return; }
+      bars.forEach(function (b) {
+        var drift = (Math.random() - 0.5) * 14;
+        var v = Math.max(6, Math.min(98, b.base + drift));
+        b.fill.style.width = v.toFixed(0) + '%';
+      });
+    }, 1400);
+  }
+
+  function sessionUptime() {
+    var s = Math.floor((Date.now() - startedAt) / 1000);
+    var m = Math.floor(s / 60);
+    return m > 0 ? m + 'm ' + (s % 60) + 's' : s + 's';
+  }
+
+  /* =====================================================================
+     7. the shell
+     ===================================================================== */
+
+  var output = document.getElementById('term-output');
+  var input = document.getElementById('term-input');
+  var field = input.parentNode;
+  var terminal = document.getElementById('terminal');
+  var crumbs = document.getElementById('path-crumbs');
+  var promptCwd = document.getElementById('prompt-cwd');
+  var statusCwd = document.getElementById('status-cwd');
+  var termTitle = document.getElementById('term-title');
+
+  var cmdLog = loadJSON(KEY.history, []);
+  var historyIdx = cmdLog.length;
+
+  function scrollToBottom() { output.scrollTop = output.scrollHeight; }
+
+  /* Output taller than the viewport used to land the reader on its last line.
+     Park the prompt line of such a block at the top instead, so the visitor
+     reads top-down; short output keeps the classic stick-to-bottom. */
+  function scrollToBlock(block) {
+    if (block.offsetHeight > output.clientHeight) {
+      output.scrollTop = block.getBoundingClientRect().top
+        - output.getBoundingClientRect().top + output.scrollTop;
+    } else {
+      scrollToBottom();
+    }
+  }
+
+  /* Focusing the input jumps back to the prompt at the bottom ‚Äî but not when
+     the focus is a side effect of clicking around the transcript. */
+  var quietFocus = false;
+  function focusInputQuietly() {
+    quietFocus = true;
+    input.focus();
+    quietFocus = false;
+  }
+
+  function promptLine(raw) {
+    var d = document.createElement('div');
+    d.className = 'term-prompt-line';
+    d.appendChild(tx('pawel@portfolio', 't-green'));
+    d.appendChild(tx(':' + pathLabel(cwd) + '$ ', 't-dim'));
+    d.appendChild(tx(raw));
+    return d;
+  }
+
+  function emit(nodes, echo) {
+    var block = document.createElement('div');
+    block.className = 'term-block';
+    if (echo !== undefined && echo !== null) block.appendChild(promptLine(echo));
+    (nodes || []).forEach(function (n) { block.appendChild(n); });
+    output.appendChild(block);
+    /* bound the scrollback so a long session cannot grow without limit */
+    while (output.children.length > 200) output.removeChild(output.firstChild);
+    scrollToBlock(block);
+    return block;
+  }
+
+  function clearScreen() {
+    output.textContent = '';
+  }
+
+  function welcome() {
+    emit([
+      ln(t('welcomeHi')),
+      ln(t('welcomeTry'), { cls: 't-dim' }),
+    ]);
+    /* show the lay of the land right away ‚Äî visitors should not have to ask */
+    emit(COMMANDS.ls.run([]), 'ls');
+  }
+
+  function resetTerminal() {
+    clearScreen();
+    welcome();
+  }
+
+  /* --- parsing ---------------------------------------------------------- */
+
+  function suggest(word) {
+    var names = Object.keys(COMMANDS);
+    var scored = names.map(function (c) {
+      var score = 0;
+      if (c.charAt(0) === word.charAt(0)) score += 1;
+      if (c.indexOf(word) !== -1 || word.indexOf(c) !== -1) score += 3;
+      var seen = {};
+      for (var i = 0; i < word.length; i++) {
+        var ch = word.charAt(i);
+        if (!seen[ch]) { seen[ch] = true; if (c.indexOf(ch) !== -1) score += 0.2; }
+      }
+      return { c: c, score: score };
+    }).sort(function (a, b) { return b.score - a.score; });
+
+    var top = scored.filter(function (x) { return x.score > 0.6; }).slice(0, 3)
+      .map(function (x) { return x.c; });
+    return top.length ? top : ['harbor', 'skills', 'contact'];
+  }
+
+  function unknown(word) {
+    var wrap = ln(null, { cls: 't-dim', mt: 4 });
+    wrap.appendChild(document.createTextNode(t('unknownDid')));
+    suggest(word).forEach(function (s) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'term-suggestion';
+      b.textContent = s;
+      b.addEventListener('click', function () { run(s); });
+      wrap.appendChild(b);
+    });
+    wrap.appendChild(document.createTextNode('?'));
+    return [
+      ln(t('unknownCmd'), { cls: 't-amber' }),
+      wrap,
+      ln(t('unknownHelp'), { cls: 't-dim', mt: 4 }),
+    ];
+  }
+
+  function exec(raw) {
+    var line = raw.trim().replace(/\s+/g, ' ');
+    if (!line) return;
+
+    /* A harmless first-load easter egg: it only looks like the infamous
+       command. Keeping it here (before normal command dispatch) means sudo
+       continues to behave normally for every other argument. */
+    if (line === 'sudo rm -rf /') {
+      emit([ln('Oszala≈Çe≈õ?! Nie usuwaj jƒôzyka francuskiego z systemu!', { cls: 't-amber' })], raw);
+      return;
+    }
+
+    var tokens = line.split(' ');
+    var name = tokens[0].toLowerCase();
+
+    /* Conversational lead-in ("show me the projects") ‚Äî stripped only when
+       the first word is not already a command, so `open github` stays on the
+       real `open` instead of losing its verb. */
+    if (!COMMANDS[name] && !ALIAS[name]) {
+      var stripped = line.replace(/^(please\s+)?(open|show|view|read|go\s+to|goto)\s+(me\s+)?(the\s+)?/i, '');
+      if (stripped && stripped !== line) {
+        line = stripped;
+        tokens = line.split(' ');
+        name = tokens[0].toLowerCase();
+      }
+    }
+
+    var args = tokens.slice(1);
+    var rest = line.slice(tokens[0].length).trim();
+
+    /* `dark` / `light` are aliases of `theme` and carry their own argument */
+    if ((name === 'dark' || name === 'light') && !args.length) args = [name];
+    /* `ll` is the classic `ls -la` shorthand, not a plain rename */
+    if (name === 'll') { name = 'ls'; args.unshift('-la'); }
+    if (ALIAS[name]) name = ALIAS[name];
+
+    if (name === 'clear') { clearScreen(); return; }
+
+    var cmd = COMMANDS[name];
+    if (cmd) {
+      var ctx = { rest: rest, raw: raw, name: name };
+      if (cmd.silent) cmd.run(args, ctx);
+      else emit(cmd.run(args, ctx), raw);
+      return;
+    }
+
+    /* not a command ‚Äî maybe it is a path (autocd / implicit cat) */
+    var target = resolvePath(line);
+    if (target && target.node) {
+      if (target.node.type === 'dir') emit(COMMANDS.cd.run([line], {}), raw);
+      else emit(COMMANDS.cat.run([line], {}), raw);
+      return;
+    }
+
+    emit(unknown(name), raw);
+  }
+
+  function run(raw) {
+    /* an empty Enter prints a bare prompt ‚Äî breathing room, like a real shell */
+    if (!raw || !raw.trim()) {
+      emit([], '');
+      input.value = '';
+      syncField();
+      return;
+    }
+    var entry = raw.trim();
+    if (cmdLog[cmdLog.length - 1] !== entry) cmdLog.push(entry);   // no consecutive dupes
+    if (cmdLog.length > 60) cmdLog = cmdLog.slice(-60);
+    historyIdx = cmdLog.length;
+    save(KEY.history, JSON.stringify(cmdLog));
+    input.value = '';
+    syncField();
+    exec(raw);
+  }
+
+  /* --- history recall --------------------------------------------------- */
+  function recall(dir) {
+    if (!cmdLog.length) return;
+    var idx = historyIdx + dir;
+    if (idx < 0) idx = 0;
+    if (idx >= cmdLog.length) {
+      historyIdx = cmdLog.length;
+      input.value = '';
+      syncField();
+      return;
+    }
+    historyIdx = idx;
+    input.value = cmdLog[idx];
+    syncField();
+    /* put the caret at the end, after the value has landed */
+    setTimeout(function () { input.setSelectionRange(input.value.length, input.value.length); }, 0);
+  }
+
+  /* --- tab completion --------------------------------------------------- */
+  function commonPrefix(list) {
+    if (!list.length) return '';
+    var prefix = list[0];
+    list.forEach(function (s) {
+      while (s.indexOf(prefix) !== 0) prefix = prefix.slice(0, -1);
+    });
+    return prefix;
+  }
+
+  function pathCandidates(fragment) {
+    var slash = fragment.lastIndexOf('/');
+    var dirPart = slash === -1 ? '' : fragment.slice(0, slash + 1);
+    var basePart = slash === -1 ? fragment : fragment.slice(slash + 1);
+    var dir = resolvePath(dirPart || '.');
+    if (!dir || !dir.node || dir.node.type !== 'dir') return { dirPart: dirPart, names: [] };
+    var names = childNames(dir.node).filter(function (n) {
+      return n.toLowerCase().indexOf(basePart.toLowerCase()) === 0;
+    }).map(function (n) {
+      return n + (dir.node.children[n].type === 'dir' ? '/' : '');
+    });
+    return { dirPart: dirPart, names: names };
+  }
+
+  function complete() {
+    var value = input.value;
+    var head = value.replace(/\s+$/, '');
+    var tokens = head.length ? head.split(/\s+/) : [];
+    var trailingSpace = /\s$/.test(value);
+    var editing = trailingSpace ? '' : (tokens[tokens.length - 1] || '');
+    var isFirst = tokens.length <= 1 && !trailingSpace;
+
+    var candidates, replaceWith;
+
+    if (isFirst) {
+      /* an empty line lists the real commands only ‚Äî dumping every alias too
+         would bury the answer the visitor is looking for */
+      var pool = editing ? Object.keys(COMMANDS).concat(Object.keys(ALIAS)) : Object.keys(COMMANDS);
+      candidates = pool
+        .filter(function (n) { return n.indexOf(editing.toLowerCase()) === 0; })
+        .sort()
+        .filter(function (n, i, arr) { return arr.indexOf(n) === i; });
+      replaceWith = function (text) { input.value = text + (candidates.length === 1 ? ' ' : ''); };
+    } else {
+      var verb = tokens[0].toLowerCase();
+      verb = ALIAS[verb] || verb;
+      if (verb === 'man') {
+        candidates = Object.keys(COMMANDS).filter(function (n) { return n.indexOf(editing.toLowerCase()) === 0; }).sort();
+      } else if (verb === 'open') {
+        candidates = Object.keys(LINKS).filter(function (n) { return n.indexOf(editing.toLowerCase()) === 0; });
+      } else if (verb === 'theme') {
+        candidates = ['auto', 'dark', 'light'].filter(function (n) { return n.indexOf(editing.toLowerCase()) === 0; });
+      } else if (verb === 'lang') {
+        candidates = ['en', 'pl'].filter(function (n) { return n.indexOf(editing.toLowerCase()) === 0; });
+      } else {
+        var found = pathCandidates(editing);
+        candidates = found.names.map(function (n) { return found.dirPart + n; });
+      }
+      var prefixTokens = trailingSpace ? tokens : tokens.slice(0, -1);
+      replaceWith = function (text) {
+        var joined = prefixTokens.concat([text]).join(' ');
+        input.value = joined + (candidates.length === 1 && !/\/$/.test(text) ? ' ' : '');
+      };
+    }
+
+    if (!candidates.length) return;
+    if (candidates.length === 1) { replaceWith(candidates[0]); syncField(); return; }
+
+    var prefix = commonPrefix(candidates);
+    if (prefix && prefix.length > editing.length) replaceWith(prefix);
+    emit([ln(candidates.join('   '), { cls: 't-faint' })], input.value);
+    syncField();
+  }
+
+  /* --- input plumbing --------------------------------------------------- */
+  function syncField() {
+    field.classList.toggle('is-empty', input.value.length === 0);
+  }
+
+  input.addEventListener('input', syncField);
+  input.addEventListener('focus', function () {
+    terminal.classList.add('focused');
+    if (!quietFocus) scrollToBottom();
+  });
+  input.addEventListener('blur', function () { terminal.classList.remove('focused'); });
+
+  input.addEventListener('keydown', function (e) {
+    var ctrl = e.ctrlKey || e.metaKey;
+
+    /* typing again means the visitor is done reading ‚Äî rejoin the prompt */
+    if (output.scrollTop + output.clientHeight < output.scrollHeight - 4) scrollToBottom();
+
+    if (e.key === 'Enter') { e.preventDefault(); run(input.value); return; }
+    if (e.key === 'Tab') { e.preventDefault(); complete(); return; }
+    if (e.key === 'ArrowUp') { e.preventDefault(); recall(-1); return; }
+    if (e.key === 'ArrowDown') { e.preventDefault(); recall(1); return; }
+    if (e.key === 'Escape' && !terminal.classList.contains('expanded')) {
+      input.value = ''; syncField(); return;
+    }
+
+    if (!ctrl) return;
+    var k = e.key.toLowerCase();
+    if (k === 'l') { e.preventDefault(); clearScreen(); }
+    else if (k === 'c') {
+      e.preventDefault();
+      emit([], input.value + '^C');
+      input.value = ''; syncField();
+      historyIdx = cmdLog.length;
+    } else if (k === 'u') {
+      e.preventDefault();
+      input.value = input.value.slice(input.selectionStart); syncField();
+      input.setSelectionRange(0, 0);
+    } else if (k === 'k') {
+      e.preventDefault();
+      input.value = input.value.slice(0, input.selectionStart); syncField();
+    } else if (k === 'a') {
+      e.preventDefault(); input.setSelectionRange(0, 0);
+    } else if (k === 'e') {
+      e.preventDefault(); input.setSelectionRange(input.value.length, input.value.length);
+    }
+  });
+
+  /* clicking the transcript (or the empty part of the prompt row) focuses the
+     input ‚Äî unless the visitor is selecting text or following a link */
+  function focusInput(e) {
+    if (e && e.target.closest && e.target.closest('a, button')) return;
+    var sel = window.getSelection();
+    if (sel && sel.toString()) return;
+    focusInputQuietly();      /* reading position must survive the click */
+  }
+  output.addEventListener('click', focusInput);
+  field.addEventListener('click', focusInput);
+
+  /* --- path chrome ------------------------------------------------------ */
+  function syncPath() {
+    crumbs.textContent = '';
+    var segs = ['~'].concat(cwd);
+    segs.forEach(function (seg, i) {
+      if (i) crumbs.appendChild(tx('/', 'path-sep'));
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'path-seg' + (i === segs.length - 1 ? ' path-cur' : '');
+      b.textContent = seg;
+      var targetPath = i === 0 ? '~' : '~/' + cwd.slice(0, i).join('/');
+      b.addEventListener('click', function () {
+        run(i === segs.length - 1 ? 'ls' : 'cd ' + targetPath);
+      });
+      crumbs.appendChild(b);
+    });
+    promptCwd.textContent = ':' + pathLabel(cwd) + '$';
+    statusCwd.textContent = absLabel(cwd);
+    termTitle.textContent = 'visitor@portfolio: ' + absLabel(cwd);
+  }
+
+  /* =====================================================================
+     8. page wiring + boot
+     ===================================================================== */
+
+  function applyPageStrings() {
+    var L = PAGE[lang];
+    root.lang = lang;
+    document.title = L.title;
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (L[key]) el.textContent = L[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (L[key]) el.placeholder = L[key];
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (L[key]) el.setAttribute('aria-label', L[key]);
+    });
+    document.getElementById('lang-en').setAttribute('aria-pressed', String(lang === 'en'));
+    document.getElementById('lang-pl').setAttribute('aria-pressed', String(lang === 'pl'));
+    syncExpandLabel();
+  }
+
+  function setLang(next) {
+    if (next === lang) return;
+    lang = next;
+    save(KEY.lang, next);
+    applyPageStrings();
+    syncPath();
+    resetTerminal();          /* a shell keeps its transcript; a portfolio should not */
+    input.focus();
+  }
+
+  document.getElementById('lang-en').addEventListener('click', function () { setLang('en'); });
+  document.getElementById('lang-pl').addEventListener('click', function () { setLang('pl'); });
+
+  document.getElementById('btn-theme').addEventListener('click', function () {
+    setTheme(activeTheme() === 'dark' ? 'light' : 'dark');
+  });
+  if (prefersDark.addEventListener) {
+    prefersDark.addEventListener('change', function () {
+      if (load(KEY.theme, DEFAULT_THEME) !== 'auto') return;
+      root.removeAttribute('data-theme');
+      syncThemeColor();
+    });
+  }
+
+  /* Everything with [data-cmd] ‚Äî nav, CTAs, path segments, fs strip, chips ‚Äî
+     runs its command. Triggers outside the terminal also bring it into view
+     (matters on mobile, where the terminal sits below the hero text). */
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest ? e.target.closest('[data-cmd]') : null;
+    if (!el) return;
+    run(el.getAttribute('data-cmd'));
+    if (!terminal.contains(el)) {
+      terminal.scrollIntoView({
+        behavior: reducedMotion.matches ? 'auto' : 'smooth',
+        block: 'nearest',
+      });
+    } else {
+      /* quiet ‚Äî a chip may have just printed long output positioned at its top */
+      focusInputQuietly();
+    }
+  });
+
+  /* --- expand / minimise ------------------------------------------------ */
+  var expandBtn = document.getElementById('btn-expand');
+  var expandIcon = document.getElementById('expand-icon');
+  var expandLabel = document.getElementById('expand-label');
+
+  function syncExpandLabel() {
+    var on = terminal.classList.contains('expanded');
+    expandIcon.textContent = on ? '‚§°' : '‚§¢';
+    expandLabel.textContent = on ? PAGE[lang].minimize : PAGE[lang].expand;
+    expandBtn.setAttribute('aria-expanded', String(on));
+  }
+  function setExpanded(on) {
+    terminal.classList.toggle('expanded', on);
+    document.body.classList.toggle('term-expanded', on);
+    syncExpandLabel();
+    if (on) input.focus();
+    scrollToBottom();
+  }
+  expandBtn.addEventListener('click', function () {
+    setExpanded(!terminal.classList.contains('expanded'));
+  });
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && terminal.classList.contains('expanded')) setExpanded(false);
+  });
+
+  /* --- go --------------------------------------------------------------- */
+  applyPageStrings();
+  syncPath();
+  welcome();
+  input.value = 'sudo rm -rf /';
+  syncField();
+  input.setSelectionRange(input.value.length, input.value.length);
+})();
