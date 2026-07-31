@@ -146,6 +146,15 @@ await check('every command produces output and no error', async () => {
   return `${COMMANDS.length} commands`;
 });
 
+await check('destructive-looking easter egg is prefilled and harmless', async () => {
+  await page.reload({ waitUntil: 'networkidle0' });
+  assert(await page.$eval('#term-input', el => el.value) === 'sudo rm -rf /', 'easter egg command is not prefilled');
+  await page.focus('#term-input');
+  await page.keyboard.press('Enter');
+  const output = await page.$eval('#term-output', el => el.textContent);
+  assert(output.includes('Oszalałeś?! Nie usuwaj języka francuskiego z systemu!'), 'easter egg response is missing');
+});
+
 await check('clear empties the transcript', async () => {
   await run(page, 'clear');
   const children = await page.$eval('#term-output', el => el.children.length);
