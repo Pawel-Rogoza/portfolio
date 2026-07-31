@@ -48,9 +48,9 @@
   var LINKS = {
     github: 'https://github.com/pawel-rogoza',
     linkedin: 'https://www.linkedin.com/in/pawel-rogoza',
-    email: 'mailto:pawel.rogoza@proton.me',
+    email: 'mailto:rogozapawel@proton.me',
   };
-  var EMAIL = 'pawel.rogoza@proton.me';
+  var EMAIL = 'rogozapawel@proton.me';
 
   var startedAt = Date.now();
 
@@ -101,8 +101,7 @@
   /* terminal content */
   var TERM = {
     en: {
-      boot: ['portfolio-shell 1.1 — booting…', 'mounting /home/pawel … ok', 'session opened for visitor … ok'],
-      welcomeHi: 'Hi — type a command, hit Tab, or click a chip.',
+      welcomeHi: 'Hi, type a command, hit Tab, or click a button.',
       welcomeTry: 'Try: ls -la · projects · skills · htop · help',
 
       whoami: 'pawel — tech support at cyber_Folks (since 03.2024), cyber_Admin Ambassador in the CST team (since 10.2025). Growing toward SysOps / Linux administration.',
@@ -214,7 +213,7 @@
         ['Web', 'nginx · Apache · PHP-FPM'],
         ['Data', 'MariaDB/MySQL · Redis'],
         ['Mail & DNS', 'Exim · DNS · SPF/DKIM/DMARC'],
-        ['Security', 'firewalld · fail2ban · ModSecurity + OWASP CRS'],
+        ['Security', 'firewalld · fail2ban · ModSecurity'],
         ['Ops', 'Zabbix · restic'],
         ['Scripting', 'Python (FastAPI) · bash · Git'],
         ['Panels', 'DirectAdmin · cyber_Admin'],
@@ -325,8 +324,7 @@
     },
 
     pl: {
-      boot: ['portfolio-shell 1.1 — uruchamianie…', 'montowanie /home/pawel … ok', 'sesja otwarta dla visitor … ok'],
-      welcomeHi: 'Cześć — wpisz komendę, użyj Tab albo kliknij chip.',
+      welcomeHi: 'Cześć, wpisz komendę, użyj Tab albo kliknij w przycisk.',
       welcomeTry: 'Spróbuj: ls -la · projects · skills · htop · help',
 
       whoami: 'pawel — wsparcie techniczne w cyber_Folks (od 03.2024), Ambasador cyber_Admin w CST (od 10.2025). Rozwijam się w stronę SysOps / administracji Linuksem.',
@@ -438,7 +436,7 @@
         ['WWW', 'nginx · Apache · PHP-FPM'],
         ['Dane', 'MariaDB/MySQL · Redis'],
         ['Poczta i DNS', 'Exim · DNS · SPF/DKIM/DMARC'],
-        ['Security', 'firewalld · fail2ban · ModSecurity + OWASP CRS'],
+        ['Security', 'firewalld · fail2ban · ModSecurity'],
         ['Ops', 'Zabbix · restic'],
         ['Skrypty', 'Python (FastAPI) · bash · Git'],
         ['Panele', 'DirectAdmin · cyber_Admin'],
@@ -1523,8 +1521,6 @@
 
   var cmdLog = loadJSON(KEY.history, []);
   var historyIdx = cmdLog.length;
-  var booting = false;
-  var bootTimers = [];
 
   function scrollToBottom() { output.scrollTop = output.scrollHeight; }
 
@@ -1583,42 +1579,7 @@
     emit(COMMANDS.ls.run([]), 'ls');
   }
 
-  function bootSequence() {
-    var lines = t('boot');
-    if (reducedMotion.matches) {
-      emit(lines.map(function (l) { return ln(l, { cls: 't-faint' }); }));
-      welcome();
-      return;
-    }
-    booting = true;
-    var block = emit([]);
-    lines.forEach(function (text, i) {
-      bootTimers.push(setTimeout(function () {
-        block.appendChild(ln(text, { cls: 't-faint' }));
-        scrollToBottom();
-      }, 130 * (i + 1)));
-    });
-    bootTimers.push(setTimeout(function () {
-      booting = false;
-      bootTimers = [];
-      welcome();
-    }, 130 * (lines.length + 1)));
-  }
-
-  function flushBoot() {
-    if (!booting) return;
-    bootTimers.forEach(clearTimeout);
-    bootTimers = [];
-    booting = false;
-    clearScreen();
-    emit(t('boot').map(function (l) { return ln(l, { cls: 't-faint' }); }));
-    welcome();
-  }
-
   function resetTerminal() {
-    bootTimers.forEach(clearTimeout);
-    bootTimers = [];
-    booting = false;
     clearScreen();
     welcome();
   }
@@ -1713,7 +1674,6 @@
   }
 
   function run(raw) {
-    flushBoot();
     /* an empty Enter prints a bare prompt — breathing room, like a real shell */
     if (!raw || !raw.trim()) {
       emit([], '');
@@ -1842,7 +1802,7 @@
     if (output.scrollTop + output.clientHeight < output.scrollHeight - 4) scrollToBottom();
 
     if (e.key === 'Enter') { e.preventDefault(); run(input.value); return; }
-    if (e.key === 'Tab') { e.preventDefault(); flushBoot(); complete(); return; }
+    if (e.key === 'Tab') { e.preventDefault(); complete(); return; }
     if (e.key === 'ArrowUp') { e.preventDefault(); recall(-1); return; }
     if (e.key === 'ArrowDown') { e.preventDefault(); recall(1); return; }
     if (e.key === 'Escape' && !terminal.classList.contains('expanded')) {
@@ -1999,5 +1959,5 @@
   applyPageStrings();
   syncPath();
   syncField();
-  bootSequence();
+  welcome();
 })();

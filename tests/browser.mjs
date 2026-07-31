@@ -412,13 +412,13 @@ await check('contact exposes real links', async () => {
   return `${hrefs.length} link(s)`;
 });
 
-await check('reduced motion skips the boot animation and the meters', async () => {
+await check('reduced motion skips the meters', async () => {
   const quiet = await open({ reducedMotion: 'reduce' });
   const blocks = await quiet.$eval('#term-output', el => el.children.length);
-  assert(blocks === 3, `expected boot + welcome + home listing as 3 blocks, got ${blocks}`);
+  assert(blocks === 2, `expected welcome + home listing as 2 blocks, got ${blocks}`);
   const listing = await quiet.$eval('#term-output', el => el.lastElementChild.textContent);
   assert(listing.includes('projects/') && listing.includes('scripts/'),
-    'the boot listing does not show the home directories');
+    'the welcome listing does not show the home directories');
   await run(quiet, 'htop');
   const before = await quiet.$$eval('.meter-fill', els => els.map(e => e.style.width));
   await quiet.waitForTimeout(1600);
