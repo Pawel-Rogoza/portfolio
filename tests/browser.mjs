@@ -152,7 +152,7 @@ await check('destructive-looking easter egg is prefilled and harmless', async ()
   await page.focus('#term-input');
   await page.keyboard.press('Enter');
   const output = await page.$eval('#term-output', el => el.textContent);
-  assert(output.includes('Oszalałeś?! Nie usuwaj języka francuskiego z systemu!'), 'easter egg response is missing');
+  assert(output.includes('Spokojnie, to tylko portfolio. Francuski jest bezpieczny :D'), 'easter egg response is missing');
 });
 
 await check('clear empties the transcript', async () => {

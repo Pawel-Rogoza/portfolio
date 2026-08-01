@@ -1632,7 +1632,7 @@
        command. Keeping it here (before normal command dispatch) means sudo
        continues to behave normally for every other argument. */
     if (line === 'sudo rm -rf /') {
-      emit([ln('Oszalałeś?! Nie usuwaj języka francuskiego z systemu!', { cls: 't-amber' })], raw);
+      emit([ln('Spokojnie, to tylko portfolio. Francuski jest bezpieczny :D', { cls: 't-amber' })], raw);
       return;
     }
 
